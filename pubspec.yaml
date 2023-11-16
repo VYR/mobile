@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  carousel_slider: ^4.0.0
 
 dev_dependencies:
   flutter_test:
@@ -18,8 +19,9 @@ dev_dependencies:
 flutter:
 
   uses-material-design: true
-  # assets:
-  #  - images/a_dot_burr.jpeg
+  assets:
+   - assets/images/splashScreen.gif
+   - assets/images/logo.webp
   #  - images/a_dot_ham.jpeg
   # fonts:
   #   - family: Schyler
