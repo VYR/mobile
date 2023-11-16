@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -74,6 +77,14 @@ class _MyHomePageState extends State<MyHomePage> {
   void _incrementCounter() {
     setState(() {
       _counter++;
+    });
+  }
+
+  @override
+  void initState() {
+    Timer(Duration(seconds: 5), () {
+      // 5 seconds over, navigate to Page2.
+      Navigator.push(context, MaterialPageRoute(builder: (_) => const Login()));
     });
   }
 
