@@ -2,6 +2,8 @@ import 'dart:ui';
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:raoproject/constants.dart';
+import 'package:raoproject/screens/home_page.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -36,8 +38,8 @@ class _HomeState extends State<Home> {
         title: const Text(
           'Navigation Drawer',
         ),
-        backgroundColor: const Color(0xff764abc),
-        foregroundColor: const Color(0xfffcfcfd),
+        backgroundColor: themeBackground,
+        foregroundColor: themeForeground,
       ),
       drawer: Drawer(
         child: ListView(
@@ -46,7 +48,7 @@ class _HomeState extends State<Home> {
           children: [
             const UserAccountsDrawerHeader(
               // <-- SEE HERE
-              decoration: BoxDecoration(color: const Color(0xff764abc)),
+              decoration: BoxDecoration(color: themeBackground),
               accountName: Text(
                 "Yellamandarao Vemula",
                 style: TextStyle(
@@ -67,7 +69,8 @@ class _HomeState extends State<Home> {
               ),
               title: const Text('Page 1'),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => HomePage()));
               },
             ),
             ListTile(
@@ -221,6 +224,43 @@ class _HomeState extends State<Home> {
           ],
         ),
       ),
+      bottomNavigationBar: BottomNavigationBar(items: const [
+        BottomNavigationBarItem(
+          icon: Icon(
+            Icons.search,
+          ),
+          label: 'Earn Money',
+          backgroundColor: themeBackground,
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(
+            Icons.view_list,
+          ),
+          label: 'My Tasks',
+          backgroundColor: themeBackground,
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(
+            Icons.task,
+          ),
+          label: 'Post a Task',
+          backgroundColor: themeBackground,
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(
+            Icons.message,
+          ),
+          label: 'My Messages',
+          backgroundColor: themeBackground,
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(
+            Icons.more_vert,
+          ),
+          label: 'More',
+          backgroundColor: themeBackground,
+        ),
+      ]),
     );
   }
 }
