@@ -1,8 +1,11 @@
 import 'package:dio/dio.dart';
-import 'package:raoproject/login.dart';
+//import 'package:raoproject/login.dart';
 import 'package:raoproject/models/user.dart';
 import 'package:raoproject/models/user_info.dart';
+import 'package:raoproject/utils/loggers.dart';
 import 'package:raoproject/utils/logging.dart';
+
+String _h = "DioClient";
 
 class DioClient {
   final Dio _dio = Dio(
@@ -14,7 +17,7 @@ class DioClient {
   )..interceptors.add(Logging());
 
   Future<Map> login({required Map userInfo}) async {
-    var retrievedUser = new Map();
+    var retrievedUser = {};
 
     try {
       Response response = await _dio.post(
@@ -22,11 +25,11 @@ class DioClient {
         data: userInfo,
       );
 
-      print('User created: ${response.data}');
+      logDebug(_h, 'User created: ${response.data}');
 
       retrievedUser = response.data;
     } catch (e) {
-      print('Error creating user: $e');
+      logDebug(_h, 'Error creating user: $e');
     }
     return retrievedUser;
   }
@@ -37,21 +40,21 @@ class DioClient {
     try {
       Response userData = await _dio.get('auth/login');
 
-      print('User Info: ${userData.data}');
+      logDebug(_h, 'User Info: ${userData.data}');
 
       user = User.fromJson(userData.data);
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       // The request was made and the server responded with a status code
       // that falls out of the range of 2xx and is also not 304.
       if (e.response != null) {
-        print('Dio error!');
-        print('STATUS: ${e.response?.statusCode}');
-        print('DATA: ${e.response?.data}');
-        print('HEADERS: ${e.response?.headers}');
+        logDebug(_h, 'Dio error!');
+        logDebug(_h, 'STATUS: ${e.response?.statusCode}');
+        logDebug(_h, 'DATA: ${e.response?.data}');
+        logDebug(_h, 'HEADERS: ${e.response?.headers}');
       } else {
         // Error due to setting up or sending the request
-        print('Error sending request!');
-        print(e.message);
+        logDebug(_h, 'Error sending request!');
+        logDebug(_h, '${e.message}');
       }
     }
 
@@ -67,11 +70,11 @@ class DioClient {
         data: userInfo.toJson(),
       );
 
-      print('User created: ${response.data}');
+      logDebug(_h, 'User created: ${response.data}');
 
       retrievedUser = UserInfo.fromJson(response.data);
     } catch (e) {
-      print('Error creating user: $e');
+      logDebug(_h, 'Error creating user: $e');
     }
 
     return retrievedUser;
@@ -89,11 +92,11 @@ class DioClient {
         data: userInfo.toJson(),
       );
 
-      print('User updated: ${response.data}');
+      logDebug(_h, 'User updated: ${response.data}');
 
       updatedUser = UserInfo.fromJson(response.data);
     } catch (e) {
-      print('Error updating user: $e');
+      logDebug(_h, 'Error updating user: $e');
     }
 
     return updatedUser;
@@ -102,9 +105,9 @@ class DioClient {
   Future<void> deleteUser({required String id}) async {
     try {
       await _dio.delete('/users/$id');
-      print('User deleted!');
+      logDebug(_h, 'User deleted!');
     } catch (e) {
-      print('Error deleting user: $e');
+      logDebug(_h, 'Error deleting user: $e');
     }
   }
 }

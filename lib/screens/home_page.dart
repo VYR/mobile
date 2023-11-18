@@ -7,8 +7,9 @@ import 'package:raoproject/widgets/update_user.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
+  const HomePage({super.key});
   @override
-  _HomePageState createState() => _HomePageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
@@ -18,7 +19,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('User Info'),
+        title: const Text('User Info'),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -26,7 +27,7 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 'POST',
                 style: TextStyle(
                   fontSize: 22.0,
@@ -34,8 +35,8 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               const CreateUser(),
-              Padding(
-                padding: const EdgeInsets.only(top: 16.0, bottom: 8.0),
+              const Padding(
+                padding: EdgeInsets.only(top: 16.0, bottom: 8.0),
                 child: Text(
                   'GET & DELETE',
                   style: TextStyle(
@@ -44,9 +45,9 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              FetchUser(),
-              Padding(
-                padding: const EdgeInsets.only(top: 16.0),
+              const FetchUser(),
+              const Padding(
+                padding: EdgeInsets.only(top: 16.0),
                 child: Text(
                   'UPDATE',
                   style: TextStyle(
@@ -55,9 +56,9 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              UpdateUser(),
-              Padding(
-                padding: const EdgeInsets.only(top: 16.0, bottom: 8.0),
+              const UpdateUser(),
+              const Padding(
+                padding: EdgeInsets.only(top: 16.0, bottom: 8.0),
                 child: Text(
                   'GET (auto fetch)',
                   style: TextStyle(
@@ -80,20 +81,20 @@ class _HomePageState extends State<HomePage> {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Image.network(userData.avatar),
-                            SizedBox(height: 8.0),
+                            const SizedBox(height: 8.0),
                             Text(
                               '${userInfo.data.firstName} ${userInfo.data.lastName}',
-                              style: TextStyle(fontSize: 16.0),
+                              style: const TextStyle(fontSize: 16.0),
                             ),
                             Text(
                               userData.email,
-                              style: TextStyle(fontSize: 16.0),
+                              style: const TextStyle(fontSize: 16.0),
                             ),
                           ],
                         );
                       }
                     }
-                    return CircularProgressIndicator();
+                    return const CircularProgressIndicator();
                   },
                 ),
               ),

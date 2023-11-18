@@ -3,4 +3,4 @@ import 'package:flutter/material.dart';
 
 const Color themeBackground = Color(0xff764abc);
 const Color themeForeground = Color(0xfffcfcfd);
-const String _keyLogin = 'login';
+//const String _keyLogin = 'login';

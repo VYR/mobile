@@ -1,9 +1,12 @@
-import 'dart:ui';
+//import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:raoproject/utils/dio_client.dart';
+import 'package:raoproject/utils/loggers.dart';
 import 'home.dart';
 import 'package:raoproject/utils/secure_data.dart';
+
+const String _h = 'login';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -32,10 +35,10 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     if (_isClicked) {
-      print('storage');
+      logDebug(_h, 'storage');
       /* () async {
         String? x = await storage.getLocalData("token");
-        print(x);
+        logDebug(_h, x);
       };*/
 
       return const Home();
@@ -99,9 +102,10 @@ class _LoginState extends State<Login> {
 
                             Map retrievedUser =
                                 await _dioClient.login(userInfo: userInfo);
-                            print('res ${retrievedUser.isNotEmpty}');
+                            logDebug(_h, 'res ${retrievedUser.isNotEmpty}');
                             if (retrievedUser.isNotEmpty) {
-                              print('res fg ${retrievedUser.isNotEmpty}');
+                              logDebug(
+                                  _h, 'res fg ${retrievedUser.isNotEmpty}');
 
                               /*await storage.setLocalData(
                                   "token",
@@ -118,7 +122,7 @@ class _LoginState extends State<Login> {
                                 _isClicked = true;
                               });
                             } else {
-                              print('else ${retrievedUser.isNotEmpty}');
+                              logDebug(_h, 'else ${retrievedUser.isNotEmpty}');
                               /* showDialog(
                               context: context,
                               builder: (context) => Dialog(
@@ -165,7 +169,7 @@ class _LoginState extends State<Login> {
                         Expanded(
                           child: InkWell(
                               onTap: () {
-                                print('hello');
+                                logDebug(_h, 'hello');
                               },
                               child: const Text(
                                 'Get help logging in. gf dfgh gfhgfh hs',

@@ -6,7 +6,7 @@ class FetchUser extends StatefulWidget {
   const FetchUser({Key? key}) : super(key: key);
 
   @override
-  _FetchUserState createState() => _FetchUserState();
+  State<FetchUser> createState() => _FetchUserState();
 }
 
 class _FetchUserState extends State<FetchUser> {
@@ -27,12 +27,12 @@ class _FetchUserState extends State<FetchUser> {
             Flexible(
               child: TextField(
                 controller: _idController,
-                decoration: InputDecoration(hintText: 'Enter ID'),
+                decoration: const InputDecoration(hintText: 'Enter ID'),
               ),
             ),
-            SizedBox(width: 16.0),
+            const SizedBox(width: 16.0),
             _isFetching
-                ? CircularProgressIndicator()
+                ? const CircularProgressIndicator()
                 : ElevatedButton(
                     onPressed: () async {
                       setState(() {
@@ -44,7 +44,7 @@ class _FetchUserState extends State<FetchUser> {
                       );
 
                       if (user == null) {
-                        showDialog(
+                        /* showDialog(
                           context: context,
                           builder: (context) => Dialog(
                             child: Container(
@@ -69,7 +69,7 @@ class _FetchUserState extends State<FetchUser> {
                               ),
                             ),
                           ),
-                        );
+                        );*/
                       }
 
                       setState(() {
@@ -78,28 +78,29 @@ class _FetchUserState extends State<FetchUser> {
                     },
                     child: const Text('Fetch'),
                   ),
-            SizedBox(width: 16.0),
+            const SizedBox(width: 16.0),
             _isDeleting
-                ? CircularProgressIndicator()
+                ? const CircularProgressIndicator()
                 : ElevatedButton(
                     onPressed: () async {
                       setState(() {
                         _isDeleting = true;
                       });
                       await _client.deleteUser(id: _idController.text);
-                      final snackBar = SnackBar(
+                      /* final snackBar = SnackBar(
                         content: Text(
                           'User at id ${_idController.text} deleted!',
-                          style: TextStyle(fontSize: 20.0),
+                          style: const TextStyle(fontSize: 20.0),
                         ),
                       );
                       ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                      */
 
                       setState(() {
                         _isDeleting = false;
                       });
                     },
-                    child: Text('Delete'),
+                    child: const Text('Delete'),
                   ),
           ],
         ),

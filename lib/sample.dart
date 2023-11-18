@@ -1,8 +1,8 @@
-import 'dart:async';
+//import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
-import 'splash.dart';
+//import 'package:flutter/scheduler.dart';
+//import 'splash.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,8 +21,7 @@ class _MyAppState extends State<MyApp> {
   bool get useLightMode {
     switch (_themeMode) {
       case ThemeMode.system:
-        return SchedulerBinding.instance.window.platformBrightness ==
-            Brightness.light;
+        return true;
       case ThemeMode.light:
         return true;
       case ThemeMode.dark:
@@ -80,6 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+/*
   @override
   void initState() {
     Timer(const Duration(seconds: 5), () {
@@ -88,7 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
           context, MaterialPageRoute(builder: (_) => const SplashScreen()));
     });
   }
-
+*/
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -127,11 +127,10 @@ class _MyHomePageState extends State<MyHomePage> {
 class _BrightnessButton extends StatelessWidget {
   const _BrightnessButton({
     required this.handleBrightnessChange,
-    this.showTooltipBelow = true,
   });
 
   final Function handleBrightnessChange;
-  final bool showTooltipBelow;
+  final bool showTooltipBelow = true;
 
   @override
   Widget build(BuildContext context) {

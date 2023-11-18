@@ -1,0 +1,1 @@
+enum LogLevels { error }
