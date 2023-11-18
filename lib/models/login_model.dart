@@ -1,22 +1,22 @@
 import "dart:convert";
 import "package:flutter/widgets.dart";
 
-class Login {
-  const Login({
+class LoginModel {
+  const LoginModel({
       this.accessToken,
       this.tokenType,
       this.expiresIn,
       this.user,
   });
   
-  factory Login.fromMap(Map<String, dynamic> map) => Login(
+  factory LoginModel.fromMap(Map<String, dynamic> map) => LoginModel(
       accessToken: map["access_token"],
       tokenType: map["token_type"],
       expiresIn: map["expires_in"],
       user: map["user"] == null ? null : User.fromMap(map["user"]),
   );
   
-  factory Login.fromJson(String str) => Login.fromMap(json.decode(str));
+  factory LoginModel.fromJson(String str) => LoginModel.fromMap(json.decode(str));
   
   final String? accessToken;
   final String? tokenType;
@@ -35,12 +35,12 @@ class Login {
   
   String toJson() => json.encode(toMap());
   
-  Login copyWith({
+  LoginModel copyWith({
       String? accessToken,
       String? tokenType,
       int? expiresIn,
       User? user,
-  }) => Login(
+  }) => LoginModel(
       accessToken: accessToken ?? this.accessToken,
       tokenType: tokenType ?? this.tokenType,
       expiresIn: expiresIn ?? this.expiresIn,
@@ -48,7 +48,7 @@ class Login {
   );
   
   @override
-  String toString() => "Login(accessToken: $accessToken, tokenType: $tokenType, expiresIn: $expiresIn, user: $user)";
+  String toString() => "LoginModel(accessToken: $accessToken, tokenType: $tokenType, expiresIn: $expiresIn, user: $user)";
   
   @override
   bool operator ==(Object other) {
@@ -58,7 +58,7 @@ class Login {
     if (other.runtimeType != runtimeType) {
       return false;
     }
-    return other is Login &&
+    return other is LoginModel &&
         other.accessToken == accessToken &&
         other.tokenType == tokenType &&
         other.expiresIn == expiresIn &&
