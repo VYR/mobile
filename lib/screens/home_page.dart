@@ -13,10 +13,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final DioClient _client = DioClient();
-
   @override
   Widget build(BuildContext context) {
+    final DioClient dioClient = DioClient(context);
     return Scaffold(
       appBar: AppBar(
         title: const Text('User Info'),
@@ -69,7 +68,7 @@ class _HomePageState extends State<HomePage> {
               ),
               Center(
                 child: FutureBuilder<User?>(
-                  future: _client.getUser(id: '1'),
+                  future: dioClient.getUser(id: '1'),
                   builder: (context, snapshot) {
                     if (snapshot.hasData) {
                       User? userInfo = snapshot.data;

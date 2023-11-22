@@ -3,7 +3,7 @@ import 'package:raoproject/utils/dio_client.dart';
 import 'package:flutter/material.dart';
 
 class UpdateUser extends StatefulWidget {
-  const UpdateUser({Key? key}) : super(key: key);
+  const UpdateUser({super.key});
 
   @override
   State<UpdateUser> createState() => _UpdateUserState();
@@ -13,8 +13,6 @@ class _UpdateUserState extends State<UpdateUser> {
   late final TextEditingController _idController;
   late final TextEditingController _nameController;
   late final TextEditingController _jobController;
-
-  final DioClient _dioClient = DioClient();
 
   bool isUpdating = false;
 
@@ -29,6 +27,7 @@ class _UpdateUserState extends State<UpdateUser> {
 
   @override
   Widget build(BuildContext context) {
+    final DioClient dioClient = DioClient(context);
     return Column(
       children: [
         TextField(
@@ -58,37 +57,37 @@ class _UpdateUserState extends State<UpdateUser> {
                       job: _jobController.text,
                     );
 
-                    UserInfo? retrievedUser = await _dioClient.updateUser(
+                    UserInfo? retrievedUser = await dioClient.updateUser(
                       userInfo: userInfo,
                       id: _idController.text,
                     );
 
                     if (retrievedUser != null) {
-                      /* showDialog(
-                          context: context,
-                          builder: (context) => Dialog(
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Text('Name: ${retrievedUser.name}'),
-                                    Text('Job: ${retrievedUser.job}'),
-                                    Text(
-                                      'Updated at: ${retrievedUser.updatedAt}',
-                                    ),
-                                  ],
-                                ),
+                      showDialog(
+                        context: context,
+                        builder: (context) => Dialog(
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text('Name: ${retrievedUser.name}'),
+                                  Text('Job: ${retrievedUser.job}'),
+                                  Text(
+                                    'Updated at: ${retrievedUser.updatedAt}',
+                                  ),
+                                ],
                               ),
                             ),
                           ),
-                        );*/
+                        ),
+                      );
                     }
                   }
 

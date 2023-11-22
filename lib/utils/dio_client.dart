@@ -1,13 +1,27 @@
 import 'package:dio/dio.dart';
-//import 'package:raoproject/login.dart';
+import 'package:flutter/material.dart';
 import 'package:raoproject/models/user.dart';
 import 'package:raoproject/models/user_info.dart';
+import 'package:raoproject/screens/home_screen.dart';
 import 'package:raoproject/utils/loggers.dart';
 import 'package:raoproject/utils/logging.dart';
 
-String _h = "DioClient";
+const String _h = 'DioClient';
+Map<String, dynamic> dialogData = {};
 
 class DioClient {
+  late BuildContext screenContext;
+  late BuildContext dialogContext;
+  DioClient(BuildContext context) {
+    screenContext = context;
+    dialogData['open'] = true;
+    // loadDialog();
+  }
+  //Local
+  //final baseUrl='http://localhost/food-delivery/public/api/';
+  //Prod
+  //final baseUrl='https://www.puppysoftwares.com/food-delivery/public/api/';
+
   final Dio _dio = Dio(
     BaseOptions(
       baseUrl: 'https://www.puppysoftwares.com/food-delivery/public/api/',
@@ -15,10 +29,94 @@ class DioClient {
       receiveTimeout: const Duration(seconds: 3000),
     ),
   )..interceptors.add(Logging());
+  closeDialog() {
+    if (dialogContext != null) {
+      Navigator.pop(dialogContext);
+    }
+  }
+
+  Future<void> loadDialog() async {
+    showDialog(
+        context: screenContext,
+        barrierDismissible: false,
+        builder: (context) {
+          dialogContext = context;
+          if (dialogData['open']) {
+            return Dialog(
+              insetPadding: const EdgeInsets.only(left: 0.0, right: 0.0),
+              //padding: const EdgeInsets.only(left: 0.0, right: 0.0),
+              child: Container(
+                margin: const EdgeInsets.only(left: 0.0, right: 0.0),
+                padding: const EdgeInsets.only(left: 0.0, right: 0.0),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [Center(child: CircularProgressIndicator())],
+                  ),
+                ),
+              ),
+            );
+          } else {
+            return AlertDialog(
+              title: Container(
+                padding: const EdgeInsets.all(5),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.greenAccent),
+                // color: Colors.yellow,
+                child: const Row(
+                  children: [
+                    Icon(Icons.info, color: Colors.red),
+                    SizedBox(width: 8),
+                    Text(
+                      'Alert Dialog Title',
+                      style: TextStyle(fontSize: 18, color: Colors.red),
+                    ),
+                  ],
+                ),
+              ),
+              actionsAlignment: MainAxisAlignment.spaceEvenly,
+              insetPadding: const EdgeInsets.only(left: 0.0, right: 0.0),
+              //padding: const EdgeInsets.only(left: 0.0, right: 0.0),
+              content: Container(
+                margin: const EdgeInsets.only(left: 0.0, right: 0.0),
+                padding: const EdgeInsets.only(left: 0.0, right: 0.0),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: const Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text('ID: '),
+                    Text('Name:'),
+                    Text('Job: '),
+                    Text('Created at: '),
+                  ],
+                ),
+              ),
+              actions: [
+                ElevatedButton(
+                    style: ElevatedButton.styleFrom(),
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: const Text('Ok'))
+              ],
+            );
+          }
+        });
+  }
 
   Future<Map> login({required Map userInfo}) async {
     var retrievedUser = {};
-
     try {
       Response response = await _dio.post(
         'auth/login',
@@ -28,8 +126,12 @@ class DioClient {
       logDebug(_h, 'User created: ${response.data}');
 
       retrievedUser = response.data;
+      //closeDialog();
     } catch (e) {
       logDebug(_h, 'Error creating user: $e');
+      // dialogData['open'] = false;
+      //closeDialog();
+      // loadDialog();
     }
     return retrievedUser;
   }
@@ -54,7 +156,7 @@ class DioClient {
       } else {
         // Error due to setting up or sending the request
         logDebug(_h, 'Error sending request!');
-        logDebug(_h, '${e.message}');
+        logDebug(_h, "$e.message");
       }
     }
 

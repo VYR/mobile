@@ -1,19 +1,24 @@
-//import 'dart:ui';
-
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:getwidget/getwidget.dart';
 import 'package:raoproject/constants.dart';
+import 'package:raoproject/enums/shared_enum.dart';
 import 'package:raoproject/screens/home_page.dart';
+import 'package:raoproject/screens/login_screen.dart';
+import 'package:raoproject/utils/loggers.dart';
+import 'package:raoproject/utils/secure_data.dart';
+import 'package:raoproject/widgets/custom_left_right_widget.dart';
+import 'package:raoproject/widgets/custom_text_label_widget.dart';
 
 class AdminHome extends StatefulWidget {
   const AdminHome({super.key});
   final String title = "Login";
 
   @override
-  State<AdminHome> createState() => _HomeState();
+  State<AdminHome> createState() => _AdminHomeState();
 }
 
-class _HomeState extends State<AdminHome> {
+class _AdminHomeState extends State<AdminHome> {
   final List<String> imageList = [
     "https://images.immediate.co.uk/production/volatile/sites/30/2023/06/Ultraprocessed-food-58d54c3.jpg",
     "https://cdn.britannica.com/36/123536-050-95CB0C6E/Variety-fruits-vegetables.jpg",
@@ -21,6 +26,7 @@ class _HomeState extends State<AdminHome> {
     "https://c.ndtvimg.com/2023-05/3rikofk8_dosa_625x300_09_May_23.jpg",
     "https://mycitychennai.com/wp-content/uploads/2017/06/8526628530_91ea7979f4_b.jpg"
   ];
+
   // Country List
   final List<String> countryList = [
     "PAKISTAN",
@@ -30,8 +36,24 @@ class _HomeState extends State<AdminHome> {
     "RUSSIA",
     "BELIZE"
   ];
+  String userName = '';
+  @override
+  initState() {
+    super.initState();
+    getData();
+  }
+
+  getData() async {
+    userName = await SecureStorage.getLocalData(spUserName, SPTypes.string);
+    setState(() {
+      userName = userName;
+    });
+    print(userName);
+  }
+
   @override
   Widget build(BuildContext context) {
+    print(userName);
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -46,22 +68,17 @@ class _HomeState extends State<AdminHome> {
           // Important: Remove any padding from the ListView.
           padding: EdgeInsets.zero,
           children: [
-            const UserAccountsDrawerHeader(
+            UserAccountsDrawerHeader(
               // <-- SEE HERE
-              decoration: BoxDecoration(color: themeBackground),
-              accountName: Text(
-                "Yellamandarao Vemula",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              accountEmail: Text(
+              decoration: const BoxDecoration(color: themeBackground),
+              accountName: CustomTextLabelWidget(text: userName),
+              accountEmail: const Text(
                 "yalamanda118@gmail.com",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              currentAccountPicture: FlutterLogo(),
+              currentAccountPicture: const FlutterLogo(),
             ),
             ListTile(
               leading: const Icon(
@@ -86,181 +103,53 @@ class _HomeState extends State<AdminHome> {
         ),
       ),
       body: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            Padding(
-                padding: const EdgeInsets.symmetric(vertical: 15),
-                child: CarouselSlider(
-                  items: imageList.map((e) {
-                    return Card(
-                      shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(2)),
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Image.network(e.trim().toString(),
-                            fit: BoxFit.fill, width: 1000),
-                      ),
-                    );
-                  }).toList(),
-                  options: CarouselOptions(
-                    height: 200,
-                  ),
-                )),
-            Padding(
-                padding: const EdgeInsets.symmetric(vertical: 15),
-                child: CarouselSlider(
-                  items: imageList.map((e) {
-                    return Card(
-                      shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(2)),
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Image.network(e.trim().toString(),
-                            fit: BoxFit.fill, width: 500),
-                      ),
-                    );
-                  }).toList(),
-                  options: CarouselOptions(
-                    height: 100,
-                  ),
-                )),
-            Padding(
-                padding: const EdgeInsets.symmetric(vertical: 15),
-                child: CarouselSlider(
-                  items: imageList.map((e) {
-                    return Card(
-                      shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(2)),
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Image.network(e.trim().toString(),
-                            fit: BoxFit.fill, width: 1000),
-                      ),
-                    );
-                  }).toList(),
-                  options: CarouselOptions(
-                    height: 200,
-                  ),
-                )),
-            Padding(
-                padding: const EdgeInsets.symmetric(vertical: 15),
-                child: CarouselSlider(
-                  items: imageList.map((e) {
-                    return Card(
-                      shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(2)),
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Image.network(e.trim().toString(),
-                            fit: BoxFit.fill, width: 1000),
-                      ),
-                    );
-                  }).toList(),
-                  options: CarouselOptions(
-                    height: 200,
-                  ),
-                )),
-            Padding(
-                padding: const EdgeInsets.symmetric(vertical: 15),
-                child: CarouselSlider(
-                  items: imageList.map((e) {
-                    return Card(
-                      shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(2)),
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Image.network(e.trim().toString(),
-                            fit: BoxFit.fill, width: 1000),
-                      ),
-                    );
-                  }).toList(),
-                  options: CarouselOptions(
-                    height: 200,
-                  ),
-                )),
-            Padding(
-                padding: const EdgeInsets.symmetric(vertical: 15),
-                child: CarouselSlider(
-                  items: imageList.map((e) {
-                    return Card(
-                      shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(2)),
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Image.network(e.trim().toString(),
-                            fit: BoxFit.fill, width: 1000),
-                      ),
-                    );
-                  }).toList(),
-                  options: CarouselOptions(
-                    height: 200,
-                  ),
-                )),
-            Padding(
-                padding: const EdgeInsets.symmetric(vertical: 15),
-                child: CarouselSlider(
-                  items: imageList.map((e) {
-                    return Card(
-                      shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(2)),
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Image.network(e.trim().toString(),
-                            fit: BoxFit.fill, width: 1000),
-                      ),
-                    );
-                  }).toList(),
-                  options: CarouselOptions(
-                    height: 200,
-                  ),
-                )),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 5),
+          child: Column(children: <Widget>[
+            const CustomLeftRightWidget(
+              leftWidget:
+                  CustomTextLabelWidget(text: "Categories", isBold: true),
+              rightWidget: Icon(Icons.plus_one_sharp),
+            ),
+            const SizedBox(height: 8),
+            GFItemsCarousel(
+              rowCount: 4,
+              itemHeight: 100,
+              children: imageList.map((url) {
+                return Column(children: [
+                  GFAvatar(
+                      backgroundImage: NetworkImage(url),
+                      shape: GFAvatarShape.circle,
+                      size: GFSize.LARGE),
+                  const SizedBox(height: 8),
+                  const CustomTextLabelWidget(text: "Name")
+                ]);
+              }).toList(),
+            ),
+            const CustomLeftRightWidget(
+              leftWidget: CustomTextLabelWidget(text: "Products", isBold: true),
+              rightWidget: Icon(Icons.plus_one_sharp),
+            ),
+            const SizedBox(height: 8),
+            GFItemsCarousel(
+              rowCount: 4,
+              itemHeight: 30,
+              children: countryList.map((name) {
+                return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 0),
+                    child: GFButton(
+                      onPressed: () {
+                        logError(logHead, name);
+                      },
+                      text: name,
+                      shape: GFButtonShape.pills,
+                      type: GFButtonType.outline,
+                    ));
+              }).toList(),
+            ),
+          ]),
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(items: const [
-        BottomNavigationBarItem(
-          icon: Icon(
-            Icons.search,
-          ),
-          label: 'Earn Money',
-          backgroundColor: themeBackground,
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(
-            Icons.view_list,
-          ),
-          label: 'My Tasks',
-          backgroundColor: themeBackground,
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(
-            Icons.task,
-          ),
-          label: 'Post a Task',
-          backgroundColor: themeBackground,
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(
-            Icons.message,
-          ),
-          label: 'My Messages',
-          backgroundColor: themeBackground,
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(
-            Icons.more_vert,
-          ),
-          label: 'More',
-          backgroundColor: themeBackground,
-        ),
-      ]),
     );
   }
 }

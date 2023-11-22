@@ -1,5 +1,3 @@
-//import 'package:flutter/material.dart';
-
 const routeHome = '/';
 const routeSettings = '/settings';
 const routePrefixDeviceSetup = '/setup/';

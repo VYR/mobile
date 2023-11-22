@@ -1,10 +1,10 @@
 //import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:raoproject/utils/dio_client.dart';
 import 'package:raoproject/utils/loggers.dart';
-import 'home.dart';
 import 'package:raoproject/utils/secure_data.dart';
+
+import 'home.dart';
 
 const String _h = 'login';
 
@@ -20,7 +20,7 @@ class _LoginState extends State<Login> {
   late final TextEditingController _emailController;
   late final TextEditingController _passwordController;
   final SecureStorage storage = SecureStorage();
-  final DioClient _dioClient = DioClient();
+  //final DioClient _dioClient = DioClient();
 
   bool _isLoading = false;
   bool _isClicked = false;
@@ -100,14 +100,14 @@ class _LoginState extends State<Login> {
                               "password": _passwordController.text
                             };
 
-                            Map retrievedUser =
-                                await _dioClient.login(userInfo: userInfo);
-                            logDebug(_h, 'res ${retrievedUser.isNotEmpty}');
+                            // Map retrievedUser =
+                            //  await _dioClient.login(userInfo: userInfo);
+                            /* logDebug(_h, 'res ${retrievedUser.isNotEmpty}');
                             if (retrievedUser.isNotEmpty) {
                               logDebug(
                                   _h, 'res fg ${retrievedUser.isNotEmpty}');
-
-                              /*await storage.setLocalData(
+*/
+                            /*await storage.setLocalData(
                                   "token",
                                   retrievedUser['token_type'] +
                                       " " +
@@ -118,12 +118,12 @@ class _LoginState extends State<Login> {
                                   "email", retrievedUser['user']['email']);
                                   */
 
-                              setState(() {
+                            /*   setState(() {
                                 _isClicked = true;
                               });
                             } else {
                               logDebug(_h, 'else ${retrievedUser.isNotEmpty}');
-                              /* showDialog(
+                              showDialog(
                               context: context,
                               builder: (context) => Dialog(
                                 child: Container(
@@ -149,12 +149,13 @@ class _LoginState extends State<Login> {
                                 ),
                               ),
                             );*/
-                            }
+                          }
 
-                            setState(() {
+                          /*  setState(() {
                               _isLoading = false;
-                            });
-                          }),
+                            });*/
+                          //}
+                          ),
                 ),
               ),
               SizedBox(

@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:raoproject/utils/loggers.dart';
 
-String _h = "Logging";
+const String _h = 'Logging';
 
 class Logging extends Interceptor {
   @override
@@ -12,7 +12,7 @@ class Logging extends Interceptor {
 
   @override
   void onResponse(Response response, ResponseInterceptorHandler handler) {
-    logDebug(
+    logSuccess(
       _h,
       'RESPONSE[${response.statusCode}] => PATH: ${response.requestOptions.path}',
     );
@@ -21,7 +21,7 @@ class Logging extends Interceptor {
 
   @override
   void onError(DioException err, ErrorInterceptorHandler handler) {
-    logDebug(
+    logError(
       _h,
       'ERROR[${err.response?.statusCode}] => PATH: ${err.requestOptions.path}',
     );

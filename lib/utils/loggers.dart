@@ -1,4 +1,3 @@
-/// Dart and Flutter packages.
 import 'dart:developer' as dart;
 import 'dart:async' show Zone;
 import 'package:flutter/foundation.dart' as flutter;

@@ -1,9 +1,9 @@
 import 'package:raoproject/models/user.dart';
-import 'package:raoproject/utils/dio_client.dart';
 import 'package:flutter/material.dart';
+import 'package:raoproject/utils/dio_client.dart';
 
 class FetchUser extends StatefulWidget {
-  const FetchUser({Key? key}) : super(key: key);
+  const FetchUser({super.key});
 
   @override
   State<FetchUser> createState() => _FetchUserState();
@@ -11,13 +11,13 @@ class FetchUser extends StatefulWidget {
 
 class _FetchUserState extends State<FetchUser> {
   final TextEditingController _idController = TextEditingController();
-  final DioClient _client = DioClient();
 
   bool _isFetching = false;
   bool _isDeleting = false;
 
   @override
   Widget build(BuildContext context) {
+    final DioClient dioClient = DioClient(context);
     return Container(
       color: Colors.blue.shade50,
       child: Padding(
@@ -39,12 +39,12 @@ class _FetchUserState extends State<FetchUser> {
                         _isFetching = true;
                       });
 
-                      User? user = await _client.getUser(
+                      User? user = await dioClient.getUser(
                         id: _idController.text,
                       );
 
                       if (user == null) {
-                        /* showDialog(
+                        showDialog(
                           context: context,
                           builder: (context) => Dialog(
                             child: Container(
@@ -59,7 +59,7 @@ class _FetchUserState extends State<FetchUser> {
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     Image.network('user.data.avatar'),
-                                    const Text('ID: 3'),
+                                    const Text('ID: '),
                                     const Text(
                                       'Name: error',
                                     ),
@@ -69,7 +69,7 @@ class _FetchUserState extends State<FetchUser> {
                               ),
                             ),
                           ),
-                        );*/
+                        );
                       }
 
                       setState(() {
@@ -86,15 +86,14 @@ class _FetchUserState extends State<FetchUser> {
                       setState(() {
                         _isDeleting = true;
                       });
-                      await _client.deleteUser(id: _idController.text);
-                      /* final snackBar = SnackBar(
+                      await dioClient.deleteUser(id: _idController.text);
+                      final snackBar = SnackBar(
                         content: Text(
                           'User at id ${_idController.text} deleted!',
                           style: const TextStyle(fontSize: 20.0),
                         ),
                       );
                       ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                      */
 
                       setState(() {
                         _isDeleting = false;

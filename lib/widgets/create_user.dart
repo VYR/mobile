@@ -3,7 +3,7 @@ import 'package:raoproject/utils/dio_client.dart';
 import 'package:flutter/material.dart';
 
 class CreateUser extends StatefulWidget {
-  const CreateUser({Key? key}) : super(key: key);
+  const CreateUser({super.key});
 
   @override
   State<CreateUser> createState() => _CreateUserState();
@@ -12,8 +12,6 @@ class CreateUser extends StatefulWidget {
 class _CreateUserState extends State<CreateUser> {
   late final TextEditingController _nameController;
   late final TextEditingController _jobController;
-
-  final DioClient _dioClient = DioClient();
 
   bool isCreating = false;
 
@@ -27,6 +25,7 @@ class _CreateUserState extends State<CreateUser> {
 
   @override
   Widget build(BuildContext context) {
+    final DioClient dioClient = DioClient(context);
     return Column(
       children: [
         TextField(
@@ -53,10 +52,10 @@ class _CreateUserState extends State<CreateUser> {
                     );
 
                     UserInfo? retrievedUser =
-                        await _dioClient.createUser(userInfo: userInfo);
+                        await dioClient.createUser(userInfo: userInfo);
 
                     if (retrievedUser != null) {
-                      /* showDialog(
+                      showDialog(
                         context: context,
                         builder: (context) => Dialog(
                           child: Container(
@@ -81,7 +80,7 @@ class _CreateUserState extends State<CreateUser> {
                             ),
                           ),
                         ),
-                      );*/
+                      );
                     }
                   }
 

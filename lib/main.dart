@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:raoproject/screens/splash_screen.dart';
 import 'package:raoproject/utils/loggers.dart';
-import 'splash.dart';
 
 void main() {
   Logger().setLogLevel(LogLevel.debugFinest);
