@@ -55,7 +55,7 @@ class _CreateUserState extends State<CreateUser> {
                         await dioClient.createUser(userInfo: userInfo);
 
                     if (retrievedUser != null) {
-                      showDialog(
+                      /*   showDialog(
                         context: context,
                         builder: (context) => Dialog(
                           child: Container(
@@ -80,7 +80,7 @@ class _CreateUserState extends State<CreateUser> {
                             ),
                           ),
                         ),
-                      );
+                      ); */
                     }
                   }
 

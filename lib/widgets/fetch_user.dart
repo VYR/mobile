@@ -44,7 +44,7 @@ class _FetchUserState extends State<FetchUser> {
                       );
 
                       if (user == null) {
-                        showDialog(
+                        /*     showDialog(
                           context: context,
                           builder: (context) => Dialog(
                             child: Container(
@@ -69,7 +69,7 @@ class _FetchUserState extends State<FetchUser> {
                               ),
                             ),
                           ),
-                        );
+                        ); */
                       }
 
                       setState(() {
@@ -87,13 +87,13 @@ class _FetchUserState extends State<FetchUser> {
                         _isDeleting = true;
                       });
                       await dioClient.deleteUser(id: _idController.text);
-                      final snackBar = SnackBar(
+                      /*   final snackBar = SnackBar(
                         content: Text(
                           'User at id ${_idController.text} deleted!',
                           style: const TextStyle(fontSize: 20.0),
                         ),
-                      );
-                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                      ); */
+                      // ScaffoldMessenger.of(context).showSnackBar(snackBar);
 
                       setState(() {
                         _isDeleting = false;

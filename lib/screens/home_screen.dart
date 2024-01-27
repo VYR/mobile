@@ -2,7 +2,6 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:raoproject/constants.dart';
-import 'package:raoproject/screens/home_page.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

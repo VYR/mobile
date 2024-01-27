@@ -63,7 +63,7 @@ class _UpdateUserState extends State<UpdateUser> {
                     );
 
                     if (retrievedUser != null) {
-                      showDialog(
+                      /*  showDialog(
                         context: context,
                         builder: (context) => Dialog(
                           child: Container(
@@ -87,7 +87,7 @@ class _UpdateUserState extends State<UpdateUser> {
                             ),
                           ),
                         ),
-                      );
+                      ); */
                     }
                   }
 

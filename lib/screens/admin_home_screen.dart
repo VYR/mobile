@@ -1,4 +1,3 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:raoproject/constants.dart';
@@ -48,12 +47,12 @@ class _AdminHomeState extends State<AdminHome> {
     setState(() {
       userName = userName;
     });
-    print(userName);
+    // print(userName);
   }
 
   @override
   Widget build(BuildContext context) {
-    print(userName);
+    // print(userName);
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,

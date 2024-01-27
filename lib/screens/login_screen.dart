@@ -27,8 +27,8 @@ class _LoginState extends State<LoginScreen> {
   late final TextEditingController passwordController;
   final SecureStorage storage = SecureStorage();
 
-  bool _isLoading = false;
-  bool _isClicked = false;
+/*   bool _isLoading = false;
+  bool _isClicked = false; */
 
   @override
   void initState() {
@@ -100,11 +100,11 @@ class _LoginState extends State<LoginScreen> {
                               retrievedUser['user']['email'], SPTypes.string);
                           await SecureStorage.setLocalData(spRole,
                               retrievedUser['user']['role'], SPTypes.string);
-                          print(retrievedUser['access_token']);
+                          //print(retrievedUser['access_token']);
                           String role = await SecureStorage.getLocalData(
                               spRole, SPTypes.string);
 
-                          print(role);
+                          //print(role);
                           setState(() {
                             Navigator.push(
                                 context,

@@ -23,7 +23,7 @@ class _LoginState extends State<Login> {
   //final DioClient _dioClient = DioClient();
 
   bool _isLoading = false;
-  bool _isClicked = false;
+  final bool _isClicked = false;
 
   @override
   void initState() {
@@ -95,10 +95,10 @@ class _LoginState extends State<Login> {
                               _isLoading = true;
                             });
 
-                            Map userInfo = {
+                            /*    Map userInfo = {
                               "email": _emailController.text,
                               "password": _passwordController.text
-                            };
+                            }; */
 
                             // Map retrievedUser =
                             //  await _dioClient.login(userInfo: userInfo);

@@ -2,7 +2,6 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:raoproject/models/user.dart';
 import 'package:raoproject/models/user_info.dart';
-import 'package:raoproject/screens/home_screen.dart';
 import 'package:raoproject/utils/loggers.dart';
 import 'package:raoproject/utils/logging.dart';
 
@@ -29,12 +28,12 @@ class DioClient {
       receiveTimeout: const Duration(seconds: 3000),
     ),
   )..interceptors.add(Logging());
-  closeDialog() {
+/*   closeDialog() {
     if (dialogContext != null) {
       Navigator.pop(dialogContext);
-    }
+    } 
   }
-
+*/
   Future<void> loadDialog() async {
     showDialog(
         context: screenContext,
