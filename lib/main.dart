@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:raoproject/screens/login_screen.dart';
+import 'package:raoproject/screens/registration.dart';
 import 'package:raoproject/screens/splash_screen.dart';
 import 'package:raoproject/utils/loggers.dart';
 
@@ -20,9 +22,17 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      initialRoute: '/splash',
+      routes: {
+        '/splash': (context) => SplashScreen(),
+        '/login': (context) => LoginScreen(),
+        '/register': (context) => RegistrationScreen(),
+      },
       debugShowCheckedModeBanner: false,
       title: 'Demo',
       theme: ThemeData(
+        scaffoldBackgroundColor: Color.fromRGBO(40, 28, 9, 1),
+        textTheme: TextTheme(bodyMedium: TextStyle(color: Colors.white)),
         useMaterial3: true,
       ),
       home: const SplashScreen(),

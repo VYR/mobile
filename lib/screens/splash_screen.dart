@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:raoproject/login.dart';
 import 'package:raoproject/screens/admin_home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -14,8 +15,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Timer(
         const Duration(seconds: 3),
-        () => Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const AdminHome())));
+        () => Navigator.of(context).pushReplacementNamed('/login'));
   }
 
   @override
@@ -27,12 +27,12 @@ class _SplashScreenState extends State<SplashScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Image.asset(
-                'assets/images/splashScreen.gif',
+                'assets/images/logo.png',
                 //fit: BoxFit.fill,
                 // height: double.infinity,
                 // width: double.infinity,
-                //width: MediaQuery.of(context).size.width,
-                // height: MediaQuery.of(context).size.height,
+                width: MediaQuery.of(context).size.width/2,
+                height: MediaQuery.of(context).size.height/2,
                 alignment: Alignment.center,
 
                 //repeat: ImageRepeat.noRepeat,

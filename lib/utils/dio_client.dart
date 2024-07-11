@@ -23,7 +23,7 @@ class DioClient {
 
   final Dio _dio = Dio(
     BaseOptions(
-      baseUrl: 'https://www.puppysoftwares.com/food-delivery/public/api/',
+      baseUrl: 'https://savegoldscheme.com/schemes-40/back-end/public/api/',
       connectTimeout: const Duration(seconds: 5000),
       receiveTimeout: const Duration(seconds: 3000),
     ),
@@ -118,7 +118,30 @@ class DioClient {
     var retrievedUser = {};
     try {
       Response response = await _dio.post(
-        'auth/login',
+        'login',
+        data: {'userId': userInfo['email'],'password': userInfo['password']},
+      );
+
+      logDebug(_h, 'User request: ${userInfo}');
+      logDebug(_h, 'User created: ${response.data}');
+
+      retrievedUser = response.data;
+      //closeDialog();
+    } catch (e) {
+
+      logDebug(_h, 'User created: ${userInfo}');
+      logDebug(_h, 'Error creating user: $e');
+      // dialogData['open'] = false;
+      //closeDialog();
+      // loadDialog();
+    }
+    return retrievedUser;
+  }
+  Future<Map> register({required Map userInfo}) async {
+    var retrievedUser = {};
+    try {
+      Response response = await _dio.post(
+        'add-update-users',
         data: userInfo,
       );
 
@@ -127,6 +150,8 @@ class DioClient {
       retrievedUser = response.data;
       //closeDialog();
     } catch (e) {
+
+      logDebug(_h, 'User created: ${userInfo}');
       logDebug(_h, 'Error creating user: $e');
       // dialogData['open'] = false;
       //closeDialog();

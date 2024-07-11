@@ -26,9 +26,8 @@ class _LoginState extends State<LoginScreen> {
   late final TextEditingController emailController;
   late final TextEditingController passwordController;
   final SecureStorage storage = SecureStorage();
-
-/*   bool _isLoading = false;
-  bool _isClicked = false; */
+  bool _isLoading = false;
+  bool _isClicked = false;
 
   @override
   void initState() {
@@ -46,23 +45,26 @@ class _LoginState extends State<LoginScreen> {
     late DioClient dioClient;
 
     return Scaffold(
-        backgroundColor: Colors.white,
         body: GFFloatingWidget(
           verticalPosition: 150,
           showBlurness: showblur,
           body: SingleChildScrollView(
             child: Column(
               children: <Widget>[
+                SizedBox(height: MediaQuery.of(context).size.width/6),
                 Center(
-                  child: Image.asset('assets/images/logo.webp'),
+                  child: Image.asset('assets/images/logo.png',
+                      width: MediaQuery.of(context).size.width/2,
+                      alignment: Alignment.center),
                 ),
+                SizedBox(height: MediaQuery.of(context).size.width/6),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                   child: CustomTextWidget(
                       textController: emailController,
                       prefixIcon: const Icon(Icons.account_circle_sharp),
-                      label: 'Email or Phone Number',
-                      hint: 'Enter valid Email  or Phone'),
+                      label: 'Email or User ID',
+                      hint: 'Enter valid Email  or User ID'),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
@@ -76,11 +78,15 @@ class _LoginState extends State<LoginScreen> {
                       keyboardType: TextInputType.visiblePassword,
                       obscureText: true),
                 ),
+                SizedBox(height: MediaQuery.of(context).size.width/12),
                 Padding(
-                  padding: const EdgeInsets.only(top: 20.0),
+                  padding: const EdgeInsets.only(top: 15.0),
                   child: CustomButton(
                       text: "LOGIN",
                       onPressed: () async {
+                        setState(() {
+                          isLoading = true;
+                        });
                         //showAlert();
                         Map userInfo = {
                           "email": emailController.text,
@@ -103,42 +109,35 @@ class _LoginState extends State<LoginScreen> {
                           //print(retrievedUser['access_token']);
                           String role = await SecureStorage.getLocalData(
                               spRole, SPTypes.string);
-
+                          print(role);
                           //print(role);
                           setState(() {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) =>
-                                        (role == Roles.user.name)
+                                        (role == "Scheme Member")
                                             ? const HomeScreen()
                                             : const AdminHome()));
                           });
-                        } else {}
+                        } else {
+                          setState(() {
+                            isLoading = false;
+                          });
+                        }
                       }),
                 ),
-                SizedBox(
-                    height: 50,
-                    child: Center(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          const Expanded(
-                              child: Text('Forgot your login details? ')),
-                          Expanded(
-                            child: InkWell(
-                                onTap: () {
-                                  logDebug(logHead, 'hello');
-                                },
-                                child: const Text(
-                                  'Get help logging in. gf dfgh gfhgfh hs',
-                                  style: TextStyle(
-                                      fontSize: 14, color: Colors.blue),
-                                )),
-                          )
-                        ],
-                      ),
-                    )),
+                Padding(
+                  padding: const EdgeInsets.only(top: 20.0),
+                  child: CustomButton(
+                      text: "Create an Account",
+                      onPressed: () async {
+                        setState(() {
+                          Navigator.of(context).pushReplacementNamed('/register');
+                        });
+
+                      }),
+                )
               ],
             ),
           ),

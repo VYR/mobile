@@ -16,13 +16,15 @@ class CustomAlertWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GFAlert(
       alignment: Alignment.center,
-      backgroundColor: Colors.white,
+      backgroundColor: Color.fromRGBO(40, 28, 9, 1),
       title: isLoading ? title : '',
       content: isLoading
-          ? const Center(child: CircularProgressIndicator())
-          : Text((content != null) ? content.toString() : ''),
+          ? const Center(child: CircularProgressIndicator(color: Colors.white,strokeWidth: 3,))
+          : Text(((content != null) ? content.toString() : ''), style: TextStyle(color: Colors.white),),
       type: GFAlertType.rounded,
-      bottomBar: Row(
+      titleTextStyle: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15),
+
+      bottomBar: !isLoading? Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[
           GFButton(
@@ -34,7 +36,7 @@ class CustomAlertWidget extends StatelessWidget {
             ),
           ),
         ],
-      ),
+      ): Text(''),
     );
   }
 }

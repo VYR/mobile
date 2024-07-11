@@ -15,7 +15,12 @@ class CustomButton extends StatelessWidget {
         elevation: 0,
         text: "$text",
         blockButton: true,
-        shape: GFButtonShape.standard,
+        size: GFSize.LARGE,
+        textStyle: TextStyle(fontWeight: FontWeight.bold, color: Color.fromRGBO(0, 64, 47, 1)),
+
+        shape: GFButtonShape.pills,
+        padding: EdgeInsets.symmetric(vertical: 5),
+        color: Color.fromRGBO(199, 162, 81, 1),
         onPressed: onPressed);
   }
 }

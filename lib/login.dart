@@ -1,6 +1,9 @@
 //import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:raoproject/constants.dart';
+import 'package:raoproject/enums/shared_enum.dart';
+import 'package:raoproject/utils/dio_client.dart';
 import 'package:raoproject/utils/loggers.dart';
 import 'package:raoproject/utils/secure_data.dart';
 
@@ -20,10 +23,10 @@ class _LoginState extends State<Login> {
   late final TextEditingController _emailController;
   late final TextEditingController _passwordController;
   final SecureStorage storage = SecureStorage();
-  //final DioClient _dioClient = DioClient();
+
 
   bool _isLoading = false;
-  final bool _isClicked = false;
+  bool _isClicked = false;
 
   @override
   void initState() {
@@ -34,22 +37,24 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
+    final DioClient _dioClient = DioClient(context);
     if (_isClicked) {
       logDebug(_h, 'storage');
-      /* () async {
-        String? x = await storage.getLocalData("token");
+       () async {
+        String x = await SecureStorage.getLocalData("token",SPTypes.string);
         logDebug(_h, x);
-      };*/
+      };
 
       return const Home();
     } else {
       return Scaffold(
-        backgroundColor: Colors.white,
         body: SingleChildScrollView(
           child: Column(
             children: <Widget>[
               Center(
-                child: Image.asset('assets/images/logo.webp'),
+                child: Image.asset('assets/images/logo.png',width: MediaQuery.of(context).size.width/2,
+          height: MediaQuery.of(context).size.height/2,
+          alignment: Alignment.center),
               ),
               Padding(
                 //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
@@ -95,30 +100,32 @@ class _LoginState extends State<Login> {
                               _isLoading = true;
                             });
 
-                            /*    Map userInfo = {
-                              "email": _emailController.text,
+                                Map userInfo = {
+                              "userId": _emailController.text,
                               "password": _passwordController.text
-                            }; */
+                            };
 
-                            // Map retrievedUser =
-                            //  await _dioClient.login(userInfo: userInfo);
-                            /* logDebug(_h, 'res ${retrievedUser.isNotEmpty}');
+                             Map retrievedUser =
+                              await _dioClient.login(userInfo: userInfo);
+                             logDebug(_h, 'res ${retrievedUser.isNotEmpty}');
                             if (retrievedUser.isNotEmpty) {
                               logDebug(
                                   _h, 'res fg ${retrievedUser.isNotEmpty}');
-*/
-                            /*await storage.setLocalData(
+
+                            await SecureStorage.setLocalData(
                                   "token",
                                   retrievedUser['token_type'] +
                                       " " +
-                                      retrievedUser['access_token']);
-                              await storage.setLocalData(
-                                  "name", retrievedUser['user']['userName']);
-                              await storage.setLocalData(
-                                  "email", retrievedUser['user']['email']);
-                                  */
+                                      retrievedUser['access_token'],SPTypes.string);
+                              await SecureStorage.setLocalData(
+                                  spUserName, retrievedUser['user']['userName'],SPTypes.string);
+                              await SecureStorage.setLocalData(
+                                  spUserId, retrievedUser['user']['userId'],SPTypes.string);
+                              await SecureStorage.setLocalData(
+                                  spEmail, retrievedUser['user']['email'],SPTypes.string);
 
-                            /*   setState(() {
+
+                               setState(() {
                                 _isClicked = true;
                               });
                             } else {
@@ -148,13 +155,13 @@ class _LoginState extends State<Login> {
                                   ),
                                 ),
                               ),
-                            );*/
+                            );
                           }
 
-                          /*  setState(() {
+                            setState(() {
                               _isLoading = false;
-                            });*/
-                          //}
+                            });
+                          }
                           ),
                 ),
               ),

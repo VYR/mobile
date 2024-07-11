@@ -35,7 +35,11 @@ class _AdminHomeState extends State<AdminHome> {
     "RUSSIA",
     "BELIZE"
   ];
-  String userName = '';
+  Map userInfo = {
+    "userId": '',
+    "email": '',
+    "userName": ''
+  };
   @override
   initState() {
     super.initState();
@@ -43,9 +47,11 @@ class _AdminHomeState extends State<AdminHome> {
   }
 
   getData() async {
-    userName = await SecureStorage.getLocalData(spUserName, SPTypes.string);
+    userInfo[spUserName] = await SecureStorage.getLocalData(spUserName, SPTypes.string);
+    userInfo[spEmail] = await SecureStorage.getLocalData(spEmail, SPTypes.string);
+    userInfo[spUserId] = await SecureStorage.getLocalData(spUserId, SPTypes.string);
     setState(() {
-      userName = userName;
+      userInfo = userInfo;
     });
     // print(userName);
   }
@@ -63,40 +69,59 @@ class _AdminHomeState extends State<AdminHome> {
         foregroundColor: themeForeground,
       ),
       drawer: Drawer(
+        backgroundColor:  Color.fromRGBO(40, 28, 9, 1),
+        shadowColor: Colors.white,
         child: ListView(
           // Important: Remove any padding from the ListView.
           padding: EdgeInsets.zero,
           children: [
             UserAccountsDrawerHeader(
               // <-- SEE HERE
-              decoration: const BoxDecoration(color: themeBackground),
-              accountName: CustomTextLabelWidget(text: userName),
-              accountEmail: const Text(
-                "yalamanda118@gmail.com",
+              decoration: const BoxDecoration(color: Color.fromRGBO(40, 28, 9, 1)),
+              accountName: CustomTextLabelWidget(text: userInfo[spUserName], color: TextLabelColors.white),
+              accountEmail: Text(
+                userInfo[spEmail],
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              currentAccountPicture: const FlutterLogo(),
+              currentAccountPicture: Image.asset('assets/images/logo.png',width: MediaQuery.of(context).size.width/2,
+                  height: MediaQuery.of(context).size.height/2,
+                  alignment: Alignment.center),
             ),
             ListTile(
+              iconColor: Colors.white,
+              textColor: Colors.white,
               leading: const Icon(
                 Icons.home,
               ),
-              title: const Text('Page 1'),
+              title: const Text('Dashboard'),
               onTap: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => const HomePage()));
               },
             ),
             ListTile(
+              iconColor: Colors.white,
+              textColor: Colors.white,
               leading: const Icon(
                 Icons.train,
               ),
-              title: const Text('Page 2'),
+              title: const Text('Schemes'),
               onTap: () {
                 Navigator.pop(context);
               },
+            ),
+              ListTile(
+                iconColor: Colors.white,
+                textColor: Colors.white,
+              leading: const Icon(
+              Icons.train,
+            ),
+            title: const Text('Scheme Members'),
+            onTap: () {
+            Navigator.pop(context);
+            },
             ),
           ],
         ),
@@ -107,7 +132,7 @@ class _AdminHomeState extends State<AdminHome> {
           child: Column(children: <Widget>[
             const CustomLeftRightWidget(
               leftWidget:
-                  CustomTextLabelWidget(text: "Categories", isBold: true),
+                  CustomTextLabelWidget(text: "Categories", isBold: true, color: TextLabelColors.white),
               rightWidget: Icon(Icons.plus_one_sharp),
             ),
             const SizedBox(height: 8),
@@ -121,12 +146,12 @@ class _AdminHomeState extends State<AdminHome> {
                       shape: GFAvatarShape.circle,
                       size: GFSize.LARGE),
                   const SizedBox(height: 8),
-                  const CustomTextLabelWidget(text: "Name")
+                  CustomTextLabelWidget(text: "Name", color: TextLabelColors.white)
                 ]);
               }).toList(),
             ),
             const CustomLeftRightWidget(
-              leftWidget: CustomTextLabelWidget(text: "Products", isBold: true),
+              leftWidget: CustomTextLabelWidget(text: "Products", isBold: true, color: TextLabelColors.white),
               rightWidget: Icon(Icons.plus_one_sharp),
             ),
             const SizedBox(height: 8),

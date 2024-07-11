@@ -11,4 +11,5 @@ const String spToken = 'token';
 const String spIsLoggedIn = 'isLoggedIn';
 const String spEmail = 'email';
 const String spUserName = 'userName';
+const String spUserId = 'userId';
 const String spRole = 'role';

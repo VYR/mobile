@@ -9,7 +9,7 @@ environment:
 flutter_launcher_icons:    
  android: "launcher_icon"    
  ios: true    
- image_path: "assets/icons/launcher.png"
+ image_path: "assets/images/logo.png"
 
 dependencies:
   flutter:
@@ -23,11 +23,13 @@ dependencies:
   getwidget: any
   shared_preferences: any
   image_picker: any
+  flutter_bloc: ^7.0.0
   #flutter_secure_storage: ^9.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: any
   flutter_lints: any
   json_serializable: any
   build_runner: any
@@ -36,7 +38,8 @@ flutter:
   uses-material-design: true
   assets:
    - assets/images/splashScreen.gif
-   - assets/images/logo.webp
+   - assets/images/myogo.webp
+   - assets/images/logo.png
   #  - images/a_dot_ham.jpeg
   # fonts:
   #   - family: Schyler

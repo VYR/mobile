@@ -6,7 +6,7 @@
    <application
        android:name="${applicationName}"
        android:icon="@mipmap/launcher_icon"
-       android:label="Food Delivery">
+       android:label="40 Months Scheme">
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
