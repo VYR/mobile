@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:raoproject/login.dart';
-import 'package:raoproject/screens/admin_home_screen.dart';
+// import 'package:raoproject/login.dart';
+// import 'package:raoproject/screens/admin_home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

@@ -37,7 +37,7 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
-    final DioClient _dioClient = DioClient(context);
+    final DioClient dioClient = DioClient(context);
     if (_isClicked) {
       logDebug(_h, 'storage');
        () async {
@@ -106,7 +106,7 @@ class _LoginState extends State<Login> {
                             };
 
                              Map retrievedUser =
-                              await _dioClient.login(userInfo: userInfo);
+                              await dioClient.login(userInfo: userInfo);
                              logDebug(_h, 'res ${retrievedUser.isNotEmpty}');
                             if (retrievedUser.isNotEmpty) {
                               logDebug(

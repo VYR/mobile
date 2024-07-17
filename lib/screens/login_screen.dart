@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:raoproject/constants.dart';
 import 'package:raoproject/enums/shared_enum.dart';
@@ -11,7 +10,7 @@ import 'package:raoproject/widgets/custom_button.dart';
 import 'package:raoproject/widgets/custom_text_widget.dart';
 import 'home_screen.dart';
 import 'package:raoproject/utils/secure_data.dart';
-import 'package:raoproject/controllers/my_home_page_controller.dart';
+//import 'package:raoproject/controllers/my_home_page_controller.dart';
 
 
 const String logHead = 'Login';
@@ -19,8 +18,7 @@ const String logHead = 'Login';
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
   final String title = "Login";
-  static MyHomePageController controller = Get.put(MyHomePageController());
-
+  
   @override
   State<LoginScreen> createState() => _LoginState();
 }
@@ -30,8 +28,6 @@ class _LoginState extends State<LoginScreen> {
   late final TextEditingController emailController;
   late final TextEditingController passwordController;
   final SecureStorage storage = SecureStorage();
-  bool _isLoading = false;
-  bool _isClicked = false;
 
   @override
   void initState() {
@@ -120,7 +116,7 @@ class _LoginState extends State<LoginScreen> {
                           //print(retrievedUser['access_token']);
                           String role = await SecureStorage.getLocalData(
                               spRole, SPTypes.string);
-                          print(role);
+                          logDebug(logHead, 'role: $role');
                           //print(role);
                           setState(() {
                             alertWidget = null;
@@ -136,7 +132,8 @@ class _LoginState extends State<LoginScreen> {
                         } else {
                           setState(() {
                             isLoading = false;
-                            print(isLoading);
+                            //print(isLoading);
+                          logDebug(logHead, 'isLoading: $isLoading');
                           });
                         }
                       }),

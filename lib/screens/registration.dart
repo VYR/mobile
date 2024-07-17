@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:getwidget/getwidget.dart';
-import 'package:raoproject/constants.dart';
-import 'package:raoproject/enums/shared_enum.dart';
-import 'package:raoproject/screens/admin_home_screen.dart';
+// import 'package:raoproject/constants.dart';
+// import 'package:raoproject/enums/shared_enum.dart';
+// import 'package:raoproject/screens/admin_home_screen.dart';
 import 'package:raoproject/screens/common/alert_screen.dart';
 import 'package:raoproject/utils/dio_client.dart';
 import 'package:raoproject/utils/loggers.dart';
 import 'package:raoproject/widgets/custom_button.dart';
 import 'package:raoproject/widgets/custom_text_widget.dart';
-import 'home_screen.dart';
+// import 'home_screen.dart';
 import 'package:raoproject/utils/secure_data.dart';
 
 const String logHead = 'Login';
@@ -135,7 +135,7 @@ class _RegistrationState extends State<RegistrationScreen> {
                         Map retrievedUser =
                         await dioClient.register(userInfo: userInfo);
                         if (retrievedUser.isNotEmpty) {
-                          print(retrievedUser);
+                          logDebug('','register: $retrievedUser');
                           setState(() {
                             Navigator.of(context).pushReplacementNamed('/login');
                           });
