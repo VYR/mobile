@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+// import 'package:flutter/services.dart';
 //import 'package:getwidget/getwidget.dart';
 
 class CustomTextWidget extends StatelessWidget {
@@ -24,17 +24,17 @@ class CustomTextWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       inputFormatters:inputFormatters,
-      style: TextStyle(color: Colors.white),
+      style: const TextStyle(color: Colors.white),
       controller: textController,
       decoration: InputDecoration(
-          hintStyle: TextStyle(color: Color.fromRGBO(209, 179, 24, 1)),
+          hintStyle: const TextStyle(color: Color.fromRGBO(209, 179, 24, 1)),
           iconColor: Colors.white,
           prefixIconColor: Colors.white,
           focusColor: Colors.white,
-          focusedBorder:  OutlineInputBorder(
+          focusedBorder: const OutlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(5.0)),
               borderSide: BorderSide(color: Color.fromRGBO(209, 179, 24, 1))),
-          labelStyle: TextStyle(color: Colors.white),
+          labelStyle: const TextStyle(color: Colors.white),
           prefixIcon: (prefixIcon != null) ? prefixIcon : null,
           border: const OutlineInputBorder(),
           labelText: label,

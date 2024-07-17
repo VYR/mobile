@@ -122,14 +122,14 @@ class DioClient {
         data: {'userId': userInfo['email'],'password': userInfo['password']},
       );
 
-      logDebug(_h, 'User request: ${userInfo}');
-      logDebug(_h, 'User created: ${response.data}');
+      logDebug(_h, 'User request: $userInfo');
+      logDebug(_h, 'User created: $response.data');
 
       retrievedUser = response.data;
       //closeDialog();
     } catch (e) {
 
-      logDebug(_h, 'User created: ${userInfo}');
+      logDebug(_h, 'User created: $userInfo');
       logDebug(_h, 'Error creating user: $e');
       // dialogData['open'] = false;
       //closeDialog();
@@ -151,7 +151,7 @@ class DioClient {
       //closeDialog();
     } catch (e) {
 
-      logDebug(_h, 'User created: ${userInfo}');
+      logDebug(_h, 'User created: $userInfo');
       logDebug(_h, 'Error creating user: $e');
       // dialogData['open'] = false;
       //closeDialog();

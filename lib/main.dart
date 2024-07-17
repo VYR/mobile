@@ -24,15 +24,15 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       initialRoute: '/splash',
       routes: {
-        '/splash': (context) => SplashScreen(),
-        '/login': (context) => LoginScreen(),
-        '/register': (context) => RegistrationScreen(),
+        '/splash': (context) => const SplashScreen(),
+        '/login': (context) => const LoginScreen(),
+        '/register': (context) => const RegistrationScreen(),
       },
       debugShowCheckedModeBanner: false,
       title: 'Demo',
       theme: ThemeData(
-        scaffoldBackgroundColor: Color.fromRGBO(40, 28, 9, 1),
-        textTheme: TextTheme(bodyMedium: TextStyle(color: Colors.white)),
+        scaffoldBackgroundColor: const Color.fromRGBO(40, 28, 9, 1),
+        textTheme: const TextTheme(bodyMedium: TextStyle(color: Colors.white)),
         useMaterial3: true,
       ),
       home: const SplashScreen(),

@@ -69,7 +69,7 @@ class _AdminHomeState extends State<AdminHome> {
         foregroundColor: themeForeground,
       ),
       drawer: Drawer(
-        backgroundColor:  Color.fromRGBO(40, 28, 9, 1),
+        backgroundColor: const Color.fromRGBO(40, 28, 9, 1),
         shadowColor: Colors.white,
         child: ListView(
           // Important: Remove any padding from the ListView.
@@ -81,7 +81,7 @@ class _AdminHomeState extends State<AdminHome> {
               accountName: CustomTextLabelWidget(text: userInfo[spUserName], color: TextLabelColors.white),
               accountEmail: Text(
                 userInfo[spEmail],
-                style: TextStyle(
+                style: const TextStyle(
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -146,7 +146,7 @@ class _AdminHomeState extends State<AdminHome> {
                       shape: GFAvatarShape.circle,
                       size: GFSize.LARGE),
                   const SizedBox(height: 8),
-                  CustomTextLabelWidget(text: "Name", color: TextLabelColors.white)
+                 const CustomTextLabelWidget(text: "Name", color: TextLabelColors.white)
                 ]);
               }).toList(),
             ),
