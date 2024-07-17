@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:raoproject/constants.dart';
 import 'package:raoproject/enums/shared_enum.dart';
@@ -10,12 +11,15 @@ import 'package:raoproject/widgets/custom_button.dart';
 import 'package:raoproject/widgets/custom_text_widget.dart';
 import 'home_screen.dart';
 import 'package:raoproject/utils/secure_data.dart';
+import 'package:raoproject/controllers/my_home_page_controller.dart';
+
 
 const String logHead = 'Login';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
   final String title = "Login";
+  static MyHomePageController controller = Get.put(MyHomePageController());
 
   @override
   State<LoginScreen> createState() => _LoginState();
@@ -84,10 +88,17 @@ class _LoginState extends State<LoginScreen> {
                   child: CustomButton(
                       text: "LOGIN",
                       onPressed: () async {
+                        {
+      
+    
+                        alertWidget = CustomAlertWidget(
+                              isLoading: isLoading);
+                        }
                         setState(() {
                           isLoading = true;
+
                         });
-                        //showAlert();
+                        // showAlert();
                         Map userInfo = {
                           "email": emailController.text,
                           "password": passwordController.text
@@ -112,6 +123,8 @@ class _LoginState extends State<LoginScreen> {
                           print(role);
                           //print(role);
                           setState(() {
+                            alertWidget = null;
+                            isLoading=false;
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
@@ -123,6 +136,7 @@ class _LoginState extends State<LoginScreen> {
                         } else {
                           setState(() {
                             isLoading = false;
+                            print(isLoading);
                           });
                         }
                       }),
@@ -149,9 +163,24 @@ class _LoginState extends State<LoginScreen> {
     setState(() {
       showblur = true;
       isLoading = true;
-      alertWidget = CustomAlertWidget(
-          title: 'Login Failed',
-          content: 'data',
+    alertWidget = CustomAlertWidget(
+          onClose: () {
+            setState(() {
+              alertWidget = null;
+              showblur = false;
+              isLoading = false;
+            });
+          },
+          isLoading: isLoading);
+    });
+  }
+
+
+    showAlert123() {
+    setState(() {
+      showblur = true;
+      isLoading = true;
+    alertWidget = CustomAlertWidget(
           onClose: () {
             setState(() {
               alertWidget = null;
@@ -163,3 +192,5 @@ class _LoginState extends State<LoginScreen> {
     });
   }
 }
+
+
