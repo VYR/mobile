@@ -16,16 +16,18 @@ dependencies:
     sdk: flutter
   carousel_slider: any
   dio: any
+  bloc: any
   cupertino_icons: any
   json_annotation: any
-  flutter_launcher_icons: any
+  #flutter_launcher_icons: any
   intl: any
   getwidget: any
   shared_preferences: any
   image_picker: any
-  flutter_bloc: ^7.0.0
-  #flutter_secure_storage: ^9.0.0
-  get: ^4.6.6
+  flutter_bloc: any
+  flutter_secure_storage: any
+  get_it: any
+   
 
 dev_dependencies:
   flutter_test:
@@ -35,7 +37,6 @@ dev_dependencies:
   json_serializable: any
   build_runner: any
 flutter:
-
   uses-material-design: true
   assets:
    - assets/images/splashScreen.gif
