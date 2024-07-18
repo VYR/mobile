@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:raoproject/constants.dart';
+import 'package:raoproject/screens/dashboard_screen.dart';
 import 'package:raoproject/screens/login_screen.dart';
 import 'package:raoproject/screens/registration.dart';
 import 'package:raoproject/screens/splash_screen.dart';
@@ -24,15 +26,16 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       initialRoute: '/splash',
       routes: {
-        '/splash': (context) => const SplashScreen(),
+        '/home': (context) => const SplashScreen(),
         '/login': (context) => const LoginScreen(),
         '/register': (context) => const RegistrationScreen(),
+        '/dashboard': (context) => const DashboardScreen(),
       },
       debugShowCheckedModeBanner: false,
       title: 'Demo',
       theme: ThemeData(
-        scaffoldBackgroundColor: const Color.fromRGBO(40, 28, 9, 1),
-        textTheme: const TextTheme(bodyMedium: TextStyle(color: Colors.white)),
+        scaffoldBackgroundColor: themeBackground,
+        textTheme: const TextTheme(bodyMedium: TextStyle(color: themeForeground)),
         useMaterial3: true,
       ),
       home: const SplashScreen(),

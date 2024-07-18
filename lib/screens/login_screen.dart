@@ -2,13 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:raoproject/constants.dart';
 import 'package:raoproject/enums/shared_enum.dart';
-import 'package:raoproject/screens/admin_home_screen.dart';
 import 'package:raoproject/screens/common/alert_screen.dart';
 import 'package:raoproject/utils/dio_client.dart';
 import 'package:raoproject/utils/loggers.dart';
 import 'package:raoproject/widgets/custom_button.dart';
 import 'package:raoproject/widgets/custom_text_widget.dart';
-import 'home_screen.dart';
 import 'package:raoproject/utils/secure_data.dart';
 //import 'package:raoproject/controllers/my_home_page_controller.dart';
 
@@ -17,17 +15,20 @@ const String logHead = 'Login';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
-  final String title = "Login";
-  
+    
   @override
   State<LoginScreen> createState() => _LoginState();
 }
 
 class _LoginState extends State<LoginScreen> {
-  final GlobalKey<_LoginState> myWidgetKey = GlobalKey();
+
   late final TextEditingController emailController;
   late final TextEditingController passwordController;
   final SecureStorage storage = SecureStorage();
+  Widget? alertWidget;
+  bool showblur = false;
+  bool isLoading = false;
+
 
   @override
   void initState() {
@@ -36,17 +37,12 @@ class _LoginState extends State<LoginScreen> {
     passwordController = TextEditingController();
   }
 
-  Widget? alertWidget;
-  bool showblur = false;
-  bool isLoading = false;
   @override
-  Widget build(BuildContext context) {
-    //final context = myWidgetKey.currentContext;
-    late DioClient dioClient;
-
+  Widget build(BuildContext context) {    
+  late DioClient dioClient;   
     return Scaffold(
         body: GFFloatingWidget(
-          verticalPosition: 150,
+          verticalPosition: 250,
           showBlurness: showblur,
           body: SingleChildScrollView(
             child: Column(
@@ -83,18 +79,11 @@ class _LoginState extends State<LoginScreen> {
                   padding: const EdgeInsets.only(top: 15.0),
                   child: CustomButton(
                       text: "LOGIN",
-                      onPressed: () async {
-                        {
-      
-    
-                        alertWidget = CustomAlertWidget(
-                              isLoading: isLoading);
-                        }
-                        setState(() {
-                          isLoading = true;
-
-                        });
-                        // showAlert();
+                      onPressed: () async { 
+                        //alertWidget =null;
+                        setState(() {                          
+                          alertWidget = getAlert();
+                        });                        
                         Map userInfo = {
                           "email": emailController.text,
                           "password": passwordController.text
@@ -113,28 +102,15 @@ class _LoginState extends State<LoginScreen> {
                               retrievedUser['user']['email'], SPTypes.string);
                           await SecureStorage.setLocalData(spRole,
                               retrievedUser['user']['role'], SPTypes.string);
-                          //print(retrievedUser['access_token']);
-                          String role = await SecureStorage.getLocalData(
-                              spRole, SPTypes.string);
-                          logDebug(logHead, 'role: $role');
-                          //print(role);
+                          logDebug(logHead, "login success");
                           setState(() {
-                            alertWidget = null;
-                            isLoading=false;
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        (role == "Scheme Member")
-                                            ? const HomeScreen()
-                                            : const AdminHome()));
-                          });
-                        } else {
-                          setState(() {
-                            isLoading = false;
-                            //print(isLoading);
-                          logDebug(logHead, 'isLoading: $isLoading');
-                          });
+                              hideAlert();
+                              Navigator.of(context).pushReplacementNamed('/dashboard');
+                            }
+                          );
+                        } 
+                        else{
+                          hideAlert();
                         }
                       }),
                 ),
@@ -156,37 +132,23 @@ class _LoginState extends State<LoginScreen> {
         ));
   }
 
-  showAlert() {
-    setState(() {
-      showblur = true;
-      isLoading = true;
-    alertWidget = CustomAlertWidget(
-          onClose: () {
-            setState(() {
-              alertWidget = null;
-              showblur = false;
-              isLoading = false;
-            });
-          },
-          isLoading: isLoading);
-    });
+  getAlert() {
+       setState(() {
+        showblur = true;
+        isLoading = true;
+      });
+    return CustomAlertWidget(
+      onClose: () {        
+      },
+      isLoading: isLoading
+    );
   }
-
-
-    showAlert123() {
-    setState(() {
-      showblur = true;
-      isLoading = true;
-    alertWidget = CustomAlertWidget(
-          onClose: () {
-            setState(() {
-              alertWidget = null;
-              showblur = false;
-              isLoading = false;
-            });
-          },
-          isLoading: isLoading);
-    });
+  hideAlert(){
+      setState(() {
+        alertWidget = null;
+        showblur = false;
+        isLoading = false;
+      });
   }
 }
 
