@@ -27,6 +27,7 @@ dependencies:
   flutter_bloc: any
   flutter_secure_storage: any
   get_it: any
+  razorpay_flutter: any
    
 
 dev_dependencies:

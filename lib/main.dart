@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:raoproject/constants.dart';
 import 'package:raoproject/screens/dashboard_screen.dart';
+import 'package:raoproject/screens/home_page.dart';
 import 'package:raoproject/screens/login_screen.dart';
 import 'package:raoproject/screens/registration.dart';
+import 'package:raoproject/screens/schemes_screen.dart';
 import 'package:raoproject/screens/splash_screen.dart';
 import 'package:raoproject/utils/loggers.dart';
 
@@ -30,6 +32,8 @@ class _MyAppState extends State<MyApp> {
         '/login': (context) => const LoginScreen(),
         '/register': (context) => const RegistrationScreen(),
         '/dashboard': (context) => const DashboardScreen(),
+        '/test': (context) => const HomePage(),
+        '/schemes': (context) => const SchemesScreen(),
       },
       debugShowCheckedModeBanner: false,
       title: 'Demo',

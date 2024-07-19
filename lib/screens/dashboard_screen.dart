@@ -8,6 +8,7 @@ import 'package:raoproject/utils/loggers.dart';
 import 'package:raoproject/utils/secure_data.dart';
 import 'package:raoproject/widgets/custom_left_right_widget.dart';
 import 'package:raoproject/widgets/custom_text_label_widget.dart';
+const String logHead = 'Dashboard';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -38,7 +39,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
     "userId": '',
     "email": '',
     "userName": '',
-    "role":''
+    "role":'',
+    "token":''
   };
   @override
   initState() {
@@ -52,6 +54,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
     userInfo[spUserId] = await SecureStorage.getLocalData(spUserId, SPTypes.string);
     userInfo[spRole] = await SecureStorage.getLocalData(spRole, SPTypes.string);
     logDebug(logHead, "role: ${userInfo[spRole]}");
+    logDebug(logHead, "token: ${userInfo[spToken]}");
     setState(() {
       userInfo = userInfo;
     });
@@ -99,8 +102,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
               ),
               title: const Text('Dashboard'),
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const HomePage()));
+                setState(() {
+                              
+                  Navigator.of(context).pushReplacementNamed('/test');
+                  }
+                );
               },
             ),
             ListTile(
@@ -111,7 +117,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
               ),
               title: const Text('Schemes'),
               onTap: () {
-                Navigator.pop(context);
+                () => Navigator.of(context).pushReplacementNamed('/test');
               },
             ),
             ListTile(
