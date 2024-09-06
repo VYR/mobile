@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/kubera_scheme.iml" filepath="$PROJECT_DIR$/kubera_scheme.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/kubera_scheme_android.iml" filepath="$PROJECT_DIR$/android/kubera_scheme_android.iml" />
+    </modules>
+  </component>
+</project>
