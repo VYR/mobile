@@ -54,6 +54,10 @@ flutter_lints
 3.1
 file:///C:/Users/tejte/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_lints-4.0.0/
 file:///C:/Users/tejte/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_lints-4.0.0/lib/
+go_router
+3.3
+file:///C:/Users/tejte/AppData/Local/Pub/Cache/hosted/pub.dev/go_router-14.2.7/
+file:///C:/Users/tejte/AppData/Local/Pub/Cache/hosted/pub.dev/go_router-14.2.7/lib/
 image
 2.15
 file:///C:/Users/tejte/AppData/Local/Pub/Cache/hosted/pub.dev/image-4.2.0/
@@ -78,6 +82,10 @@ lints
 3.1
 file:///C:/Users/tejte/AppData/Local/Pub/Cache/hosted/pub.dev/lints-4.0.0/
 file:///C:/Users/tejte/AppData/Local/Pub/Cache/hosted/pub.dev/lints-4.0.0/lib/
+logging
+2.19
+file:///C:/Users/tejte/AppData/Local/Pub/Cache/hosted/pub.dev/logging-1.2.0/
+file:///C:/Users/tejte/AppData/Local/Pub/Cache/hosted/pub.dev/logging-1.2.0/lib/
 matcher
 3.0
 file:///C:/Users/tejte/AppData/Local/Pub/Cache/hosted/pub.dev/matcher-0.12.16+1/
@@ -174,6 +182,10 @@ flutter_test
 3.3
 file:///E:/flutter/packages/flutter_test/
 file:///E:/flutter/packages/flutter_test/lib/
+flutter_web_plugins
+3.2
+file:///E:/flutter/packages/flutter_web_plugins/
+file:///E:/flutter/packages/flutter_web_plugins/lib/
 kubera_scheme
 3.5
 file:///E:/live-projects/mobile/

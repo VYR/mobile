@@ -1,62 +1,40 @@
 import 'package:flutter/material.dart';
-import 'package:webview_flutter/webview_flutter.dart';
+import 'package:go_router/go_router.dart';
+import 'package:kubera_scheme/screens/splash_screen.dart';
+import 'package:kubera_scheme/screens/webview_screens/basic_webview_screen.dart';
+import 'package:kubera_scheme/screens/webview_screens/webview_profile_screen.dart';
 
 void main() {
   runApp(
     MaterialApp(
       theme: ThemeData(useMaterial3: true),
-      home: const WebViewApp(),
+      home: MyApp(),
     ),
   );
 }
 
-class WebViewApp extends StatefulWidget {
-  const WebViewApp({super.key});
-
-  @override
-  State<WebViewApp> createState() => _WebViewAppState();
-}
-
-class _WebViewAppState extends State<WebViewApp> {
-  late final WebViewController controller;
-
-  @override
-  void initState() {
-    super.initState();
-    controller = WebViewController()
-      ..setJavaScriptMode(JavaScriptMode.unrestricted)
-      ..setNavigationDelegate(
-        NavigationDelegate(
-          onProgress: (int progress) {
-            // Update loading bar.
-          },
-          onPageStarted: (String url) {},
-          onPageFinished: (String url) {},
-          onHttpError: (HttpResponseError error) {},
-          onWebResourceError: (WebResourceError error) {},
-          onNavigationRequest: (NavigationRequest request) {
-            if (request.url.startsWith('https://www.youtube.com/')) {
-              return NavigationDecision.prevent;
-            }
-            return NavigationDecision.navigate;
-          },
-        ),
-      )
-      ..loadRequest(
-        Uri.parse('https://www.vibullion.com/mobile-app'),
-      );
-  }
-
+class MyApp extends StatelessWidget {
+  // GoRouter configuration
+  final _router = GoRouter(
+    initialLocation: '/',
+    routes: [
+      GoRoute(
+        name: 'home', // Optional, add name to your routes. Allows you navigate by name instead of path
+        path: '/',
+        builder: (context, state) => SplashScreen(),
+      ),
+      GoRoute(
+        name: 'shope',
+        path: '/shope',
+        builder: (context, state) => const WebViewProfile(),
+      ),
+    ],
+  );
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 0,
-        backgroundColor: const Color.fromRGBO(199, 162, 80, 1)
-      ),
-      body: WebViewWidget(
-        controller: controller,
-      ),
+    return MaterialApp.router(
+      routerConfig: _router,
     );
   }
 }
+
