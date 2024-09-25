@@ -1,12 +1,13 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:kubera_scheme/screens/webview_screens/basic_webview_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   final Color backgroundColor = Colors.white;
   final TextStyle styleTextUnderTheLoader = const TextStyle(
       fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.black);
+
+  const SplashScreen({super.key});
 
   @override
   _SplashScreenState createState() => _SplashScreenState();
@@ -14,7 +15,7 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
 
-  String _versionName = 'V1.0';
+  final String _versionName = 'V1.0';
   final splashDelay = 5;
 
   @override
@@ -25,8 +26,8 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   _loadWidget() async {
-    var _duration = Duration(seconds: splashDelay);
-    return Timer(_duration, navigationPage);
+    var duration = Duration(seconds: splashDelay);
+    return Timer(duration, navigationPage);
   }
 
   void navigationPage() {
@@ -57,8 +58,8 @@ class _SplashScreenState extends State<SplashScreen> {
                         height: 300,
                         width: 300,
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 10.0),
+                      const Padding(
+                        padding: EdgeInsets.only(top: 10.0),
                       ),
                     ],
                   )),
@@ -66,20 +67,20 @@ class _SplashScreenState extends State<SplashScreen> {
                 Expanded(
                   child: Column(
                     children: <Widget>[
-                      CircularProgressIndicator(),
+                      const CircularProgressIndicator(),
                       Container(
                         height: 10,
                       ),
                       Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: <Widget>[
-                            Spacer(),
+                            const Spacer(),
                             Text(_versionName),
-                            Spacer(
+                            const Spacer(
                               flex: 4,
                             ),
-                            Text('androing'),
-                            Spacer(),
+                            const Text('androing'),
+                            const Spacer(),
                           ])
                     ],
                   ),

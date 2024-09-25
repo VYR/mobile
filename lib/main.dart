@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kubera_scheme/screens/splash_screen.dart';
-import 'package:kubera_scheme/screens/webview_screens/basic_webview_screen.dart';
 import 'package:kubera_scheme/screens/webview_screens/webview_profile_screen.dart';
 
 void main() {
@@ -30,6 +29,8 @@ class MyApp extends StatelessWidget {
       ),
     ],
   );
+
+  MyApp({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
