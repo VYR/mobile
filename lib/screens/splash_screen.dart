@@ -10,7 +10,7 @@ class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
   @override
-  _SplashScreenState createState() => _SplashScreenState();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
 class _SplashScreenState extends State<SplashScreen> {
@@ -30,9 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return Timer(duration, navigationPage);
   }
 
-  void navigationPage() {
-    print("hello");
-    //Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => context.go('/shope')));
+  void navigationPage() {   
     GoRouter.of(context).go('/shope');
   }
 
@@ -49,8 +47,7 @@ class _SplashScreenState extends State<SplashScreen> {
               children: <Widget>[
                 Expanded(
                   flex: 7,
-                  child: Container(
-                      child: Column(
+                  child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Image.asset(
@@ -62,7 +59,7 @@ class _SplashScreenState extends State<SplashScreen> {
                         padding: EdgeInsets.only(top: 10.0),
                       ),
                     ],
-                  )),
+                  ),
                 ),
                 Expanded(
                   child: Column(

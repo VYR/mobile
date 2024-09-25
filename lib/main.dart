@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       GoRoute(
         name: 'home', // Optional, add name to your routes. Allows you navigate by name instead of path
         path: '/',
-        builder: (context, state) => SplashScreen(),
+        builder: (context, state) => const SplashScreen(),
       ),
       GoRoute(
         name: 'shope',

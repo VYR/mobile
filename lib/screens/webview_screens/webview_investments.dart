@@ -46,7 +46,7 @@ class _WebViewInvestState extends State<WebViewInvest> {
         backgroundColor: const Color.fromRGBO(128, 50, 224, 1),
         foregroundColor: const Color.fromRGBO(255, 255, 255, 1),
         leading: IconButton(onPressed: (){
-                  print('pressed');
+                 
                 }, 
                 icon: const Icon(Icons.arrow_back)),
         title: const Text("My Investments"),
