@@ -31,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void navigationPage() {   
-    GoRouter.of(context).go('/shope');
+    GoRouter.of(context).go('/login');
   }
 
 
