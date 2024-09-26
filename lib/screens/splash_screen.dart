@@ -34,7 +34,6 @@ class _SplashScreenState extends State<SplashScreen> {
     GoRouter.of(context).go('/login');
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

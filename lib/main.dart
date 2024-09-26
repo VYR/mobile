@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:kubera_scheme/screens/dashboard_screen.dart';
+import 'package:kubera_scheme/screens/investment_screen.dart';
 import 'package:kubera_scheme/screens/login_screen.dart';
+import 'package:kubera_scheme/screens/set_pin_screen.dart';
 import 'package:kubera_scheme/screens/splash_screen.dart';
 import 'package:kubera_scheme/screens/webview_screens/webview_profile_screen.dart';
 
@@ -32,6 +35,21 @@ class MyApp extends StatelessWidget {
         name: 'login',
         path: '/login',
         builder: (context, state) => const LoginScreen(),
+      ),
+      GoRoute(
+        name: 'set-pin',
+        path: '/set-pin',
+        builder: (context, state) => const SetPinScreen(),
+      ),
+      GoRoute(
+        name: 'dashboard',
+        path: '/dashboard',
+        builder: (context, state) => const DashboardScreen(),
+      ),
+      GoRoute(
+        name: 'investment',
+        path: '/investment',
+        builder: (context, state) => const InvestmentScreen(),
       ),
     ],
   );
