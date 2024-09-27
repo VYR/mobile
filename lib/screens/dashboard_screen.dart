@@ -15,7 +15,7 @@ class DashboardScreen extends StatelessWidget {
                 Column(
                   children: <Widget> [
                     Center(child: Image.asset(
-                              "assets/thumb.jpg",
+                              "assets/icon/thumb.jpg",
                               height: 100,
                               width: 100,
                             ),
