@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kubera_scheme/screens/dashboard_screen.dart';
+import 'package:kubera_scheme/screens/enter_otp_screen.dart';
 import 'package:kubera_scheme/screens/investment_screen.dart';
 import 'package:kubera_scheme/screens/login_screen.dart';
 import 'package:kubera_scheme/screens/set_pin_screen.dart';
@@ -22,7 +23,8 @@ class MyApp extends StatelessWidget {
     initialLocation: '/',
     routes: [
       GoRoute(
-        name: 'home', // Optional, add name to your routes. Allows you navigate by name instead of path
+        name:
+            'home', // Optional, add name to your routes. Allows you navigate by name instead of path
         path: '/',
         builder: (context, state) => const SplashScreen(),
       ),
@@ -51,6 +53,11 @@ class MyApp extends StatelessWidget {
         path: '/investment',
         builder: (context, state) => const InvestmentScreen(),
       ),
+      GoRoute(
+        name: 'otp',
+        path: '/otp',
+        builder: (context, state) => const EnterOtpScreen(),
+      ),
     ],
   );
 
@@ -62,4 +69,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
