@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:kubera_scheme/screens/address_screen.dart';
 import 'package:kubera_scheme/screens/dashboard_screen.dart';
 import 'package:kubera_scheme/screens/enter_otp_screen.dart';
 import 'package:kubera_scheme/screens/investment_screen.dart';
 import 'package:kubera_scheme/screens/login_screen.dart';
+import 'package:kubera_scheme/screens/personal_details.dart';
+import 'package:kubera_scheme/screens/profile_screens.dart';
+import 'package:kubera_scheme/screens/schemes_screens.dart';
 import 'package:kubera_scheme/screens/set_pin_screen.dart';
 import 'package:kubera_scheme/screens/splash_screen.dart';
+import 'package:kubera_scheme/screens/user_menu_screen.dart';
 import 'package:kubera_scheme/screens/webview_screens/webview_profile_screen.dart';
 
 void main() {
@@ -57,6 +62,31 @@ class MyApp extends StatelessWidget {
         name: 'otp',
         path: '/otp',
         builder: (context, state) => const EnterOtpScreen(),
+      ),
+      GoRoute(
+        name: 'schemes',
+        path: '/schemes',
+        builder: (context, state) => const SchemesScreens(),
+      ),
+      GoRoute(
+        name: 'profile',
+        path: '/profile',
+        builder: (context, state) => const ProfileScreens(),
+      ),
+      GoRoute(
+        name: 'personal',
+        path: '/personal',
+        builder: (context, state) => const PersonalDetails(),
+      ),
+      GoRoute(
+        name: 'address',
+        path: '/address',
+        builder: (context, state) => const AddressScreen(),
+      ),
+      GoRoute(
+        name: 'user-menu',
+        path: '/user-menu',
+        builder: (context, state) => const UserMenuScreen(),
       ),
     ],
   );

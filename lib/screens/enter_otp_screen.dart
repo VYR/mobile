@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:go_router/go_router.dart';
 
 class EnterOtpScreen extends StatelessWidget {
   const EnterOtpScreen({super.key});
@@ -206,7 +207,7 @@ class EnterOtpScreen extends StatelessWidget {
             minWidth: 330.0,
             color: const Color.fromRGBO(227, 227, 228, 1),
             textColor: Colors.black,
-            onPressed: () => {},
+            onPressed: () => {GoRouter.of(context).go('/set-pin')},
             hoverColor: const Color.fromRGBO(0, 92, 187, 1),
             child: const Text("Continue"),
           )
