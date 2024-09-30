@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kubera_scheme/screens/address_screen.dart';
+import 'package:kubera_scheme/screens/bottom_navigation_part.dart';
 import 'package:kubera_scheme/screens/dashboard_screen.dart';
 import 'package:kubera_scheme/screens/enter_otp_screen.dart';
 import 'package:kubera_scheme/screens/investment_screen.dart';
@@ -12,15 +13,12 @@ import 'package:kubera_scheme/screens/set_pin_screen.dart';
 import 'package:kubera_scheme/screens/splash_screen.dart';
 import 'package:kubera_scheme/screens/user_menu_screen.dart';
 import 'package:kubera_scheme/screens/webview_screens/webview_profile_screen.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {
-  runApp(
-    MaterialApp(
-      theme: ThemeData(useMaterial3: true),
-      home: MyApp(),
-    ),
-  );
+   runApp(ProviderScope(child: MyApp()));
 }
+
 
 class MyApp extends StatelessWidget {
   // GoRouter configuration
@@ -87,6 +85,11 @@ class MyApp extends StatelessWidget {
         name: 'user-menu',
         path: '/user-menu',
         builder: (context, state) => const UserMenuScreen(),
+      ),
+      GoRoute(
+        name: 'bottom-navigation',
+        path: '/bottom-navigation',
+        builder: (context, state) => const BottomNavigationPart(),
       ),
     ],
   );

@@ -14,7 +14,7 @@ class InvestmentScreen extends StatelessWidget {
               children: <Widget>[
                 Center(
                   child: Image.asset(
-                    "assets/investment.png",
+                    "assets/icon/thumb.jpg",
                     height: 100,
                     width: 100,
                   ),

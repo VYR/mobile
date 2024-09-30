@@ -38,6 +38,7 @@ dependencies:
   webview_flutter: ^4.9.0
   flutter_launcher_icons: any
   go_router: any
+  flutter_riverpod: ^2.5.1
 
 dev_dependencies:
   flutter_test:
