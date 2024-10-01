@@ -15,7 +15,6 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
 
-  final String _versionName = 'V1.0';
   final splashDelay = 5;
 
   @override
@@ -37,6 +36,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromRGBO(127, 57, 222, 1),
       body: InkWell(
         child: Stack(
           fit: StackFit.expand,
@@ -50,7 +50,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Image.asset(
-                        "assets/icon/icon.png",
+                        "assets/icon/gold_icon.gif",
                         height: 300,
                         width: 300,
                       ),
@@ -60,27 +60,16 @@ class _SplashScreenState extends State<SplashScreen> {
                     ],
                   ),
                 ),
-                Expanded(
-                  child: Column(
-                    children: <Widget>[
-                      const CircularProgressIndicator(),
-                      Container(
-                        height: 10,
-                      ),
-                      Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: <Widget>[
-                            const Spacer(),
-                            Text(_versionName),
-                            const Spacer(
-                              flex: 4,
-                            ),
-                            const Text('androing'),
-                            const Spacer(),
-                          ])
-                    ],
-                  ),
-                ),
+                // Expanded(
+                //   child: Column(
+                //     children: <Widget>[
+                //       const CircularProgressIndicator(),
+                //       Container(
+                //         height: 10,
+                //       ),
+                //     ],
+                //   ),
+                // ),
               ],
             ),
           ],

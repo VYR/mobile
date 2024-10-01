@@ -10,6 +10,7 @@ import 'package:kubera_scheme/screens/personal_details.dart';
 import 'package:kubera_scheme/screens/profile_screens.dart';
 import 'package:kubera_scheme/screens/schemes_screens.dart';
 import 'package:kubera_scheme/screens/set_pin_screen.dart';
+import 'package:kubera_scheme/screens/side_bottom_menu.dart';
 import 'package:kubera_scheme/screens/splash_screen.dart';
 import 'package:kubera_scheme/screens/user_menu_screen.dart';
 import 'package:kubera_scheme/screens/webview_screens/webview_profile_screen.dart';
@@ -18,7 +19,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 void main() {
    runApp(ProviderScope(child: MyApp()));
 }
-
 
 class MyApp extends StatelessWidget {
   // GoRouter configuration
@@ -59,7 +59,7 @@ class MyApp extends StatelessWidget {
       GoRoute(
         name: 'otp',
         path: '/otp',
-        builder: (context, state) => const EnterOtpScreen(),
+        builder: (context, state) =>  EnterOtpScreen(mobileNumber: '7867565465',),
       ),
       GoRoute(
         name: 'schemes',
@@ -90,6 +90,11 @@ class MyApp extends StatelessWidget {
         name: 'bottom-navigation',
         path: '/bottom-navigation',
         builder: (context, state) => const BottomNavigationPart(),
+      ),
+      GoRoute(
+        name: 'main-page',
+        path: '/main-page',
+        builder: (context, state) => const SideBottomMenu(),
       ),
     ],
   );

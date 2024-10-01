@@ -9,7 +9,7 @@ class InvestmentScreen extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         child: Column(
           children: <Widget>[
-            const SizedBox(height: 100),
+            const SizedBox(height: 70),
             Column(
               children: <Widget>[
                 Center(

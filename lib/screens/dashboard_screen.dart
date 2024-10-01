@@ -5,34 +5,34 @@ class DashboardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const Drawer(
-        backgroundColor: Colors.white,
-        child: Column(
-          children: [
-            // Contrainer(),
-            DrawerHeader(
-                decoration: BoxDecoration(color: Colors.grey),
-                child: Text("venky")),
-          ],
-        ),
-      ),
-      appBar: AppBar(
-        backgroundColor: Colors.teal,
-        title: const Text("Dashboard"),
-        actions: [
-          IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.login_outlined,
-                color: Colors.red,
-              ))
-        ],
-      ),
+      // drawer: const Drawer(
+      //   backgroundColor: Colors.white,
+      //   child: Column(
+      //     children: [
+      //       // Contrainer(),
+      //       DrawerHeader(
+      //           decoration: BoxDecoration(color: Colors.grey),
+      //           child: Text("venky")),
+      //     ],
+      //   ),
+      // ),
+      // appBar: AppBar(
+      //   backgroundColor: Colors.teal,
+      //   title: const Text("Dashboard"),
+      //   actions: [
+      //     IconButton(
+      //         onPressed: () {},
+      //         icon: const Icon(
+      //           Icons.login_outlined,
+      //           color: Colors.red,
+      //         ))
+      //   ],
+      // ),
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
           children: <Widget>[
-            const SizedBox(height: 100),
+            const SizedBox(height: 70),
             Column(
               children: <Widget>[
                 Center(

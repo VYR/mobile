@@ -1,31 +1,59 @@
-// Not using. It's Already in SideBottomMenu
-
 import 'package:flutter/material.dart';
+import 'package:kubera_scheme/screens/dashboard_screen.dart';
+import 'package:kubera_scheme/screens/investment_screen.dart';
+import 'package:kubera_scheme/screens/schemes_screens.dart';
 
-class UserMenuScreen extends StatelessWidget {
-  const UserMenuScreen({super.key});
+class SideBottomMenu extends StatefulWidget {
+  const SideBottomMenu({super.key});
+
+  @override
+  _SideBottomMenuState createState() => _SideBottomMenuState();
+}
+
+class _SideBottomMenuState extends State<SideBottomMenu> {
+  int _selectedIndex = 0; 
+  final List<Widget> screens = [
+      const DashboardScreen(),
+      const SchemesScreens(),
+      const InvestmentScreen(),
+  ];
+
+  final List<Widget> titles = [
+    const Text('Dashboard'),
+    const Text('Schemes'),
+    const Text('Transactions'),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: titles[_selectedIndex],
+        titleTextStyle: const TextStyle(color: Colors.white, fontSize: 20),
+        backgroundColor: const Color.fromRGBO(0, 92, 187, 1),
+        actions: [
+          IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.login_outlined,
+                color: Colors.red,
+              ))
+        ],
+      ),
       drawer: Drawer(
         child: ListView(
-          // Remove any padding from the ListView.
           padding: EdgeInsets.zero,
           children: [
-            // const DrawerHeader(
-            //   decoration: BoxDecoration(
-            //     color: Colors.blue,
-            //   ),
-            //   child: Text('Drawer Header'),
-            // ),
-
-            /// Header of the Drawer
             Material(
-              color: Colors.blueAccent,
+              color: const Color.fromRGBO(0, 92, 187, 1),
               child: InkWell(
                 onTap: () {
-                  /// Close Navigation drawer before
                   Navigator.pop(context);
                 },
                 child: Container(
@@ -61,7 +89,6 @@ class UserMenuScreen extends StatelessWidget {
                   leading: const Icon(Icons.home_outlined),
                   title: const Text('Income Certificate'),
                   onTap: () {
-                    /// Close Navigation drawer before
                     Navigator.pop(context);
                     // Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()),);
                   },
@@ -69,11 +96,7 @@ class UserMenuScreen extends StatelessWidget {
                 ListTile(
                   leading: const Icon(Icons.favorite_border),
                   title: const Text('My Referrals'),
-                  onTap: () {
-                    /// Close Navigation drawer before
-                    Navigator.pop(context);
-                    // Navigator.push(context, MaterialPageRoute(builder: (context) => FavouriteScreen()),);
-                  },
+                  onTap: () {},
                 ),
                 ListTile(
                   leading: const Icon(Icons.workspaces),
@@ -85,14 +108,6 @@ class UserMenuScreen extends StatelessWidget {
                   title: const Text('Logout'),
                   onTap: () {},
                 ),
-                const Divider(
-                  color: Colors.black45,
-                ),
-                ListTile(
-                  leading: const Icon(Icons.account_tree_outlined),
-                  title: const Text('Plugins'),
-                  onTap: () {},
-                ),
                 ListTile(
                   leading: const Icon(Icons.notifications_outlined),
                   title: const Text('Notifications'),
@@ -102,6 +117,18 @@ class UserMenuScreen extends StatelessWidget {
             )
           ],
         ),
+      ),
+      body: screens[_selectedIndex], // Show the selected screen
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.blue,
+        unselectedItemColor: Colors.grey,
+        onTap: _onItemTapped,
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Dashboard'),
+          BottomNavigationBarItem(icon: Icon(Icons.favorite), label: 'Schemes'),
+          BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Transactions'),
+        ],
       ),
     );
   }
