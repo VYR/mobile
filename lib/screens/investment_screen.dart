@@ -5,7 +5,9 @@ class InvestmentScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
+      body:SafeArea(
+        child: SingleChildScrollView(
+          child:  Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
           children: <Widget>[
@@ -49,6 +51,8 @@ class InvestmentScreen extends StatelessWidget {
           ],
         ), //Container
       ),
+    )
+      )
     );
   }
 }

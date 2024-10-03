@@ -5,7 +5,7 @@ import 'package:go_router/go_router.dart';
 class SetPinScreen extends StatefulWidget {
   const SetPinScreen({super.key});
   @override
-  _SetPinScreenState createState() => _SetPinScreenState();
+  State<SetPinScreen> createState() => _SetPinScreenState();
 }
 
 class _SetPinScreenState extends State<SetPinScreen> {
@@ -29,7 +29,8 @@ class _SetPinScreenState extends State<SetPinScreen> {
     if (pin == confirmPin) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('PIN set successfully!')),
-      );
+      );      
+      GoRouter.of(context).go('/main-page');
     } else {
       // Show error message
       ScaffoldMessenger.of(context).showSnackBar(
@@ -94,7 +95,7 @@ class _SetPinScreenState extends State<SetPinScreen> {
                 ),
                 const SizedBox(height: 15),
                 const Text(
-                'Please Set 4 digit mobile PIN for Kubera App to securly login into your account. Once set, You can access your account via PIN'),
+                'Please Set 4 digit mobile PIN for Kubera App to securely login into your account. Once set, You can access your account via PIN'),
                 const SizedBox(height: 15),
                 const Text(
                   'Enter the PIN',
@@ -125,11 +126,9 @@ class _SetPinScreenState extends State<SetPinScreen> {
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () => {GoRouter.of(context).go('/main-page')},
-                    child: Text('Submit',
-                            style: TextStyle(
-                                  color: Colors.white, // Change text color to white
-                                ),),
+                    onPressed: () => {      
+                       _onSubmit()              
+                    },
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.symmetric(vertical: 20),
                       backgroundColor: const Color.fromRGBO(0, 92, 187, 1), // Change button background color if needed
@@ -137,6 +136,10 @@ class _SetPinScreenState extends State<SetPinScreen> {
                         borderRadius: BorderRadius.circular(8),
                       ),
                     ),
+                    child: const Text('Submit',
+                            style: TextStyle(
+                                  color: Colors.white, // Change text color to white
+                                ),),
                   ),
                 ),
               ],
@@ -182,7 +185,7 @@ class _SetPinScreenState extends State<SetPinScreen> {
 //             ),
 //             const SizedBox(height: 10),
 //             const Text(
-//                 'Please Set 4 digit mobile PIN for Kubera App to securly login into your account. Once set, You can access your account via PIN'),
+//                 'Please Set 4 digit mobile PIN for Kubera App to securely login into your account. Once set, You can access your account via PIN'),
 //             const SizedBox(height: 10),
 //             Column(
 //               mainAxisAlignment: MainAxisAlignment.center,

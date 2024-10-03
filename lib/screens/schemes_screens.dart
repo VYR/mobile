@@ -5,7 +5,9 @@ class SchemesScreens extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
         children: <Widget>[
           const Text(
             "Your KYC verification is in progress",
@@ -130,6 +132,8 @@ class SchemesScreens extends StatelessWidget {
           ),
         ],
       ),
+    )
+      )
     );
   }
 }

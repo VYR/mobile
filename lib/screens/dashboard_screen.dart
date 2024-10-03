@@ -9,10 +9,10 @@ class DashboardScreen extends StatelessWidget {
       //   backgroundColor: Colors.white,
       //   child: Column(
       //     children: [
-      //       // Contrainer(),
+      //       // Container(),
       //       DrawerHeader(
       //           decoration: BoxDecoration(color: Colors.grey),
-      //           child: Text("venky")),
+      //           child: Text("gmail")),
       //     ],
       //   ),
       // ),
@@ -28,7 +28,9 @@ class DashboardScreen extends StatelessWidget {
       //         ))
       //   ],
       // ),
-      body: Padding(
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
           children: <Widget>[
@@ -72,6 +74,8 @@ class DashboardScreen extends StatelessWidget {
           ],
         ), //Container
       ),
+    )
+      )
     );
   }
 }

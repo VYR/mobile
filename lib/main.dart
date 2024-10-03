@@ -59,7 +59,7 @@ class MyApp extends StatelessWidget {
       GoRoute(
         name: 'otp',
         path: '/otp',
-        builder: (context, state) =>  EnterOtpScreen(mobileNumber: '7867565465',),
+        builder: (context, state) => const EnterOtpScreen(mobileNumber: '7867565465',),
       ),
       GoRoute(
         name: 'schemes',

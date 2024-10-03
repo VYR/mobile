@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:kubera_scheme/screens/dashboard_screen.dart';
 import 'package:kubera_scheme/screens/investment_screen.dart';
 import 'package:kubera_scheme/screens/schemes_screens.dart';
@@ -7,7 +8,7 @@ class SideBottomMenu extends StatefulWidget {
   const SideBottomMenu({super.key});
 
   @override
-  _SideBottomMenuState createState() => _SideBottomMenuState();
+  State<SideBottomMenu> createState() => _SideBottomMenuState();
 }
 
 class _SideBottomMenuState extends State<SideBottomMenu> {
@@ -34,6 +35,7 @@ class _SideBottomMenuState extends State<SideBottomMenu> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: const IconThemeData(color: Colors.white),
         title: titles[_selectedIndex],
         titleTextStyle: const TextStyle(color: Colors.white, fontSize: 20),
         backgroundColor: const Color.fromRGBO(0, 92, 187, 1),
@@ -47,6 +49,7 @@ class _SideBottomMenuState extends State<SideBottomMenu> {
         ],
       ),
       drawer: Drawer(
+        backgroundColor: Colors.white,
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
@@ -54,9 +57,10 @@ class _SideBottomMenuState extends State<SideBottomMenu> {
               color: const Color.fromRGBO(0, 92, 187, 1),
               child: InkWell(
                 onTap: () {
+                  GoRouter.of(context).goNamed('profile');
                   Navigator.pop(context);
                 },
-                child: Container(
+                child: Container(                  
                   padding: EdgeInsets.only(
                       top: MediaQuery.of(context).padding.top, bottom: 24),
                   child: const Column(

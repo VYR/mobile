@@ -5,11 +5,11 @@ import 'package:go_router/go_router.dart';
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  TextEditingController _mobileController = TextEditingController();
+  final TextEditingController _mobileController = TextEditingController();
   bool _isButtonEnabled = false;
 
   @override
@@ -85,12 +85,6 @@ class _LoginScreenState extends State<LoginScreen> {
                                 GoRouter.of(context).go('/otp')
                               }
                             : null,
-                        child: Text(
-                          'Get OTP',
-                          style: TextStyle(
-                            color: _isButtonEnabled ? Colors.white : Colors.black,
-                          ),
-                        ),
                         style: ElevatedButton.styleFrom(
                           padding: const EdgeInsets.symmetric(vertical: 20),
                           backgroundColor: _isButtonEnabled
@@ -98,6 +92,12 @@ class _LoginScreenState extends State<LoginScreen> {
                               : Colors.grey,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8), 
+                          ),
+                        ),
+                        child: Text(
+                          'Get OTP',
+                          style: TextStyle(
+                            color: _isButtonEnabled ? Colors.white : Colors.black,
                           ),
                         ),
                       ),

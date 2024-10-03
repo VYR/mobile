@@ -4,10 +4,10 @@ import 'package:go_router/go_router.dart';
 
 class EnterOtpScreen extends StatefulWidget {
   final String mobileNumber;
-  EnterOtpScreen({required this.mobileNumber});
+  const EnterOtpScreen({super.key, required this.mobileNumber});
 
   @override
-  _EnterOtpScreenState createState() => _EnterOtpScreenState();
+  State<EnterOtpScreen> createState() => _EnterOtpScreenState();
 }
 
 class _EnterOtpScreenState extends State<EnterOtpScreen> {
@@ -16,9 +16,9 @@ class _EnterOtpScreenState extends State<EnterOtpScreen> {
 
   @override
   void dispose() {
-    otpControllers.forEach((controller) {
+    for (var controller in otpControllers) {
       controller.dispose();
-    });
+    }
     super.dispose();
   }
 
@@ -79,7 +79,7 @@ class _EnterOtpScreenState extends State<EnterOtpScreen> {
                 ),
                 const SizedBox(height: 10),
                 const Text(
-                    "abc***atgmail.com",
+                    "abc***@gmail.com",
                     textAlign: TextAlign.left,
                     style: TextStyle(
                         color: Color.fromRGBO(0, 0, 0, 1),
@@ -107,20 +107,20 @@ class _EnterOtpScreenState extends State<EnterOtpScreen> {
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () => {GoRouter.of(context).go('/set-pin')},
-                    child: Text(
-                                'Continue',
-                                style: TextStyle(
-                                  color: Colors.white, // Change text color to white
-                                ),
-                                ),    
+                    onPressed: () => {GoRouter.of(context).go('/set-pin')},    
                     style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.symmetric(vertical: 20),
+                      padding: const EdgeInsets.symmetric(vertical: 20),
                       backgroundColor: const Color.fromRGBO(0, 92, 187, 1),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8),
                       ),
                     ),
+                    child: const Text(
+                                'Continue',
+                                style: TextStyle(
+                                  color: Colors.white, // Change text color to white
+                                ),
+                                ),
                   ),
                 ),
               ],
@@ -184,7 +184,7 @@ class _EnterOtpScreenState extends State<EnterOtpScreen> {
 //                 fontWeight: FontWeight.w900),
 //           ),
 //           const Text(
-//             "abc***atgmail.com",
+//             "abc***@gmail.com",
 //             textAlign: TextAlign.left,
 //             style: TextStyle(
 //                 color: Color.fromRGBO(0, 0, 0, 1),
