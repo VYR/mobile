@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kubera_scheme/screens/address_screen.dart';
+import 'package:kubera_scheme/screens/bank_account_screen.dart';
 import 'package:kubera_scheme/screens/bottom_navigation_part.dart';
 import 'package:kubera_scheme/screens/dashboard_screen.dart';
 import 'package:kubera_scheme/screens/enter_otp_screen.dart';
@@ -17,7 +18,7 @@ import 'package:kubera_scheme/screens/webview_screens/webview_profile_screen.dar
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {
-   runApp(ProviderScope(child: MyApp()));
+  runApp(ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -59,7 +60,9 @@ class MyApp extends StatelessWidget {
       GoRoute(
         name: 'otp',
         path: '/otp',
-        builder: (context, state) => const EnterOtpScreen(mobileNumber: '7867565465',),
+        builder: (context, state) => const EnterOtpScreen(
+          mobileNumber: '7867565465',
+        ),
       ),
       GoRoute(
         name: 'schemes',
@@ -80,6 +83,11 @@ class MyApp extends StatelessWidget {
         name: 'address',
         path: '/address',
         builder: (context, state) => const AddressScreen(),
+      ),
+      GoRoute(
+        name: 'bank-account',
+        path: '/bank-account',
+        builder: (context, state) => const BankAccountScreen(),
       ),
       GoRoute(
         name: 'user-menu',
