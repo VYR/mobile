@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kubera_scheme/screens/dashboard_screen.dart';
 import 'package:kubera_scheme/screens/investment_screen.dart';
+import 'package:kubera_scheme/screens/kubera_scheme_screen.dart';
 import 'package:kubera_scheme/screens/schemes_screens.dart';
 
 class SideBottomMenu extends StatefulWidget {
@@ -14,14 +15,14 @@ class SideBottomMenu extends StatefulWidget {
 class _SideBottomMenuState extends State<SideBottomMenu> {
   int _selectedIndex = 0; 
   final List<Widget> screens = [
-      const DashboardScreen(),
       const SchemesScreens(),
+      const DashboardScreen(),
       const InvestmentScreen(),
   ];
 
   final List<Widget> titles = [
-    const Text('Dashboard'),
     const Text('Schemes'),
+    const Text('Dashboard'),
     const Text('Transactions'),
   ];
 
@@ -129,9 +130,9 @@ class _SideBottomMenuState extends State<SideBottomMenu> {
         unselectedItemColor: Colors.grey,
         onTap: _onItemTapped,
         items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.insert_chart ), label: 'Schemes'),
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Dashboard'),
-          BottomNavigationBarItem(icon: Icon(Icons.favorite), label: 'Schemes'),
-          BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Transactions'),
+          BottomNavigationBarItem(icon: Icon(Icons.business_center), label: 'My Investments'),
         ],
       ),
     );

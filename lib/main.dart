@@ -3,11 +3,13 @@ import 'package:go_router/go_router.dart';
 import 'package:kubera_scheme/screens/address_screen.dart';
 import 'package:kubera_scheme/screens/bottom_navigation_part.dart';
 import 'package:kubera_scheme/screens/dashboard_screen.dart';
+import 'package:kubera_scheme/screens/digital_gold_scheme.dart';
 import 'package:kubera_scheme/screens/enter_otp_screen.dart';
 import 'package:kubera_scheme/screens/investment_screen.dart';
 import 'package:kubera_scheme/screens/login_screen.dart';
 import 'package:kubera_scheme/screens/personal_details.dart';
 import 'package:kubera_scheme/screens/profile_screens.dart';
+import 'package:kubera_scheme/screens/kubera_scheme_screen.dart';
 import 'package:kubera_scheme/screens/schemes_screens.dart';
 import 'package:kubera_scheme/screens/set_pin_screen.dart';
 import 'package:kubera_scheme/screens/side_bottom_menu.dart';
@@ -95,6 +97,16 @@ class MyApp extends StatelessWidget {
         name: 'main-page',
         path: '/main-page',
         builder: (context, state) => const SideBottomMenu(),
+      ),
+      GoRoute(
+        name: 'kubera-scheme',
+        path: '/kubera-scheme',
+        builder: (context, state) => const KuberaSchemeScreen(),
+      ),
+      GoRoute(
+        name: 'digital-gold-scheme',
+        path: '/digital-gold-scheme',
+        builder: (context, state) => const DigitalGoldSchemeScreen(),
       ),
     ],
   );

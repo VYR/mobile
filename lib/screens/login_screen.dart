@@ -37,6 +37,7 @@ class _LoginScreenState extends State<LoginScreen> {
             padding: const EdgeInsets.all(16.0),
             child: Column(
               children: [
+                const SizedBox(height: 60),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -57,9 +58,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       fontWeight: FontWeight.w900),
                 ),
                 const SizedBox(height: 50),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 32.0),
-                  child: TextField(
+                TextField(
                     controller: _mobileController,
                     keyboardType: TextInputType.phone,
                     maxLength: 10, 
@@ -73,36 +72,32 @@ class _LoginScreenState extends State<LoginScreen> {
                       counterText: '', 
                     ),
                   ),
-                ),
-                const SizedBox(height: 100),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 32.0),
-                  child: SizedBox(
-                      width: double.infinity, // Full width button
-                      child: ElevatedButton(
-                        onPressed: _isButtonEnabled
-                            ? () => {
-                                GoRouter.of(context).go('/otp')
-                              }
-                            : null,
-                        style: ElevatedButton.styleFrom(
-                          padding: const EdgeInsets.symmetric(vertical: 20),
-                          backgroundColor: _isButtonEnabled
-                              ? const Color.fromRGBO(0, 92, 187, 1)
-                              : Colors.grey,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8), 
-                          ),
-                        ),
-                        child: Text(
-                          'Get OTP',
-                          style: TextStyle(
-                            color: _isButtonEnabled ? Colors.white : Colors.black,
-                          ),
-                        ),
+                const SizedBox(height: 60),
+                SizedBox(
+                  width: double.infinity, // Full width button
+                  child: ElevatedButton(
+                    onPressed: _isButtonEnabled
+                        ? () => {
+                            GoRouter.of(context).go('/otp')
+                          }
+                        : null,
+                    style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(vertical: 20),
+                      backgroundColor: _isButtonEnabled
+                          ? const Color.fromRGBO(0, 92, 187, 1)
+                          : Colors.grey,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8), 
                       ),
                     ),
-                )
+                    child: Text(
+                      'Get OTP',
+                      style: TextStyle(
+                        color: _isButtonEnabled ? Colors.white : Colors.black,
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
