@@ -6,6 +6,7 @@ import 'package:kubera_scheme/screens/dashboard_screen.dart';
 import 'package:kubera_scheme/screens/digital_gold_scheme.dart';
 import 'package:kubera_scheme/screens/enter_otp_screen.dart';
 import 'package:kubera_scheme/screens/investment_screen.dart';
+import 'package:kubera_scheme/screens/key_matrices_screen.dart';
 import 'package:kubera_scheme/screens/login_screen.dart';
 import 'package:kubera_scheme/screens/personal_details.dart';
 import 'package:kubera_scheme/screens/profile_screens.dart';
@@ -13,6 +14,7 @@ import 'package:kubera_scheme/screens/kubera_scheme_screen.dart';
 import 'package:kubera_scheme/screens/schemes_screens.dart';
 import 'package:kubera_scheme/screens/set_pin_screen.dart';
 import 'package:kubera_scheme/screens/side_bottom_menu.dart';
+import 'package:kubera_scheme/screens/snapshot_screen.dart';
 import 'package:kubera_scheme/screens/splash_screen.dart';
 import 'package:kubera_scheme/screens/user_menu_screen.dart';
 import 'package:kubera_scheme/screens/webview_screens/webview_profile_screen.dart';
@@ -29,7 +31,7 @@ class MyApp extends StatelessWidget {
     routes: [
       GoRoute(
         name:
-            'home', // Optional, add name to your routes. Allows you navigate by name instead of path
+            'home', 
         path: '/',
         builder: (context, state) => const SplashScreen(),
       ),
@@ -101,12 +103,22 @@ class MyApp extends StatelessWidget {
       GoRoute(
         name: 'kubera-scheme',
         path: '/kubera-scheme',
-        builder: (context, state) => const KuberaSchemeScreen(),
+        builder: (context, state) =>  const KuberaSchemeScreen(),
       ),
       GoRoute(
         name: 'digital-gold-scheme',
         path: '/digital-gold-scheme',
         builder: (context, state) => const DigitalGoldSchemeScreen(),
+      ),
+      GoRoute(
+        name: 'snapshot',
+        path: '/snapshot',
+        builder: (context, state) => const SnapShotScreen(),
+      ),
+      GoRoute(
+        name: 'key-metrices',
+        path: '/key-metrices',
+        builder: (context, state) => const KeyMetricesScreen(),
       ),
     ],
   );

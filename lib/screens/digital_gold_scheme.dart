@@ -5,6 +5,12 @@ class DigitalGoldSchemeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        iconTheme: const IconThemeData(color: Colors.white),
+        title: const Text('Schemes Details'),
+        titleTextStyle: const TextStyle(color: Colors.white, fontSize: 20),
+        backgroundColor: const Color.fromRGBO(0, 92, 187, 1),
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -39,7 +45,7 @@ class DigitalGoldSchemeScreen extends StatelessWidget {
                         padding: const EdgeInsets.all(16.0),
                         decoration: BoxDecoration(
                           color: const Color.fromRGBO(245, 237, 255, 1), 
-                          borderRadius: BorderRadius.circular(8.0), 
+                          borderRadius: BorderRadius.circular(14.0), 
                         ),
                         child: const Text(
                           "Balance Risk with Insurance Protection",
@@ -51,7 +57,11 @@ class DigitalGoldSchemeScreen extends StatelessWidget {
                       ),
                       Container(
                         width: double.infinity,
-                        padding: const EdgeInsets.all(10.0), // Padding for the second row
+                        padding: const EdgeInsets.all(10.0),
+                        decoration: BoxDecoration(
+                          color: Colors.white, 
+                          borderRadius: BorderRadius.circular(14.0), 
+                        ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start, 
                           children: <Widget>[
@@ -140,7 +150,7 @@ class DigitalGoldSchemeScreen extends StatelessWidget {
                                       'Pre-tax IRR',
                                       textAlign: TextAlign.left,
                                       style: TextStyle(
-                                        fontSize: 16
+                                        fontSize: 14
                                       ),
                                     ),
                                     SizedBox(height: 5),
@@ -160,7 +170,7 @@ class DigitalGoldSchemeScreen extends StatelessWidget {
                                       'Tenure',
                                       textAlign: TextAlign.left,
                                       style: TextStyle(
-                                        fontSize: 16
+                                        fontSize: 14
                                       ),
                                     ),
                                     SizedBox(height: 5),
@@ -180,12 +190,12 @@ class DigitalGoldSchemeScreen extends StatelessWidget {
                                       'Min. Investment',
                                       textAlign: TextAlign.left,
                                       style: TextStyle(
-                                        fontSize: 16
+                                        fontSize: 14
                                       ),
                                     ),
                                     SizedBox(height: 5),
                                     Text(
-                                      'Rs: 25,000',
+                                      '₹25,000',
                                       textAlign: TextAlign.end,
                                       style: TextStyle(
                                         color: Color.fromRGBO(42, 38, 38, 1),
@@ -210,7 +220,7 @@ class DigitalGoldSchemeScreen extends StatelessWidget {
                                       'Risk Category',
                                       textAlign: TextAlign.left,
                                       style: TextStyle(
-                                        fontSize: 16
+                                        fontSize: 14
                                       ),
                                     ),
                                     SizedBox(height: 5),
@@ -230,7 +240,7 @@ class DigitalGoldSchemeScreen extends StatelessWidget {
                                       'Insured By',
                                       textAlign: TextAlign.left,
                                       style: TextStyle(
-                                        fontSize: 16
+                                        fontSize: 14
                                       ),
                                     ),
                                     SizedBox(height: 5),

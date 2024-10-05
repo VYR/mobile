@@ -89,9 +89,9 @@ class SchemesScreens extends StatelessWidget {
                         child: const Text("Kubera Scheme"),
                 ),
                 InkWell(
-                onTap: (){
-                         GoRouter.of(context).go('/kubera-scheme');
-                        },
+                  onTap: () {
+                    context.push('/kubera-scheme');
+                  },
                 child: Container(
                   width: double.infinity,
                   decoration: BoxDecoration(
@@ -109,7 +109,7 @@ class SchemesScreens extends StatelessWidget {
                         padding: const EdgeInsets.all(16.0),
                         decoration: BoxDecoration(
                           color: const Color.fromRGBO(245, 237, 255, 1), 
-                          borderRadius: BorderRadius.circular(8.0), 
+                          borderRadius: BorderRadius.circular(14.0), 
                         ),
                         child: const Text(
                           "Balance Risk with Insurance Protection",
@@ -121,7 +121,11 @@ class SchemesScreens extends StatelessWidget {
                       ),
                       Container(
                         width: double.infinity,
-                        padding: const EdgeInsets.all(10.0), // Padding for the second row
+                        padding: const EdgeInsets.all(10.0),
+                        decoration: BoxDecoration(
+                          color: Colors.white, 
+                          borderRadius: BorderRadius.circular(14.0), 
+                        ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start, 
                           children: <Widget>[
@@ -133,7 +137,6 @@ class SchemesScreens extends StatelessWidget {
                             ),
                             const SizedBox(height: 10),
                             Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: <Widget>[
                                 ElevatedButton(
                                     onPressed: () {
@@ -147,7 +150,8 @@ class SchemesScreens extends StatelessWidget {
                                         fontSize: 12, color: Colors.black
                                       )
                                     ),
-                                  ),
+                                ),
+                                const SizedBox(width: 10,),
                                 ElevatedButton(
                                     onPressed: () {
                                     },
@@ -165,7 +169,6 @@ class SchemesScreens extends StatelessWidget {
                             ),
                             const SizedBox(height: 10),
                             Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: <Widget>[
                                  ElevatedButton(
                                     onPressed: () {
@@ -179,7 +182,8 @@ class SchemesScreens extends StatelessWidget {
                                         fontSize: 12,color: Colors.black
                                       )
                                     ),
-                                  ),
+                                 ),
+                                 const SizedBox(width: 10,),
                                  ElevatedButton(
                                     onPressed: () {
                                     },
@@ -197,7 +201,7 @@ class SchemesScreens extends StatelessWidget {
                               ]
                             ),
                             const SizedBox(height: 10),
-                            const Divider(color: Colors.black45),
+                            const Divider(color: Colors.black26),
                             const SizedBox(height: 10),
                             const Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -210,7 +214,7 @@ class SchemesScreens extends StatelessWidget {
                                       'Fixed Returns',
                                       textAlign: TextAlign.left,
                                       style: TextStyle(
-                                        fontSize: 16
+                                        fontSize: 14
                                       ),
                                     ),
                                     SizedBox(height: 5),
@@ -230,7 +234,7 @@ class SchemesScreens extends StatelessWidget {
                                       'Tenure',
                                       textAlign: TextAlign.left,
                                       style: TextStyle(
-                                        fontSize: 16
+                                        fontSize: 14
                                       ),
                                     ),
                                     SizedBox(height: 5),
@@ -250,12 +254,12 @@ class SchemesScreens extends StatelessWidget {
                                       'Min. Investment',
                                       textAlign: TextAlign.left,
                                       style: TextStyle(
-                                        fontSize: 16
+                                        fontSize: 14
                                       ),
                                     ),
                                     SizedBox(height: 5),
                                     Text(
-                                      'Rs: 10,00,000',
+                                      '₹10,00,000',
                                       textAlign: TextAlign.end,
                                       style: TextStyle(
                                         color: Color.fromRGBO(42, 38, 38, 1),
@@ -267,7 +271,7 @@ class SchemesScreens extends StatelessWidget {
                               ]
                             ),
                             const SizedBox(height: 10),
-                            const Divider(color: Colors.black45),
+                            const Divider(color: Colors.black26),
                             const SizedBox(height: 10),
                             const Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -280,7 +284,7 @@ class SchemesScreens extends StatelessWidget {
                                       'Risk Category',
                                       textAlign: TextAlign.left,
                                       style: TextStyle(
-                                        fontSize: 16
+                                        fontSize: 14
                                       ),
                                     ),
                                     SizedBox(height: 5),
@@ -300,7 +304,7 @@ class SchemesScreens extends StatelessWidget {
                                       'Insured By',
                                       textAlign: TextAlign.left,
                                       style: TextStyle(
-                                        fontSize: 16
+                                        fontSize: 14
                                       ),
                                     ),
                                     SizedBox(height: 5),
@@ -318,7 +322,7 @@ class SchemesScreens extends StatelessWidget {
                               ]
                             ),
                             const SizedBox(height: 10),
-                            const Divider(color: Colors.black45),
+                            const Divider(color: Colors.black26),
                             const SizedBox(height: 10),
                             const Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -360,9 +364,9 @@ class SchemesScreens extends StatelessWidget {
                         child: const Text("Digital Gold"),
                 ),
                 InkWell(
-                onTap: (){
-                         GoRouter.of(context).go('/digital-gold-scheme');
-                        },
+                  onTap: () {
+                    context.push('/digital-gold-scheme');
+                  },
                 child: Container(
                   width: double.infinity,
                   decoration: BoxDecoration(
@@ -380,7 +384,7 @@ class SchemesScreens extends StatelessWidget {
                         padding: const EdgeInsets.all(16.0),
                         decoration: BoxDecoration(
                           color: const Color.fromRGBO(245, 237, 255, 1), 
-                          borderRadius: BorderRadius.circular(8.0), 
+                          borderRadius: BorderRadius.circular(14.0), 
                         ),
                         child: const Text(
                           "Balance Risk with Insurance Protection",
@@ -392,7 +396,11 @@ class SchemesScreens extends StatelessWidget {
                       ),
                       Container(
                         width: double.infinity,
-                        padding: const EdgeInsets.all(10.0), // Padding for the second row
+                        padding: const EdgeInsets.all(10.0),
+                        decoration: BoxDecoration(
+                          color: Colors.white, 
+                          borderRadius: BorderRadius.circular(14.0), 
+                        ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start, 
                           children: <Widget>[
@@ -404,7 +412,6 @@ class SchemesScreens extends StatelessWidget {
                             ),
                             const SizedBox(height: 10),
                             Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: <Widget>[
                                 ElevatedButton(
                                     onPressed: () {
@@ -419,6 +426,7 @@ class SchemesScreens extends StatelessWidget {
                                       )
                                     ),
                                   ),
+                                  const SizedBox(width: 10,),
                                 ElevatedButton(
                                     onPressed: () {
                                     },
@@ -436,7 +444,6 @@ class SchemesScreens extends StatelessWidget {
                             ),
                             const SizedBox(height: 10),
                             Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: <Widget>[
                                  ElevatedButton(
                                     onPressed: () {
@@ -451,6 +458,7 @@ class SchemesScreens extends StatelessWidget {
                                       )
                                     ),
                                   ),
+                                  const SizedBox(width: 10,),
                                  ElevatedButton(
                                     onPressed: () {
                                     },
@@ -468,7 +476,7 @@ class SchemesScreens extends StatelessWidget {
                               ]
                             ),
                             const SizedBox(height: 10),
-                            const Divider(color: Colors.black45),
+                            const Divider(color: Colors.black26),
                             const SizedBox(height: 10),
                             const Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -481,7 +489,7 @@ class SchemesScreens extends StatelessWidget {
                                       'Pre-tax IRR',
                                       textAlign: TextAlign.left,
                                       style: TextStyle(
-                                        fontSize: 16
+                                        fontSize: 14
                                       ),
                                     ),
                                     SizedBox(height: 5),
@@ -501,7 +509,7 @@ class SchemesScreens extends StatelessWidget {
                                       'Tenure',
                                       textAlign: TextAlign.left,
                                       style: TextStyle(
-                                        fontSize: 16
+                                        fontSize: 14
                                       ),
                                     ),
                                     SizedBox(height: 5),
@@ -521,12 +529,12 @@ class SchemesScreens extends StatelessWidget {
                                       'Min. Investment',
                                       textAlign: TextAlign.left,
                                       style: TextStyle(
-                                        fontSize: 16
+                                        fontSize: 14
                                       ),
                                     ),
                                     SizedBox(height: 5),
                                     Text(
-                                      'Rs: 25,000',
+                                      '₹25,000',
                                       textAlign: TextAlign.end,
                                       style: TextStyle(
                                         color: Color.fromRGBO(42, 38, 38, 1),
@@ -538,7 +546,7 @@ class SchemesScreens extends StatelessWidget {
                               ]
                             ),
                             const SizedBox(height: 10),
-                            const Divider(color: Colors.black45),
+                            const Divider(color: Colors.black26),
                             const SizedBox(height: 10),
                             const Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -551,7 +559,7 @@ class SchemesScreens extends StatelessWidget {
                                       'Risk Category',
                                       textAlign: TextAlign.left,
                                       style: TextStyle(
-                                        fontSize: 16
+                                        fontSize: 14
                                       ),
                                     ),
                                     SizedBox(height: 5),
@@ -571,7 +579,7 @@ class SchemesScreens extends StatelessWidget {
                                       'Insured By',
                                       textAlign: TextAlign.left,
                                       style: TextStyle(
-                                        fontSize: 16
+                                        fontSize: 14
                                       ),
                                     ),
                                     SizedBox(height: 5),
@@ -589,7 +597,7 @@ class SchemesScreens extends StatelessWidget {
                               ]
                             ),
                             const SizedBox(height: 10),
-                            const Divider(color: Colors.black45),
+                            const Divider(color: Colors.black26),
                             const SizedBox(height: 10),
                             const Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kubera_scheme/screens/dashboard_screen.dart';
 import 'package:kubera_scheme/screens/investment_screen.dart';
-import 'package:kubera_scheme/screens/kubera_scheme_screen.dart';
 import 'package:kubera_scheme/screens/schemes_screens.dart';
 
 class SideBottomMenu extends StatefulWidget {
@@ -23,7 +22,7 @@ class _SideBottomMenuState extends State<SideBottomMenu> {
   final List<Widget> titles = [
     const Text('Schemes'),
     const Text('Dashboard'),
-    const Text('Transactions'),
+    const Text('My Investments'),
   ];
 
   void _onItemTapped(int index) {
