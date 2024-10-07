@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:kubera_scheme/screens/documents.dart';
+import 'package:kubera_scheme/screens/faqs_screen.dart';
+import 'package:kubera_scheme/screens/key_invest_highlights.dart';
+import 'package:kubera_scheme/screens/key_matrices_screen.dart';
+import 'package:kubera_scheme/screens/snapshot_screen.dart';
 
 class KuberaSchemeScreen extends StatelessWidget {
   const KuberaSchemeScreen({super.key});
@@ -376,22 +381,22 @@ class KuberaSchemeScreen extends StatelessWidget {
                       children: [
                         TabBar(
                           tabs: [
-                            Tab(text: 'Tab 1'),
-                            Tab(text: 'Tab 2'),
-                            Tab(text: 'Tab 3'),
-                            Tab(text: 'Tab 4'),
-                            Tab(text: 'Tab 5'),
+                            Tab(text: 'SnapShot'),
+                            Tab(text: 'Key Invest Highlights'),
+                            Tab(text: 'Key Performance Metric'),
+                            Tab(text: 'FAQs'),
+                            Tab(text: 'Documents'),
                           ],
                           isScrollable: true,
                         ),
                         Expanded(
                           child: TabBarView(
                             children: [
-                              Center(child: Text('Content for Tab 1')),
-                              Center(child: Text('Content for Tab 2')),
-                              Center(child: Text('Content for Tab 3')),
-                              Center(child: Text('Content for Tab 4')),
-                              Center(child: Text('Content for Tab 5')),
+                              SnapShotScreen(),
+                              KeyInvestHighlightsScreen(),
+                              KeyMetricesScreen(),
+                              FaqsScreen(),
+                              DocumentsScreen()
                             ],
                           ),
                         ),

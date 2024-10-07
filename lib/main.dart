@@ -4,8 +4,10 @@ import 'package:kubera_scheme/screens/address_screen.dart';
 import 'package:kubera_scheme/screens/bottom_navigation_part.dart';
 import 'package:kubera_scheme/screens/dashboard_screen.dart';
 import 'package:kubera_scheme/screens/digital_gold_scheme.dart';
+import 'package:kubera_scheme/screens/documents.dart';
 import 'package:kubera_scheme/screens/enter_otp_screen.dart';
 import 'package:kubera_scheme/screens/investment_screen.dart';
+import 'package:kubera_scheme/screens/key_invest_highlights.dart';
 import 'package:kubera_scheme/screens/key_matrices_screen.dart';
 import 'package:kubera_scheme/screens/login_screen.dart';
 import 'package:kubera_scheme/screens/personal_details.dart';
@@ -17,6 +19,7 @@ import 'package:kubera_scheme/screens/side_bottom_menu.dart';
 import 'package:kubera_scheme/screens/snapshot_screen.dart';
 import 'package:kubera_scheme/screens/splash_screen.dart';
 import 'package:kubera_scheme/screens/user_menu_screen.dart';
+import 'package:kubera_scheme/screens/faqs_screen.dart';
 import 'package:kubera_scheme/screens/webview_screens/webview_profile_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -119,6 +122,21 @@ class MyApp extends StatelessWidget {
         name: 'key-metrices',
         path: '/key-metrices',
         builder: (context, state) => const KeyMetricesScreen(),
+      ),
+      GoRoute(
+        name: 'documents',
+        path: '/documents',
+        builder: (context, state) =>  const DocumentsScreen(),
+      ),
+      GoRoute(
+        name: 'faqs',
+        path: '/faqs',
+        builder: (context, state) => const FaqsScreen(),
+      ),
+      GoRoute(
+        name: 'key-highlights',
+        path: '/key-highlights',
+        builder: (context, state) => const KeyInvestHighlightsScreen(),
       ),
     ],
   );

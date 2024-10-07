@@ -112,7 +112,7 @@ class SchemesScreens extends StatelessWidget {
                           borderRadius: BorderRadius.circular(14.0), 
                         ),
                         child: const Text(
-                          "Balance Risk with Insurance Protection",
+                          "Build Wealth With Kubera",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             color: Color.fromRGBO(42, 38, 38, 1),
@@ -309,7 +309,7 @@ class SchemesScreens extends StatelessWidget {
                                     ),
                                     SizedBox(height: 5),
                                     Text(
-                                      'Vi Bullion',
+                                      'VIINDHYA BULLION',
                                       textAlign: TextAlign.end,
                                       style: TextStyle(
                                         color: Color.fromRGBO(42, 38, 38, 1),
@@ -584,7 +584,7 @@ class SchemesScreens extends StatelessWidget {
                                     ),
                                     SizedBox(height: 5),
                                     Text(
-                                      'Vi Bullion',
+                                      'VIINDHYA BULLION',
                                       textAlign: TextAlign.end,
                                       style: TextStyle(
                                         color: Color.fromRGBO(42, 38, 38, 1),
