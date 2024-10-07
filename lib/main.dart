@@ -8,11 +8,13 @@ import 'package:kubera_scheme/screens/digital_gold_scheme.dart';
 import 'package:kubera_scheme/screens/documents.dart';
 import 'package:kubera_scheme/screens/enter_otp_screen.dart';
 import 'package:kubera_scheme/screens/income_dashboard.dart';
+import 'package:kubera_scheme/screens/incomplete_kyc_dashboard.dart';
 import 'package:kubera_scheme/screens/investment_screen.dart';
 import 'package:kubera_scheme/screens/key_invest_highlights.dart';
 import 'package:kubera_scheme/screens/key_matrices_screen.dart';
 import 'package:kubera_scheme/screens/kubera_balance.dart';
 import 'package:kubera_scheme/screens/login_screen.dart';
+import 'package:kubera_scheme/screens/my_schemes.dart';
 import 'package:kubera_scheme/screens/personal_details.dart';
 import 'package:kubera_scheme/screens/profile_screens.dart';
 import 'package:kubera_scheme/screens/kubera_scheme_screen.dart';
@@ -145,7 +147,7 @@ class MyApp extends StatelessWidget {
       GoRoute(
         name: 'dashboard1',
         path: '/dashboard1',
-        builder: (context, state) => const DashboardOneScreen(),
+        builder: (context, state) => const DashboardScreen(),
       ),
       GoRoute(
         name: 'income1',
@@ -161,6 +163,16 @@ class MyApp extends StatelessWidget {
         name: 'referrals',
         path: '/referrals',
         builder: (context, state) => const ReferralScreen(),
+      ),
+      GoRoute(
+        name: 'my-schemes',
+        path: '/my-schemes',
+        builder: (context, state) => const MySchemesScreen(),
+      ),
+      GoRoute(
+        name: 'incomplete-kyc',
+        path: '/incomplete-kyc',
+        builder: (context, state) => const IncompleteKycDashboardScreen(),
       ),
     ],
   );

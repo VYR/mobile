@@ -18,18 +18,22 @@ class _KuberaBalanceScreenState extends State<KuberaBalanceScreen> {
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               const SizedBox(height: 400),
               const Expanded(
                 child: Text(
                   'Kubera Balance:',
-                  style: TextStyle(fontSize: 18),
+                  style: TextStyle(
+                        color: Color.fromRGBO(95, 92, 92, 1),
+                        fontSize: 20,
+                        fontWeight: FontWeight.w900)
                 ),
               ),
               const SizedBox(width: 8), 
               Expanded(
-                flex: 1,
+                flex: 2,
                 child: TextField(
                   onChanged: (value) {
                     setState(() {

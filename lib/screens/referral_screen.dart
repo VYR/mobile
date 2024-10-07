@@ -202,6 +202,10 @@ class ReferralScreen extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: const Color.fromRGBO(245, 255, 251, 1), 
                       borderRadius: BorderRadius.circular(8.0), 
+                      border: Border.all(
+                        color: const Color.fromRGBO(215, 221, 219, 1),
+                        width: 2
+                      )
                     ),
                     child: const Column(
                       children: <Widget>[
@@ -214,8 +218,8 @@ class ReferralScreen extends StatelessWidget {
                                 Text('0',
                                   style: TextStyle(
                                     color: Color.fromRGBO(39, 36, 123, 1),
-                                    fontSize: 22.0,
-                                    fontWeight: FontWeight.w600,
+                                    fontSize: 24.0,
+                                    fontWeight: FontWeight.w700,
                                   ),
                                 ),
                                 Text('Investors Referred')
@@ -261,24 +265,24 @@ class ReferralScreen extends StatelessWidget {
                       ],
                     )
                   ),
-                  const SizedBox(height: 30,),
-                  const TabBar(
-                    labelColor: Colors.blue,
-                    unselectedLabelColor: Colors.black,
-                    indicatorColor: Colors.blue,
-                    tabs: [
-                      Tab(text: 'Rewards Earned(0)'),
-                      Tab(text: 'Not Invested Yet(0)'),
-                    ],
-                  ),
-                  const Expanded(
-                    child: TabBarView(
-                      children: [
-                        Center(child: Text('You are yet to invite friends to experience Kubera Scheme')),
-                        Center(child: Text('You are yet to invite friends to experience Kubera Scheme')),
-                      ],
-                    ),
-                  ),
+                  // const SizedBox(height: 30,),
+                  // const TabBar(
+                  //   labelColor: Colors.blue,
+                  //   unselectedLabelColor: Colors.black,
+                  //   indicatorColor: Colors.blue,
+                  //   tabs: [
+                  //     Tab(text: 'Rewards Earned(0)'),
+                  //     Tab(text: 'Not Invested Yet(0)'),
+                  //   ],
+                  // ),
+                  // const Expanded(
+                  //   child: TabBarView(
+                  //     children: [
+                  //       Center(child: Text('You are yet to invite friends to experience Kubera Scheme')),
+                  //       Center(child: Text('You are yet to invite friends to experience Kubera Scheme')),
+                  //     ],
+                  //   ),
+                  // ),
                 ]     
               )
             )
