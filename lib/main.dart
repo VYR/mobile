@@ -2,17 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kubera_scheme/screens/address_screen.dart';
 import 'package:kubera_scheme/screens/bottom_navigation_part.dart';
+import 'package:kubera_scheme/screens/dashboard_dashboard.dart';
 import 'package:kubera_scheme/screens/dashboard_screen.dart';
 import 'package:kubera_scheme/screens/digital_gold_scheme.dart';
 import 'package:kubera_scheme/screens/documents.dart';
 import 'package:kubera_scheme/screens/enter_otp_screen.dart';
+import 'package:kubera_scheme/screens/income_dashboard.dart';
 import 'package:kubera_scheme/screens/investment_screen.dart';
 import 'package:kubera_scheme/screens/key_invest_highlights.dart';
 import 'package:kubera_scheme/screens/key_matrices_screen.dart';
+import 'package:kubera_scheme/screens/kubera_balance.dart';
 import 'package:kubera_scheme/screens/login_screen.dart';
 import 'package:kubera_scheme/screens/personal_details.dart';
 import 'package:kubera_scheme/screens/profile_screens.dart';
 import 'package:kubera_scheme/screens/kubera_scheme_screen.dart';
+import 'package:kubera_scheme/screens/referral_screen.dart';
 import 'package:kubera_scheme/screens/schemes_screens.dart';
 import 'package:kubera_scheme/screens/set_pin_screen.dart';
 import 'package:kubera_scheme/screens/side_bottom_menu.dart';
@@ -137,6 +141,26 @@ class MyApp extends StatelessWidget {
         name: 'key-highlights',
         path: '/key-highlights',
         builder: (context, state) => const KeyInvestHighlightsScreen(),
+      ),
+      GoRoute(
+        name: 'dashboard1',
+        path: '/dashboard1',
+        builder: (context, state) => const DashboardOneScreen(),
+      ),
+      GoRoute(
+        name: 'income1',
+        path: '/income1',
+        builder: (context, state) => const IncomeDashboardScreen(),
+      ),
+      GoRoute(
+        name: 'kubera-balance',
+        path: '/kubera-balance',
+        builder: (context, state) => const KuberaBalanceScreen(),
+      ),
+      GoRoute(
+        name: 'referrals',
+        path: '/referrals',
+        builder: (context, state) => const ReferralScreen(),
       ),
     ],
   );

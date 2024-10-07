@@ -72,7 +72,7 @@ class DashboardScreen extends StatelessWidget {
               child: const Text("Get Support"),
             )
           ],
-        ), //Container
+        ),
       ),
     )
       )
