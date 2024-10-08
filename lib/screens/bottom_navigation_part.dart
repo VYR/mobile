@@ -15,7 +15,7 @@ class BottomNavigationPart extends ConsumerWidget {
     final List<Widget> screens = [
       const DashboardScreen(),
       const SchemesScreens(),
-      const InvestmentScreen(),
+      InvestmentScreen(),
     ];
     return Scaffold(
       body: screens[indexBottomNavbar], 

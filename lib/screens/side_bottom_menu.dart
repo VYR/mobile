@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kubera_scheme/screens/dashboard_screen.dart';
 import 'package:kubera_scheme/screens/investment_screen.dart';
+import 'package:kubera_scheme/screens/refer_earn_screen.dart';
 import 'package:kubera_scheme/screens/schemes_screens.dart';
 
 class SideBottomMenu extends StatefulWidget {
@@ -16,13 +17,13 @@ class _SideBottomMenuState extends State<SideBottomMenu> {
   final List<Widget> screens = [
       const SchemesScreens(),
       const DashboardScreen(),
-      const InvestmentScreen(),
+      InvestmentScreen(),
   ];
 
   final List<Widget> titles = [
     const Text('Schemes'),
     const Text('Dashboard'),
-    const Text('My Investments'),
+    const Text('My Schemes'),
   ];
 
   void _onItemTapped(int index) {
@@ -85,44 +86,49 @@ class _SideBottomMenuState extends State<SideBottomMenu> {
                 ),
               ),
             ),
-
-            /// Header Menu items
             Column(
               children: [
                 ListTile(
-                  leading: const Icon(Icons.home_outlined),
-                  title: const Text('Income Certificate'),
+                  title: const Text('About Kubera'),
+                  onTap: () {
+                    Navigator.pop(context);
+                    // Navigator.push(context, MaterialPageRoute(builder: (context) => const ReferEarnScreen()),);
+                  },
+                ),
+                ListTile(
+                  title: const Text('Knowledge Center'),
                   onTap: () {
                     Navigator.pop(context);
                     // Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()),);
                   },
                 ),
                 ListTile(
-                  leading: const Icon(Icons.favorite_border),
-                  title: const Text('My Referrals'),
-                  onTap: () {},
+                  title: const Text('About Us'),
+                  onTap: () {
+                    Navigator.pop(context);
+                    // Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()),);
+                  },
                 ),
                 ListTile(
-                  leading: const Icon(Icons.workspaces),
-                  title: const Text('Reset Kubera PIN'),
-                  onTap: () {},
+                  title: const Text('Contact Us'),
+                  onTap: () {
+                    Navigator.pop(context);
+                    // Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()),);
+                  },
                 ),
                 ListTile(
-                  leading: const Icon(Icons.update),
-                  title: const Text('Logout'),
-                  onTap: () {},
-                ),
-                ListTile(
-                  leading: const Icon(Icons.notifications_outlined),
-                  title: const Text('Notifications'),
-                  onTap: () {},
+                  title: const Text('Refer & Earn'),
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const ReferEarnScreen()),);
+                  },
                 ),
               ],
             )
           ],
         ),
       ),
-      body: screens[_selectedIndex], // Show the selected screen
+      body: screens[_selectedIndex], 
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.blue,
@@ -131,7 +137,7 @@ class _SideBottomMenuState extends State<SideBottomMenu> {
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.insert_chart ), label: 'Schemes'),
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Dashboard'),
-          BottomNavigationBarItem(icon: Icon(Icons.business_center), label: 'My Investments'),
+          BottomNavigationBarItem(icon: Icon(Icons.business_center), label: 'My Schemes'),
         ],
       ),
     );

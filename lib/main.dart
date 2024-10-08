@@ -18,6 +18,7 @@ import 'package:kubera_scheme/screens/my_schemes.dart';
 import 'package:kubera_scheme/screens/personal_details.dart';
 import 'package:kubera_scheme/screens/profile_screens.dart';
 import 'package:kubera_scheme/screens/kubera_scheme_screen.dart';
+import 'package:kubera_scheme/screens/refer_earn_screen.dart';
 import 'package:kubera_scheme/screens/referral_screen.dart';
 import 'package:kubera_scheme/screens/schemes_screens.dart';
 import 'package:kubera_scheme/screens/set_pin_screen.dart';
@@ -67,7 +68,7 @@ class MyApp extends StatelessWidget {
       GoRoute(
         name: 'investment',
         path: '/investment',
-        builder: (context, state) => const InvestmentScreen(),
+        builder: (context, state) => InvestmentScreen(),
       ),
       GoRoute(
         name: 'otp',
@@ -173,6 +174,11 @@ class MyApp extends StatelessWidget {
         name: 'incomplete-kyc',
         path: '/incomplete-kyc',
         builder: (context, state) => const IncompleteKycDashboardScreen(),
+      ),
+      GoRoute(
+        name: 'refer-earn',
+        path: '/refer-earn',
+        builder: (context, state) => const ReferEarnScreen(),
       ),
     ],
   );

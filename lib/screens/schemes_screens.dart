@@ -141,8 +141,8 @@ class SchemesScreens extends StatelessWidget {
                                 ElevatedButton(
                                     onPressed: () {
                                     },
-                                    style: ElevatedButton.styleFrom( // Text color
-                                      side: const BorderSide(color: Colors.black, width: 1), // Border color
+                                    style: ElevatedButton.styleFrom(
+                                      side: const BorderSide(color: Colors.black, width: 1), 
                                     ),
                                     child: const Text(
                                       'Invoice Discounting',
@@ -155,8 +155,8 @@ class SchemesScreens extends StatelessWidget {
                                 ElevatedButton(
                                     onPressed: () {
                                     },
-                                    style: ElevatedButton.styleFrom( // Text color
-                                      side: const BorderSide(color: Colors.black, width: 1), // Border color
+                                    style: ElevatedButton.styleFrom( 
+                                      side: const BorderSide(color: Colors.black, width: 1),
                                     ),
                                     child: const Text(
                                       'Multiple Sectors',
@@ -173,8 +173,8 @@ class SchemesScreens extends StatelessWidget {
                                  ElevatedButton(
                                     onPressed: () {
                                     },
-                                    style: ElevatedButton.styleFrom( // Text color
-                                      side: const BorderSide(color: Colors.black, width: 1), // Border color
+                                    style: ElevatedButton.styleFrom( 
+                                      side: const BorderSide(color: Colors.black, width: 1), 
                                     ),
                                     child: const Text(
                                       'Escrow Controlled',
@@ -187,8 +187,8 @@ class SchemesScreens extends StatelessWidget {
                                  ElevatedButton(
                                     onPressed: () {
                                     },
-                                    style: ElevatedButton.styleFrom( // Text color
-                                      side: const BorderSide(color: Colors.black, width: 1), // Border color
+                                    style: ElevatedButton.styleFrom(
+                                      side: const BorderSide(color: Colors.black, width: 1),
                                     ),
                                     child: const Text(
                                       'Secured',
@@ -416,8 +416,8 @@ class SchemesScreens extends StatelessWidget {
                                 ElevatedButton(
                                     onPressed: () {
                                     },
-                                    style: ElevatedButton.styleFrom( // Text color
-                                      side: const BorderSide(color: Colors.black, width: 1), // Border color
+                                    style: ElevatedButton.styleFrom( 
+                                      side: const BorderSide(color: Colors.black, width: 1), 
                                     ),
                                     child: const Text(
                                       'Invoice Discounting',
@@ -430,8 +430,8 @@ class SchemesScreens extends StatelessWidget {
                                 ElevatedButton(
                                     onPressed: () {
                                     },
-                                    style: ElevatedButton.styleFrom( // Text color
-                                      side: const BorderSide(color: Colors.black, width: 1), // Border color
+                                    style: ElevatedButton.styleFrom( 
+                                      side: const BorderSide(color: Colors.black, width: 1), 
                                     ),
                                     child: const Text(
                                       'Multiple Sectors',
@@ -448,8 +448,8 @@ class SchemesScreens extends StatelessWidget {
                                  ElevatedButton(
                                     onPressed: () {
                                     },
-                                    style: ElevatedButton.styleFrom( // Text color
-                                      side: const BorderSide(color: Colors.black, width: 1), // Border color
+                                    style: ElevatedButton.styleFrom( 
+                                      side: const BorderSide(color: Colors.black, width: 1), 
                                     ),
                                     child: const Text(
                                       'Escrow Controlled',
@@ -462,8 +462,8 @@ class SchemesScreens extends StatelessWidget {
                                  ElevatedButton(
                                     onPressed: () {
                                     },
-                                    style: ElevatedButton.styleFrom( // Text color
-                                      side: const BorderSide(color: Colors.black, width: 1), // Border color
+                                    style: ElevatedButton.styleFrom( 
+                                      side: const BorderSide(color: Colors.black, width: 1), 
                                     ),
                                     child: const Text(
                                       'Secured',
@@ -666,7 +666,7 @@ class SchemesScreens extends StatelessWidget {
                 //       ),
                 //       Container(
                 //         width: double.infinity,
-                //         padding: const EdgeInsets.all(40.0), // Padding for the second row
+                //         padding: const EdgeInsets.all(40.0), 
                 //         child: Column(
                 //           crossAxisAlignment: CrossAxisAlignment.start, 
                 //           children: <Widget>[
