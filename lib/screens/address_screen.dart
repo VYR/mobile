@@ -1,170 +1,127 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class AddressScreen extends StatelessWidget {
-  const AddressScreen({super.key});
+  AddressScreen({super.key});
+  final _formKey = GlobalKey<FormState>(); 
+  final TextEditingController _addressController = TextEditingController();
+  final TextEditingController _cityController = TextEditingController();
+  final TextEditingController _stateController = TextEditingController();
+  final TextEditingController _pinCodeController = TextEditingController();
+  final TextEditingController _countryController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
-          padding: EdgeInsets.all(20.0),
-          // child:Container(
-          // child: DecoratedBox(
-          //   decoration: BoxDecoration(
-          //       border: Border.all(),
-          //       borderRadius: BorderRadius.circular(20.0)),
-          child: Column(
-            children: [
-              // Padding(padding: EdgeInsets.all(20.0)),
-              Align(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  "Address",
-                  style: TextStyle(
-                    fontSize: 15,
-                    color: Colors.black,
-                    fontWeight: FontWeight.w900,
+    return Scaffold(
+        appBar: AppBar(
+          title: const Text('Address Details'),
+        ),
+        body: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Form(
+            key: _formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                TextFormField(
+                  controller: _addressController,
+                  decoration: const InputDecoration(
+                    labelText: 'Address',
+                    border: OutlineInputBorder(),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your address';
+                    }
+                    return null;
+                  },
+                ),
+                const SizedBox(height: 16), 
+                TextFormField(
+                  controller: _cityController,
+                  decoration: const InputDecoration(
+                    labelText: 'City',
+                    border: OutlineInputBorder(),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your city';
+                    }
+                    return null;
+                  },
+                ),
+                const SizedBox(height: 16), 
+                TextFormField(
+                  controller: _stateController,
+                  decoration: const InputDecoration(
+                    labelText: 'State',
+                    border: OutlineInputBorder(),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your state';
+                    }
+                    return null;
+                  },
+                ),
+                const SizedBox(height: 16),
+                TextFormField(
+                  controller: _pinCodeController,
+                  keyboardType: TextInputType.number, 
+                  inputFormatters: [
+                    FilteringTextInputFormatter.digitsOnly,
+                  ],
+                  decoration: const InputDecoration(
+                    labelText: 'Pin Code',
+                    border: OutlineInputBorder(),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your pin code';
+                    }
+                    return null;
+                  },
+                ),
+                const SizedBox(height: 16),
+                TextFormField(
+                  controller: _countryController,
+                  decoration: const InputDecoration(
+                    labelText: 'Country',
+                    border: OutlineInputBorder(),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your country';
+                    }
+                    return null; 
+                  },
+                ),                
+                const SizedBox(height: 16),
+                const Align(
+                  alignment: Alignment.topLeft,
+                  child: Text(
+                    "This Address is based on the address proof document that you uploaded during KYC. If You want to update Your Address , please write to us at kuberaScheme.com",
+                    style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.black),
                   ),
                 ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(0.0),
-                child: TextField(
-                  keyboardType: TextInputType.phone,
-                  decoration: InputDecoration(
-                      // prefix: Icon(Icons.phone_android),
-                      // suffixIcon: Icon(Icons.arrow_forward_ios),
-                      // labelText: "Enter Email",
-                      hintText: "Enter Address",
-                      hintStyle: TextStyle(fontSize: 15, color: Colors.black),
-                      border: OutlineInputBorder()),
-                  maxLines: 5,
-                  minLines: 1,
+                const SizedBox(height: 24),
+                ElevatedButton(
+                  onPressed: () {
+                    if (_formKey.currentState!.validate()) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('Your Address Details Submitted Successfully')),
+                      );
+                    }
+                  },
+                  child: const Text('Submit'),
                 ),
-              ),
-              SizedBox(
-                height: 20.0,
-              ),
-              Align(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  "City",
-                  style: TextStyle(
-                      fontSize: 15,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w900),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(0.0),
-                child: TextField(
-                  keyboardType: TextInputType.phone,
-                  decoration: InputDecoration(
-                      // prefix: Icon(Icons.phone_android),
-                      // suffixIcon: Icon(Icons.arrow_forward_ios),
-                      // labelText: "Enter Email",
-                      hintText: "Enter City",
-                      hintStyle: TextStyle(fontSize: 15, color: Colors.black),
-                      border: OutlineInputBorder()),
-                ),
-              ),
-              SizedBox(
-                height: 20.0,
-              ),
-              Align(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  "State",
-                  style: TextStyle(
-                      fontSize: 15,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w900),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(0.0),
-                child: TextField(
-                  keyboardType: TextInputType.phone,
-                  decoration: InputDecoration(
-                      // prefix: Icon(Icons.phone_android),
-                      // suffixIcon: Icon(Icons.arrow_forward_ios),
-                      // labelText: "Enter Email",
-                      hintText: "Enter State",
-                      hintStyle: TextStyle(fontSize: 15, color: Colors.black),
-                      border: OutlineInputBorder()),
-                ),
-              ),
-              SizedBox(
-                height: 20.0,
-              ),
-              Align(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  "Country",
-                  style: TextStyle(
-                      fontSize: 15,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w900),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(0.0),
-                child: TextField(
-                  keyboardType: TextInputType.phone,
-                  decoration: InputDecoration(
-                      // prefix: Icon(Icons.phone_android),
-                      // suffixIcon: Icon(Icons.arrow_forward_ios),
-                      // labelText: "Enter Email",
-                      hintText: "Enter Country",
-                      hintStyle: TextStyle(fontSize: 15, color: Colors.black),
-                      border: OutlineInputBorder()),
-                ),
-              ),
-              SizedBox(
-                height: 20.0,
-              ),
-              Align(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  "Pin Code",
-                  style: TextStyle(
-                      fontSize: 15,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w900),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(0.0),
-                child: TextField(
-                  keyboardType: TextInputType.phone,
-                  decoration: InputDecoration(
-                      // prefix: Icon(Icons.phone_android),
-                      // suffixIcon: Icon(Icons.arrow_forward_ios),
-                      // labelText: "Enter Email",
-                      hintText: "Enter Pin Code",
-                      hintStyle: TextStyle(fontSize: 15, color: Colors.black),
-                      border: OutlineInputBorder()),
-                ),
-              ),
-              SizedBox(
-                height: 20.0,
-              ),
-              Align(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  "This Address is based on the address proof document that you uploaded during KYC. If You want to update Your Address , please write to us at kuberaScheme.com",
-                  style: TextStyle(
-                      fontSize: 15,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w900),
-                ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
-        //),
-      ),
-      // );
-    );
+      );
   }
 }
+

@@ -1,155 +1,123 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-class PersonalDetails extends StatelessWidget {
-  const PersonalDetails({super.key});
+class PersonalDetailsForm extends StatelessWidget {
+  PersonalDetailsForm({super.key});
+  final _formKey = GlobalKey<FormState>(); 
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _phoneController = TextEditingController();
+  final TextEditingController _panController = TextEditingController();
+  final TextEditingController _kycController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
-          padding: EdgeInsets.all(20.0),
-          // child:Container(
-          // child: DecoratedBox(
-          //   decoration: BoxDecoration(
-          //       border: Border.all(),
-          //       borderRadius: BorderRadius.circular(20.0)),
-          child: Column(
-            children: [
-              // Padding(padding: EdgeInsets.all(20.0)),
-              Align(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  "Full Name",
-                  style: TextStyle(
-                    fontSize: 15,
-                    color: Colors.black,
-                    fontWeight: FontWeight.w900,
+    return Scaffold(
+        appBar: AppBar(
+          title: const Text('Personal Details'),
+        ),
+        body: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Form(
+            key: _formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                TextFormField(
+                  controller: _nameController,
+                  inputFormatters: [
+                    FilteringTextInputFormatter.allow(RegExp(r'[a-zA-Z\s]')),
+                  ],
+                  decoration: const InputDecoration(
+                    labelText: 'Name',
+                    border: OutlineInputBorder(),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your name';
+                    }
+                    if (!RegExp(r'^[a-zA-Z\s]+$').hasMatch(value)) {
+                      return 'Name can only contain letters';
+                    }
+                    return null;
+                  },
+                ),
+                const SizedBox(height: 16), 
+                TextFormField(
+                  controller: _emailController,
+                  decoration: const InputDecoration(
+                    labelText: 'Email',
+                    border: OutlineInputBorder(),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your email';
+                    }
+                    if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
+                      return 'Please enter a valid email address';
+                    }
+                    return null;
+                  },
+                ),
+                const SizedBox(height: 16),
+                TextFormField(
+                  controller: _phoneController,
+                  keyboardType: TextInputType.number, 
+                  inputFormatters: [
+                    FilteringTextInputFormatter.digitsOnly,
+                  ],
+                  decoration: const InputDecoration(
+                    labelText: 'Mobile Number',
+                    border: OutlineInputBorder(),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your mobile number';
+                    }
+                    if (value.length != 10) {
+                      return 'Mobile number must be 10 digits';
+                    }
+                    return null; // No error
+                  },
+                ),
+                const SizedBox(height: 16),
+                TextFormField(
+                  controller: _panController,
+                  decoration: const InputDecoration(
+                    labelText: 'PAN',
+                    border: OutlineInputBorder(),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your Pan';
+                    }
+                    return null; 
+                  },
+                ),
+                const SizedBox(height: 16),
+                TextFormField(
+                  controller: _kycController,
+                  decoration: const InputDecoration(
+                    labelText: 'KYC',
+                    border: OutlineInputBorder(),
                   ),
                 ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(0.0),
-                child: TextField(
-                  keyboardType: TextInputType.phone,
-                  decoration: InputDecoration(
-                      // prefix: Icon(Icons.phone_android),
-                      // suffixIcon: Icon(Icons.arrow_forward_ios),
-                      // labelText: "Enter Email",
-                      hintText: "Enter Name",
-                      hintStyle: TextStyle(fontSize: 15, color: Colors.black),
-                      border: OutlineInputBorder()),
+                const SizedBox(height: 24),
+                ElevatedButton(
+                  onPressed: () {
+                    if (_formKey.currentState!.validate()) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('Your Personal Details Submitted Successfully')),
+                      );
+                    }
+                  },
+                  child: const Text('Submit'),
                 ),
-              ),
-              SizedBox(
-                height: 20.0,
-              ),
-              Align(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  "Email",
-                  style: TextStyle(
-                      fontSize: 15,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w900),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(0.0),
-                child: TextField(
-                  keyboardType: TextInputType.phone,
-                  decoration: InputDecoration(
-                      // prefix: Icon(Icons.phone_android),
-                      // suffixIcon: Icon(Icons.arrow_forward_ios),
-                      // labelText: "Enter Email",
-                      hintText: "Enter Email",
-                      hintStyle: TextStyle(fontSize: 15, color: Colors.black),
-                      border: OutlineInputBorder()),
-                ),
-              ),
-              SizedBox(
-                height: 20.0,
-              ),
-              Align(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  "Mobile Number",
-                  style: TextStyle(
-                      fontSize: 15,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w900),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(0.0),
-                child: TextField(
-                  keyboardType: TextInputType.phone,
-                  decoration: InputDecoration(
-                      // prefix: Icon(Icons.phone_android),
-                      // suffixIcon: Icon(Icons.arrow_forward_ios),
-                      // labelText: "Enter Email",
-                      hintText: "Enter Mobile Number",
-                      hintStyle: TextStyle(fontSize: 15, color: Colors.black),
-                      border: OutlineInputBorder()),
-                ),
-              ),
-              SizedBox(
-                height: 20.0,
-              ),
-              Align(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  "PAN",
-                  style: TextStyle(
-                      fontSize: 15,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w900),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(0.0),
-                child: TextField(
-                  keyboardType: TextInputType.phone,
-                  decoration: InputDecoration(
-                      // prefix: Icon(Icons.phone_android),
-                      // suffixIcon: Icon(Icons.arrow_forward_ios),
-                      // labelText: "Enter Email",
-                      hintText: "PAN",
-                      hintStyle: TextStyle(fontSize: 15, color: Colors.black),
-                      border: OutlineInputBorder()),
-                ),
-              ),
-              SizedBox(
-                height: 20.0,
-              ),
-              Align(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  "KYC",
-                  style: TextStyle(
-                      fontSize: 15,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w900),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(0.0),
-                child: TextField(
-                  keyboardType: TextInputType.phone,
-                  decoration: InputDecoration(
-                      // prefix: Icon(Icons.phone_android),
-                      // suffixIcon: Icon(Icons.arrow_forward_ios),
-                      // labelText: "Enter Email",
-                      hintText: "KYC",
-                      hintStyle: TextStyle(fontSize: 15, color: Colors.black),
-                      border: OutlineInputBorder()),
-                ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
-        //),
-      ),
-      // );
-    );
+      );
   }
 }
+

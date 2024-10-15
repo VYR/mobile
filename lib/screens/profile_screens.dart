@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:kubera_scheme/screens/address_screen.dart';
+import 'package:kubera_scheme/screens/bank_account_screen.dart';
+import 'package:kubera_scheme/screens/demart_account_screen.dart';
+import 'package:kubera_scheme/screens/nominee_screen.dart';
+import 'package:kubera_scheme/screens/personal_details.dart';
 
 class ProfileScreens extends StatelessWidget {
   const ProfileScreens({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,13 +24,13 @@ class ProfileScreens extends StatelessWidget {
           titleTextStyle: const TextStyle(color: Colors.white, fontSize: 20),
           backgroundColor: const Color.fromRGBO(0, 92, 187, 1),
         ),
-        body: const SafeArea(
+        body: SafeArea(
             child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
               Column(
                 children: <Widget>[
-                  Padding(
+                  const Padding(
                     padding: EdgeInsets.all(5),
                     child: SizedBox(
                       height: 80,
@@ -44,119 +50,144 @@ class ProfileScreens extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.all(5),
+                    padding: const EdgeInsets.all(5),
                     child: SizedBox(
                       height: 80,
-                      child: Card(
-                        //card color  color: Color.fromARGB(42, 38, 38,1),
-                        child: Column(
-                          children: <Widget>[
-                            ListTile(
-                              leading: Icon(
-                                Icons.person_2_outlined,
-                                size: 40,
-                              ),
-                              title: Text('Personal Details'),
-                              subtitle:
-                                  Text(' Full name, Mobile num, Email, PAN'),
-                              trailing: Icon(Icons.keyboard_arrow_right),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(5),
-                    child: SizedBox(
-                      height: 80,
-                      child: Card(
-                        child: Column(
-                          children: <Widget>[
-                            ListTile(
-                              leading: Icon(
-                                Icons.location_on,
-                                size: 40,
-                              ),
-                              title: Text('Address'),
-                              subtitle: Text(
-                                  '  Address line, City, State, Country, Pincode'),
-                              trailing: Icon(Icons.keyboard_arrow_right),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(5),
-                    child: SizedBox(
-                      height: 80,
-                      child: Card(
-                        child: Column(
-                          children: <Widget>[
-                            ListTile(
-                              leading: Icon(
-                                Icons.comment_bank_outlined,
-                                size: 40,
-                              ),
-                              title: Text('Bank Account'),
-                              subtitle:
-                                  Text(' Acc. Holder Name, Acc. Number, IFSC'),
-                              trailing: Icon(Icons.keyboard_arrow_right),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(5),
-                    child: SizedBox(
-                        height: 80,
-                        child: InkWell(
-                          child: Card(
-                            child: Column(
-                              children: <Widget>[
-                                ListTile(
-                                  leading: Icon(
-                                    Icons.list_alt,
-                                    size: 40,
-                                  ),
-                                  title: Text('Demat Account'),
-                                  subtitle: Text(' Demat Account Number'),
-                                  trailing: Icon(Icons.keyboard_arrow_right),
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => PersonalDetailsForm()),);
+                        },
+                        child: const Card(
+                          child: Column(
+                            children: <Widget>[
+                              ListTile(
+                                leading: Icon(
+                                  Icons.person_2_outlined,
+                                  size: 40,
                                 ),
-                              ],
-                            ),
+                                title: Text('Personal Details'),
+                                subtitle:
+                                    Text(' Full name, Mobile num, Email, PAN'),
+                                trailing: Icon(Icons.keyboard_arrow_right),
+                              ),
+                            ],
                           ),
-                        )),
+                        )
+                      ),
+                    ),
                   ),
                   Padding(
-                    padding: EdgeInsets.all(5),
+                    padding: const EdgeInsets.all(5),
                     child: SizedBox(
                       height: 80,
-                      child: Card(
-                        child: Column(
-                          children: <Widget>[
-                            ListTile(
-                              leading: Icon(
-                                Icons.groups_3_outlined,
-                                size: 40,
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => AddressScreen()),);
+                        },
+                        child: const Card(
+                          child: Column(
+                            children: <Widget>[
+                              ListTile(
+                                leading: Icon(
+                                  Icons.location_on,
+                                  size: 40,
+                                ),
+                                title: Text('Address'),
+                                subtitle: Text(
+                                    '  Address line, City, State, Country, Pincode'),
+                                trailing: Icon(Icons.keyboard_arrow_right),
                               ),
-                              title: Text('Nominee'),
-                              subtitle: Text(' Nominee, Change nominee'),
-                              trailing: Icon(Icons.keyboard_arrow_right),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
+                      )
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(5),
+                    child: SizedBox(
+                      height: 80,
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => BankAccountScreen()),);
+                        },
+                        child: const Card(
+                          child: Column(
+                            children: <Widget>[
+                              ListTile(
+                                leading: Icon(
+                                  Icons.comment_bank_outlined,
+                                  size: 40,
+                                ),
+                                title: Text('Bank Account'),
+                                subtitle:
+                                    Text(' Acc. Holder Name, Acc. Number, IFSC'),
+                                trailing: Icon(Icons.keyboard_arrow_right),
+                              ),
+                            ],
+                          ),
+                        ),
+                      )
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(5),
+                    child: SizedBox(
+                      height: 80,
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => const DemartAccountScreen()),);
+                        },
+                        child: const Card(
+                          child: Column(
+                            children: <Widget>[
+                              ListTile(
+                                leading: Icon(
+                                  Icons.list_alt,
+                                  size: 40,
+                                ),
+                                title: Text('Demat Account'),
+                                subtitle: Text(' Demat Account Number'),
+                                trailing: Icon(Icons.keyboard_arrow_right),
+                              ),
+                            ],
+                          ),
+                        ),
+                      )
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(5),
+                    child: SizedBox(
+                      height: 80,
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => const NomineeScreen()),);
+                        },
+                        child: const Card(
+                          child: Column(
+                            children: <Widget>[
+                              ListTile(
+                                leading: Icon(
+                                  Icons.groups_3_outlined,
+                                  size: 40,
+                                ),
+                                title: Text('Nominee'),
+                                subtitle: Text(' Nominee, Change nominee'),
+                                trailing: Icon(Icons.keyboard_arrow_right),
+                              ),
+                            ],
+                          ),
+                        ),
+                      )
                     ),
                   ),
                 ],
               )
             ],
           ),
-        )));
+        )
+      )
+    );
   }
 }

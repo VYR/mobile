@@ -1,118 +1,104 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class BankAccountScreen extends StatelessWidget {
-  const BankAccountScreen({super.key});
+  BankAccountScreen({super.key});
+  final _formKey = GlobalKey<FormState>(); 
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _numController = TextEditingController();
+  final TextEditingController _ifscController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
-          padding: EdgeInsets.all(20.0),
-          // child:Container(
-          // child: DecoratedBox(
-          //   decoration: BoxDecoration(
-          //       border: Border.all(),
-          //       borderRadius: BorderRadius.circular(20.0)),
-          child: Column(
-            children: [
-              // Padding(padding: EdgeInsets.all(20.0)),
-              Align(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  "Here are the details ot the bank account linked to your profile on kuberascheme.com",
-                  style: TextStyle(
-                      fontSize: 15,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w200),
-                ),
-              ),
-              SizedBox(
-                height: .0,
-              ),
-              Align(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  "Account Holder Name",
-                  style: TextStyle(
-                    fontSize: 15,
-                    color: Colors.black,
-                    fontWeight: FontWeight.w900,
+    return Scaffold(
+        appBar: AppBar(
+          title: const Text('Bank Details'),
+        ),
+        body: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Form(
+            key: _formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Align(
+                  alignment: Alignment.topLeft,
+                  child: Text(
+                    "Here are the details ot the bank account linked to your profile on kuberascheme.com",
+                    style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w200),
                   ),
                 ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(0.0),
-                child: TextField(
-                  keyboardType: TextInputType.phone,
-                  decoration: InputDecoration(
-                      // prefix: Icon(Icons.phone_android),
-                      // suffixIcon: Icon(Icons.arrow_forward_ios),
-                      // labelText: "Enter Email",
-                      hintText: "Enter Account Holder Name",
-                      hintStyle: TextStyle(fontSize: 15, color: Colors.black),
-                      border: OutlineInputBorder()),
-                  maxLines: 5,
-                  minLines: 1,
+                const SizedBox(height: 16), 
+                TextFormField(
+                  controller: _nameController,
+                  inputFormatters: [
+                    FilteringTextInputFormatter.allow(RegExp(r'[a-zA-Z\s]')),
+                  ],
+                  decoration: const InputDecoration(
+                    labelText: 'Account Holder Name',
+                    border: OutlineInputBorder(),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter account holder name';
+                    }
+                    if (!RegExp(r'^[a-zA-Z\s]+$').hasMatch(value)) {
+                      return 'Name can only contain letters';
+                    }
+                    return null;
+                  },
                 ),
-              ),
-              SizedBox(
-                height: 20.0,
-              ),
-              Align(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  "Account Number",
-                  style: TextStyle(
-                      fontSize: 15,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w900),
+                const SizedBox(height: 16),
+                TextFormField(
+                  controller: _numController,
+                  keyboardType: TextInputType.number, 
+                  inputFormatters: [
+                    FilteringTextInputFormatter.digitsOnly,
+                  ],
+                  decoration: const InputDecoration(
+                    labelText: 'Account Number',
+                    border: OutlineInputBorder(),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your account number';
+                    }
+                    return null; // No error
+                  },
                 ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(0.0),
-                child: TextField(
-                  keyboardType: TextInputType.phone,
-                  decoration: InputDecoration(
-                      // prefix: Icon(Icons.phone_android),
-                      // suffixIcon: Icon(Icons.arrow_forward_ios),
-                      // labelText: "Enter Email",
-                      hintText: "Enter Account Number",
-                      hintStyle: TextStyle(fontSize: 15, color: Colors.black),
-                      border: OutlineInputBorder()),
+                const SizedBox(height: 16),
+                TextFormField(
+                  controller: _ifscController,
+                  decoration: const InputDecoration(
+                    labelText: 'IFSC Code',
+                    border: OutlineInputBorder(),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your ifsc code';
+                    }
+                    return null; 
+                  },
                 ),
-              ),
-              SizedBox(
-                height: 20.0,
-              ),
-              Align(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  "IFSC Code",
-                  style: TextStyle(
-                      fontSize: 15,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w900),
+                const SizedBox(height: 24),
+                ElevatedButton(
+                  onPressed: () {
+                    if (_formKey.currentState!.validate()) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('Your Bank Details Submitted Successfully')),
+                      );
+                    }
+                  },
+                  child: const Text('Submit'),
                 ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(0.0),
-                child: TextField(
-                  keyboardType: TextInputType.phone,
-                  decoration: InputDecoration(
-                      // prefix: Icon(Icons.phone_android),
-                      // suffixIcon: Icon(Icons.arrow_forward_ios),
-                      // labelText: "Enter Email",
-                      hintText: "Enter IFSC Code",
-                      hintStyle: TextStyle(fontSize: 15, color: Colors.black),
-                      border: OutlineInputBorder()),
-                ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
-        //),
-      ),
-      // );
-    );
+      );
   }
 }
+

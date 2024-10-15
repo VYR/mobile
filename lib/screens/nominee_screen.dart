@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class NomineeScreen extends StatelessWidget {
   const NomineeScreen({super.key});
@@ -7,19 +6,7 @@ class NomineeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          leading: IconButton(
-              onPressed: () {
-                GoRouter.of(context).goNamed('');
-                Navigator.pop(context);
-              },
-              icon: const Icon(Icons.arrow_back)),
-          iconTheme: const IconThemeData(color: Colors.white),
-          title: const Align(
-            alignment: Alignment.center,
-            child: Text('Nominee'),
-          ),
-          titleTextStyle: const TextStyle(color: Colors.white, fontSize: 20),
-          backgroundColor: const Color.fromRGBO(0, 92, 187, 1),
+          title: const Text('Nominee Details'),
         ),
         body: SafeArea(
             child: SingleChildScrollView(
@@ -53,7 +40,9 @@ class NomineeScreen extends StatelessWidget {
                   height: 3,
                 ),
                 const Text(
-                    'We are veryfying your Kyc details. You can add nominee once verification is complete.'),
+                    'We are veryfying your KYC Details. You can add Nominee once verification is complete.',
+                    textAlign: TextAlign.center,
+                    ),
                 const SizedBox(
                   height: 20,
                 ),
@@ -68,6 +57,8 @@ class NomineeScreen extends StatelessWidget {
               ],
             ), //Container
           ),
-        )));
+        )
+      )
+    );
   }
 }

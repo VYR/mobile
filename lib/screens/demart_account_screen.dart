@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class DemartAccountScreen extends StatelessWidget {
   const DemartAccountScreen({super.key});
@@ -7,16 +6,7 @@ class DemartAccountScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          leading: IconButton(
-              onPressed: () {
-                GoRouter.of(context).goNamed('');
-                Navigator.pop(context);
-              },
-              icon: const Icon(Icons.arrow_back)),
-          iconTheme: const IconThemeData(color: Colors.white),
-          title: const Text('Demart Account'),
-          titleTextStyle: const TextStyle(color: Colors.white, fontSize: 20),
-          backgroundColor: const Color.fromRGBO(0, 92, 187, 1),
+          title: const Text('Demat Account'),
         ),
         body: SafeArea(
             child: SingleChildScrollView(
@@ -50,7 +40,9 @@ class DemartAccountScreen extends StatelessWidget {
                   height: 3,
                 ),
                 const Text(
-                    'We are veryfying your bank information. you can add once verification is complete'),
+                    'We are verifying your Bank Information. You can add once verification is complete.',
+                    textAlign: TextAlign.center,
+                    ),
                 const SizedBox(
                   height: 20,
                 ),
@@ -63,8 +55,10 @@ class DemartAccountScreen extends StatelessWidget {
                 //   child: const Text("Get Support"),
                 // )
               ],
-            ), //Container
+            ),
           ),
-        )));
+        )
+      )
+    );
   }
 }

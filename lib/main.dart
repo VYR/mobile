@@ -92,21 +92,21 @@ class MyApp extends StatelessWidget {
       GoRoute(
         name: 'personal',
         path: '/personal',
-        builder: (context, state) => const PersonalDetails(),
+        builder: (context, state) => PersonalDetailsForm(),
       ),
       GoRoute(
         name: 'address',
         path: '/address',
-        builder: (context, state) => const AddressScreen(),
+        builder: (context, state) => AddressScreen(),
       ),
       GoRoute(
         name: 'bank-account',
         path: '/bank-account',
-        builder: (context, state) => const BankAccountScreen(),
+        builder: (context, state) => BankAccountScreen(),
       ),
       GoRoute(
-        name: 'demart-account',
-        path: '/demart-account',
+        name: 'demat-account',
+        path: '/demat-account',
         builder: (context, state) => const DemartAccountScreen(),
       ),
       GoRoute(
