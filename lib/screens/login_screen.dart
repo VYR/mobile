@@ -1,61 +1,107 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  final TextEditingController _mobileController = TextEditingController();
+  bool _isButtonEnabled = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _mobileController.addListener(() {
+      setState(() {
+        _isButtonEnabled = _mobileController.text.length == 10;
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _mobileController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          children: <Widget>[
-            Column(
-              children: <Widget>[
-                Center(
-                  child: Image.asset(
-                    "assets/icon/icon.png",
-                    height: 100,
-                    width: 100,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              children: [
+                const SizedBox(height: 60),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      "assets/icon/icon.png",
+                      height: 100,
+                      width: 100,
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 60), 
+                const Text(
+                  "Hey, Welcome Back!",
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                      color: Color.fromRGBO(0, 92, 187, 1),
+                      fontSize: 30.0,
+                      fontWeight: FontWeight.w900),
+                ),
+                const SizedBox(height: 50),
+                TextField(
+                    controller: _mobileController,
+                    keyboardType: TextInputType.phone,
+                    maxLength: 10, 
+                    inputFormatters: [
+                      FilteringTextInputFormatter.digitsOnly, 
+                    ],
+                    decoration: const InputDecoration(
+                      labelText: 'Enter Mobile Number',
+                      border: OutlineInputBorder(),
+                      prefixIcon: Icon(Icons.phone),
+                      counterText: '', 
+                    ),
+                  ),
+                const SizedBox(height: 60),
+                SizedBox(
+                  width: double.infinity, // Full width button
+                  child: ElevatedButton(
+                    onPressed: _isButtonEnabled
+                        ? () => {
+                            GoRouter.of(context).go('/otp')
+                          }
+                        : null,
+                    style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(vertical: 20),
+                      backgroundColor: _isButtonEnabled
+                          ? const Color.fromRGBO(0, 92, 187, 1)
+                          : Colors.grey,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8), 
+                      ),
+                    ),
+                    child: Text(
+                      'Get OTP',
+                      style: TextStyle(
+                        color: _isButtonEnabled ? Colors.white : Colors.black,
+                      ),
+                    ),
                   ),
                 ),
               ],
             ),
-            const SizedBox(
-              height: 10,
-            ),
-            const Text(
-              "Hey, Welcome Back!",
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                  color: Color.fromRGBO(0, 92, 187, 1),
-                  fontSize: 30.0,
-                  fontWeight: FontWeight.w900),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            const TextField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                hintText: 'Enter Mobile Number',
-              ),
-              keyboardType: TextInputType.number,
-            ),
-            const SizedBox(
-              height: 100,
-            ),
-            MaterialButton(
-              height: 50.0,
-              minWidth: 500.0,
-              color: const Color.fromRGBO(227, 227, 228, 1),
-              textColor: Colors.black,
-              onPressed: () => {GoRouter.of(context).go('/otp')},
-              hoverColor: const Color.fromRGBO(0, 92, 187, 1),
-              child: const Text("Get OTP"),
-            )
-          ],
-        ), //Container
+          ),
+        ),
       ),
     );
   }

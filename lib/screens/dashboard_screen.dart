@@ -1,76 +1,107 @@
 import 'package:flutter/material.dart';
+import 'package:kubera_scheme/screens/dashboard_dashboard.dart';
+import 'package:kubera_scheme/screens/income_dashboard.dart';
+import 'package:kubera_scheme/screens/kubera_balance.dart';
+import 'package:kubera_scheme/screens/my_schemes.dart';
+import 'package:kubera_scheme/screens/referral_screen.dart';
 
-class DashboardScreen extends StatelessWidget {
+class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
+
+  @override
+  State<DashboardScreen> createState() => _DashboardScreenState();
+}
+
+class _DashboardScreenState extends State<DashboardScreen> {
+  int _selectedIndex = 0;
+
+  final List<Widget> _pages = [
+    const DashboardOneScreen(),
+    // If kyc doesn't complete
+    // const IncompleteKycDashboardScreen(),
+    const MySchemesScreen(),
+    const KuberaBalanceScreen(),
+    const ReferralScreen(),
+    const IncomeDashboardScreen(),
+  ];
+
+  final List<Widget> titles = [
+    const Text('Dashboard'),
+    const Text('My Schemes'),
+    const Text('My Kubera Balance'),
+    const Text('My Referrals'),
+    const Text('Income Certificate'),
+  ];
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      drawer: const Drawer(
-        backgroundColor: Colors.white,
-        child: Column(
-          children: [
-            // Contrainer(),
-            DrawerHeader(
-                decoration: BoxDecoration(color: Colors.grey),
-                child: Text("venky")),
-          ],
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          title: titles[_selectedIndex],
+          titleTextStyle: const TextStyle(color: Colors.black, fontSize: 20),
         ),
-      ),
-      appBar: AppBar(
-        backgroundColor: Colors.teal,
-        title: const Text("Dashboard"),
-        actions: [
-          IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.login_outlined,
-                color: Colors.red,
-              ))
-        ],
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          children: <Widget>[
-            const SizedBox(height: 100),
-            Column(
-              children: <Widget>[
-                Center(
-                  child: Image.asset(
-                    "assets/icon/thumb.jpg",
-                    height: 100,
-                    width: 100,
+        drawer: Drawer(
+          backgroundColor: Colors.white,
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: [
+              Column(
+                children: [
+                  ListTile(
+                    title: const Text('Dashboard'),
+                    onTap: () {
+                      setState(() {
+                        _selectedIndex = 0;
+                      });
+                      Navigator.pop(context);
+                    },
                   ),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            const Text("Your KYC Verification is in progress",
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                    color: Color.fromRGBO(95, 92, 92, 1),
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold)),
-            const SizedBox(
-              height: 10,
-            ),
-            const Text(
-                ' We will notify you as soon as it is verified. please reach out for support.'),
-            const SizedBox(
-              height: 20,
-            ),
-            MaterialButton(
-              height: 50.0,
-              minWidth: 300.0,
-              color: const Color.fromRGBO(0, 92, 187, 1),
-              textColor: Colors.white,
-              onPressed: () => {},
-              child: const Text("Get Support"),
-            )
-          ],
-        ), //Container
+                  ListTile(
+                    title: const Text('My Schemes'),
+                    onTap: () {
+                      setState(() {
+                        _selectedIndex = 1;
+                      });
+                      Navigator.pop(context);
+                    },
+                  ),
+                  ListTile(
+                    title: const Text('My Kubera Balance'),
+                    onTap: () {
+                      setState(() {
+                        _selectedIndex = 2;
+                      });
+                      Navigator.pop(context);
+                    },
+                  ),
+                  ListTile(
+                    title: const Text('My Referrals'),
+                    onTap: () {
+                      setState(() {
+                        _selectedIndex = 3;
+                      });
+                      Navigator.pop(context);
+                    },
+                  ),
+                  ListTile(
+                    title: const Text('Income Certificate'),
+                    onTap: () {
+                      setState(() {
+                        _selectedIndex = 4;
+                      });
+                      Navigator.pop(context);
+                    },
+                  ),
+                ],
+              )
+            ],
+          ),
+        ),
+        body: IndexedStack(
+          index: _selectedIndex,
+          children: _pages,
+        ),
       ),
     );
   }
