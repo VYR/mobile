@@ -4,9 +4,11 @@ import 'package:kubera_scheme/screens/address_screen.dart';
 import 'package:kubera_scheme/screens/bank_account_screen.dart';
 import 'package:kubera_scheme/screens/bottom_navigation_part.dart';
 import 'package:kubera_scheme/screens/dashboard_screen.dart';
+import 'package:kubera_scheme/screens/demart_account_screen.dart';
 import 'package:kubera_scheme/screens/enter_otp_screen.dart';
 import 'package:kubera_scheme/screens/investment_screen.dart';
 import 'package:kubera_scheme/screens/login_screen.dart';
+import 'package:kubera_scheme/screens/nominee_screen.dart';
 import 'package:kubera_scheme/screens/personal_details.dart';
 import 'package:kubera_scheme/screens/profile_screens.dart';
 import 'package:kubera_scheme/screens/schemes_screens.dart';
@@ -88,6 +90,16 @@ class MyApp extends StatelessWidget {
         name: 'bank-account',
         path: '/bank-account',
         builder: (context, state) => const BankAccountScreen(),
+      ),
+      GoRoute(
+        name: 'demart-account',
+        path: '/demart-account',
+        builder: (context, state) => const DemartAccountScreen(),
+      ),
+      GoRoute(
+        name: 'nominee',
+        path: '/nominee',
+        builder: (context, state) => const NomineeScreen(),
       ),
       GoRoute(
         name: 'user-menu',
