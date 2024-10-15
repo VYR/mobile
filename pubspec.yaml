@@ -75,6 +75,13 @@ flutter:
    - assets/icon/thumb.jpg
    - assets/icon/icon.png
    - assets/icon/dashboard.jpeg
+   - assets/icon/about-kubera-img1.jpg
+   - assets/icon/about-kubera-img2.jpg
+   - assets/icon/about-kubera-img3.png
+   - assets/icon/about-kubera-img4.jpg
+   - assets/icon/about-kubera-img5.jpg
+   - assets/icon/about-kubera-img6.jpg
+   - assets/icon/about-kubera-img7.png
    # - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

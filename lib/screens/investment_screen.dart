@@ -114,87 +114,92 @@ class TransactionDetailsPage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Card(
-          margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 16),
+          elevation: 4, // Adds shadow to the card
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15), // Rounded corners
+          ),
           color: Colors.grey[150],
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child:
-                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              const SizedBox(height: 5),
-              const Row(
-                children: <Widget>[
-                  SizedBox(
-                    width: 125,
-                    child: Text('Payment For',
-                        style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.w700)),
+                Column(crossAxisAlignment: CrossAxisAlignment.start, 
+                children: [
+                  const SizedBox(height: 5),
+                  const Row(
+                    children: <Widget>[
+                      SizedBox(
+                        width: 108,
+                        child: Text('Payment For',
+                            style: TextStyle(
+                                fontSize: 14, fontWeight: FontWeight.w600)),
+                      ),
+                      Text('Kubera Scheme', style: TextStyle(fontSize: 14)),
+                    ],
                   ),
-                  Text('Kubera Scheme', style: TextStyle(fontSize: 16)),
-                ],
-              ),
-              const SizedBox(height: 2),
-              const Row(
-                children: <Widget>[
-                  SizedBox(
-                    width: 125,
-                    child: Text('Name',
-                        style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.w700)),
+                  const SizedBox(height: 2),
+                  const Row(
+                    children: <Widget>[
+                      SizedBox(
+                        width: 108,
+                        child: Text('Name',
+                            style: TextStyle(
+                                fontSize: 14, fontWeight: FontWeight.w600)),
+                      ),
+                      Text('Kubera', style: TextStyle(fontSize: 14)),
+                    ],
                   ),
-                  Text('Kubera', style: TextStyle(fontSize: 16)),
-                ],
-              ),
-              const SizedBox(height: 2),
-              const Row(
-                children: <Widget>[
-                  SizedBox(
-                    width: 125,
-                    child: Text('Email Id',
-                        style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.w700)),
+                  const SizedBox(height: 2),
+                  const Row(
+                    children: <Widget>[
+                      SizedBox(
+                        width: 108,
+                        child: Text('Email Id',
+                            style: TextStyle(
+                                fontSize: 14, fontWeight: FontWeight.w600)),
+                      ),
+                      Text('kubera@gmail.com', style: TextStyle(fontSize: 14)),
+                    ],
                   ),
-                  Text('kubera@gmail.com', style: TextStyle(fontSize: 16)),
-                ],
-              ),
-              const SizedBox(height: 2),
-              const Row(
-                children: <Widget>[
-                  SizedBox(
-                    width: 125,
-                    child: Text('Phone Number',
-                        style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.w700)),
+                  const SizedBox(height: 2),
+                  const Row(
+                    children: <Widget>[
+                      SizedBox(
+                        width: 108,
+                        child: Text('Phone Number',
+                            style: TextStyle(
+                                fontSize: 14, fontWeight: FontWeight.w600)),
+                      ),
+                      Text('9876543210', style: TextStyle(fontSize: 14)),
+                    ],
                   ),
-                  Text('9876543210', style: TextStyle(fontSize: 16)),
-                ],
-              ),
-              const SizedBox(height: 2),
-              Row(
-                children: <Widget>[
-                  const SizedBox(
-                    width: 125,
-                    child: Text('Amount',
-                        style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.w700)),
+                  const SizedBox(height: 2),
+                  Row(
+                    children: <Widget>[
+                      const SizedBox(
+                        width: 108,
+                        child: Text('Amount',
+                            style: TextStyle(
+                                fontSize: 14, fontWeight: FontWeight.w600)),
+                      ),
+                      Text(' ${transaction.amount} ',
+                          style: const TextStyle(fontSize: 14)),
+                    ],
                   ),
-                  Text(' ${transaction.amount} ',
-                      style: const TextStyle(fontSize: 16)),
-                ],
-              ),
-              const SizedBox(height: 2),
-              Row(
-                children: <Widget>[
-                  const SizedBox(
-                    width: 125,
-                    child: Text('Transaction No',
-                        style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.w700)),
+                  const SizedBox(height: 2),
+                  Row(
+                    children: <Widget>[
+                      const SizedBox(
+                        width: 108,
+                        child: Text('Transaction No',
+                            style: TextStyle(
+                                fontSize: 14, fontWeight: FontWeight.w600)),
+                      ),
+                      Text(' ${transaction.txnNo} ',
+                          style: const TextStyle(fontSize: 14)),
+                    ],
                   ),
-                  Text(' ${transaction.txnNo} ',
-                      style: const TextStyle(fontSize: 16)),
-                ],
-              ),
-            ]),
+                ]
+            ),
           ),
         ),
       ),
