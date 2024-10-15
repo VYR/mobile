@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:kubera_scheme/screens/about_kubera.dart';
 import 'package:kubera_scheme/screens/dashboard_screen.dart';
 import 'package:kubera_scheme/screens/investment_screen.dart';
 import 'package:kubera_scheme/screens/refer_earn_screen.dart';
@@ -46,7 +47,8 @@ class _SideBottomMenuState extends State<SideBottomMenu> {
               icon: const Icon(
                 Icons.login_outlined,
                 color: Colors.red,
-              ))
+              )
+          )
         ],
       ),
       drawer: Drawer(
@@ -92,7 +94,7 @@ class _SideBottomMenuState extends State<SideBottomMenu> {
                   title: const Text('About Kubera'),
                   onTap: () {
                     Navigator.pop(context);
-                    // Navigator.push(context, MaterialPageRoute(builder: (context) => const ReferEarnScreen()),);
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const AboutKubera()),);
                   },
                 ),
                 ListTile(

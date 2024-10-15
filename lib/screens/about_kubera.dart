@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ReferEarnScreen extends StatelessWidget {
-  const ReferEarnScreen({super.key});
+class AboutKubera extends StatelessWidget {
+  const AboutKubera({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,25 +18,15 @@ class ReferEarnScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(14.0), 
                   ),
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center, 
+                    crossAxisAlignment: CrossAxisAlignment.start, 
                     children: <Widget>[
                       const Text(
-                        "REFER AND EARN",
-                        textAlign: TextAlign.center,
+                        "Your KYC verification is in progress",
+                        textAlign: TextAlign.left,
                         style: TextStyle(
                           color: Color.fromRGBO(47, 44, 81, 1),
                           fontSize: 16.0,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      const SizedBox(height: 8),
-                      const Text(
-                        "Fixed-Income Investments to your Friends and Earn",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Color.fromRGBO(47, 44, 81, 1),
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.w500,
+                          fontWeight: FontWeight.w600,
                         ),
                       ),
                       const SizedBox(height: 8), 

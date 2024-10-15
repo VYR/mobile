@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:kubera_scheme/screens/about_kubera.dart';
 import 'package:kubera_scheme/screens/address_screen.dart';
 import 'package:kubera_scheme/screens/bottom_navigation_part.dart';
-import 'package:kubera_scheme/screens/dashboard_dashboard.dart';
 import 'package:kubera_scheme/screens/dashboard_screen.dart';
 import 'package:kubera_scheme/screens/digital_gold_scheme.dart';
 import 'package:kubera_scheme/screens/documents.dart';
@@ -179,6 +179,11 @@ class MyApp extends StatelessWidget {
         name: 'refer-earn',
         path: '/refer-earn',
         builder: (context, state) => const ReferEarnScreen(),
+      ),
+      GoRoute(
+        name: 'about-kubera',
+        path: '/about-kubera',
+        builder: (context, state) => const AboutKubera(),
       ),
     ],
   );

@@ -101,7 +101,7 @@ class InvestmentScreen extends StatelessWidget {
 class TransactionDetailsPage extends StatelessWidget {
   final Transaction transaction;
 
-  TransactionDetailsPage({required this.transaction});
+  const TransactionDetailsPage({super.key, required this.transaction});
 
   @override
   Widget build(BuildContext context) {

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kubera_scheme/screens/dashboard_dashboard.dart';
 import 'package:kubera_scheme/screens/income_dashboard.dart';
-import 'package:kubera_scheme/screens/incomplete_kyc_dashboard.dart';
 import 'package:kubera_scheme/screens/kubera_balance.dart';
 import 'package:kubera_scheme/screens/my_schemes.dart';
 import 'package:kubera_scheme/screens/referral_screen.dart';
