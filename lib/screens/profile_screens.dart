@@ -7,126 +7,156 @@ class ProfileScreens extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          leading: IconButton(onPressed: (){
-             GoRouter.of(context).goNamed('main-page');
-            Navigator.pop(context);
-          }, icon: const Icon(Icons.arrow_back)),
-        iconTheme:  const IconThemeData(color: Colors.white),
-        title: const Text('Profile'),
-        titleTextStyle: const TextStyle(color: Colors.white, fontSize: 20),
-        backgroundColor: const Color.fromRGBO(0, 92, 187, 1),     
-      ),
-      body: const SafeArea(
-        child: SingleChildScrollView( 
+          leading: IconButton(
+              onPressed: () {
+                GoRouter.of(context).goNamed('main-page');
+                Navigator.pop(context);
+              },
+              icon: const Icon(Icons.arrow_back)),
+          iconTheme: const IconThemeData(color: Colors.white),
+          title: const Text('Profile'),
+          titleTextStyle: const TextStyle(color: Colors.white, fontSize: 20),
+          backgroundColor: const Color.fromRGBO(0, 92, 187, 1),
+        ),
+        body: const SafeArea(
+            child: SingleChildScrollView(
           child: Column(
-        children: <Widget>[
-          Column(
             children: <Widget>[
-              Padding(
-                padding: EdgeInsets.all(5),
-                child: SizedBox(
-                  height: 80,
-                  child: Card(
-                    child: Column(
-                      children: <Widget>[
-                        ListTile(
-                          title: Text('USER NAME'),
-                          subtitle: Text('kyc pending'),
+              Column(
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.all(5),
+                    child: SizedBox(
+                      height: 80,
+                      child: Card(
+                        child: Column(
+                          children: <Widget>[
+                            ListTile(
+                              leading: Icon(
+                                Icons.abc_outlined,
+                              ),
+                              title: Text('USER NAME'),
+                              subtitle: Text('kyc pending'),
+                            ),
+                          ],
                         ),
-                      ],
+                      ),
                     ),
                   ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(5),
-                child: SizedBox(
-                  height: 80,
-                  child: Card(
-                    //card color  color: Color.fromARGB(42, 38, 38,1),
-                    child: Column(
-                      children: <Widget>[
-                        ListTile(
-                          title: Text('Personal Details'),
-                          subtitle: Text(' Full name, Mobile num, Email, PAN'),
+                  Padding(
+                    padding: EdgeInsets.all(5),
+                    child: SizedBox(
+                      height: 80,
+                      child: Card(
+                        //card color  color: Color.fromARGB(42, 38, 38,1),
+                        child: Column(
+                          children: <Widget>[
+                            ListTile(
+                              leading: Icon(
+                                Icons.person_2_outlined,
+                                size: 40,
+                              ),
+                              title: Text('Personal Details'),
+                              subtitle:
+                                  Text(' Full name, Mobile num, Email, PAN'),
+                              trailing: Icon(Icons.keyboard_arrow_right),
+                            ),
+                          ],
                         ),
-                      ],
+                      ),
                     ),
                   ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(5),
-                child: SizedBox(
-                  height: 80,
-                  child: Card(
-                    child: Column(
-                      children: <Widget>[
-                        ListTile(
-                          title: Text('Address'),
-                          subtitle: Text(
-                              '  Address line, City, State, Country, Pincode'),
+                  Padding(
+                    padding: EdgeInsets.all(5),
+                    child: SizedBox(
+                      height: 80,
+                      child: Card(
+                        child: Column(
+                          children: <Widget>[
+                            ListTile(
+                              leading: Icon(
+                                Icons.location_on,
+                                size: 40,
+                              ),
+                              title: Text('Address'),
+                              subtitle: Text(
+                                  '  Address line, City, State, Country, Pincode'),
+                              trailing: Icon(Icons.keyboard_arrow_right),
+                            ),
+                          ],
                         ),
-                      ],
+                      ),
                     ),
                   ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(5),
-                child: SizedBox(
-                  height: 80,
-                  child: Card(
-                    child: Column(
-                      children: <Widget>[
-                        ListTile(
-                          title: Text('Bank Account'),
-                          subtitle:
-                              Text(' Acc. Holder Name, Acc. Number, IFSC'),
+                  Padding(
+                    padding: EdgeInsets.all(5),
+                    child: SizedBox(
+                      height: 80,
+                      child: Card(
+                        child: Column(
+                          children: <Widget>[
+                            ListTile(
+                              leading: Icon(
+                                Icons.comment_bank_outlined,
+                                size: 40,
+                              ),
+                              title: Text('Bank Account'),
+                              subtitle:
+                                  Text(' Acc. Holder Name, Acc. Number, IFSC'),
+                              trailing: Icon(Icons.keyboard_arrow_right),
+                            ),
+                          ],
                         ),
-                      ],
+                      ),
                     ),
                   ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(5),
-                child: SizedBox(
-                  height: 80,
-                  child: Card(
-                    child: Column(
-                      children: <Widget>[
-                        ListTile(
-                          title: Text('Demat Account'),
-                          subtitle: Text(' Demat Account Number'),
+                  Padding(
+                    padding: EdgeInsets.all(5),
+                    child: SizedBox(
+                        height: 80,
+                        child: InkWell(
+                          child: Card(
+                            child: Column(
+                              children: <Widget>[
+                                ListTile(
+                                  leading: Icon(
+                                    Icons.list_alt,
+                                    size: 40,
+                                  ),
+                                  title: Text('Demat Account'),
+                                  subtitle: Text(' Demat Account Number'),
+                                  trailing: Icon(Icons.keyboard_arrow_right),
+                                ),
+                              ],
+                            ),
+                          ),
+                        )),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(5),
+                    child: SizedBox(
+                      height: 80,
+                      child: Card(
+                        child: Column(
+                          children: <Widget>[
+                            ListTile(
+                              leading: Icon(
+                                Icons.groups_3_outlined,
+                                size: 40,
+                              ),
+                              title: Text('Nominee'),
+                              subtitle: Text(' Nominee, Change nominee'),
+                              trailing: Icon(Icons.keyboard_arrow_right),
+                            ),
+                          ],
                         ),
-                      ],
+                      ),
                     ),
                   ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(5),
-                child: SizedBox(
-                  height: 80,
-                  child: Card(
-                    child: Column(
-                      children: <Widget>[
-                        ListTile(
-                          title: Text('Nominee'),
-                          subtitle: Text(' Nominee, Change nominee'),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
+                ],
+              )
             ],
-          )
-        ],
-      ),
-    )
-      )
-    );
+          ),
+        )));
   }
 }
