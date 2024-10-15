@@ -31,7 +31,7 @@ import 'package:kubera_scheme/screens/webview_screens/webview_profile_screen.dar
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {
-   runApp(ProviderScope(child: MyApp()));
+  runApp(ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -40,8 +40,7 @@ class MyApp extends StatelessWidget {
     initialLocation: '/',
     routes: [
       GoRoute(
-        name:
-            'home', 
+        name: 'home',
         path: '/',
         builder: (context, state) => const SplashScreen(),
       ),
@@ -73,7 +72,9 @@ class MyApp extends StatelessWidget {
       GoRoute(
         name: 'otp',
         path: '/otp',
-        builder: (context, state) => const EnterOtpScreen(mobileNumber: '7867565465',),
+        builder: (context, state) => const EnterOtpScreen(
+          mobileNumber: '7867565465',
+        ),
       ),
       GoRoute(
         name: 'schemes',
@@ -113,7 +114,7 @@ class MyApp extends StatelessWidget {
       GoRoute(
         name: 'kubera-scheme',
         path: '/kubera-scheme',
-        builder: (context, state) =>  const KuberaSchemeScreen(),
+        builder: (context, state) => const KuberaSchemeScreen(),
       ),
       GoRoute(
         name: 'digital-gold-scheme',
@@ -133,7 +134,7 @@ class MyApp extends StatelessWidget {
       GoRoute(
         name: 'documents',
         path: '/documents',
-        builder: (context, state) =>  const DocumentsScreen(),
+        builder: (context, state) => const DocumentsScreen(),
       ),
       GoRoute(
         name: 'faqs',
