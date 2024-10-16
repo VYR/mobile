@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 
-class FaqsScreens extends StatelessWidget {
-  const FaqsScreens({super.key});
+class KnowledgeFaqScreens extends StatelessWidget {
+  const KnowledgeFaqScreens({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('FAQs'),
+      ),
       body: ListView(
         padding: const EdgeInsets.all(20),
         children: const [
@@ -12,10 +15,10 @@ class FaqsScreens extends StatelessWidget {
               textAlign: TextAlign.center,
               style: TextStyle(
                   color: Color.fromRGBO(16, 15, 15, 1),
-                  fontSize: 18,
+                  fontSize: 20,
                   fontWeight: FontWeight.bold)),
           SizedBox(
-            height: 5,
+            height: 15,
           ),
           Text(
             'Here are answers to questions that we get asked most about investing in Kubera Scheme',
@@ -26,8 +29,7 @@ class FaqsScreens extends StatelessWidget {
           ),
           ExpansionTile(
             title: Text("What is the goal of the Kubera Scheme?"),
-            childrenPadding: EdgeInsets.all(20),
-            expandedAlignment: Alignment.topLeft, //left and right adjust
+            expandedAlignment: Alignment.topLeft,
             expandedCrossAxisAlignment: CrossAxisAlignment.center,
             // collapsedBackgroundColor: Colors.blue,
             // trailing: Icon(Icons.check), // icons symbol change
@@ -58,7 +60,6 @@ class FaqsScreens extends StatelessWidget {
           // ),
           ExpansionTile(
             title: Text("How long does the Kubera Scheme last?"),
-            childrenPadding: EdgeInsets.all(20),
             expandedAlignment: Alignment.topLeft, //left and right adjust
             expandedCrossAxisAlignment: CrossAxisAlignment.center,
             // collapsedBackgroundColor: Colors.blue,
@@ -73,7 +74,6 @@ class FaqsScreens extends StatelessWidget {
           ),
           ExpansionTile(
             title: Text("How often are the returns paid?"),
-            childrenPadding: EdgeInsets.all(20),
             expandedAlignment: Alignment.topLeft, //left and right adjust
             expandedCrossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -87,7 +87,6 @@ class FaqsScreens extends StatelessWidget {
           ),
           ExpansionTile(
             title: Text("What happens if I miss to receive my return?"),
-            childrenPadding: EdgeInsets.all(20),
             expandedAlignment: Alignment.topLeft, //left and right adjust
             expandedCrossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -101,7 +100,6 @@ class FaqsScreens extends StatelessWidget {
           ),
           ExpansionTile(
             title: Text("Can I increase my investment during the scheme?"),
-            childrenPadding: EdgeInsets.all(20),
             expandedAlignment: Alignment.topLeft, //left and right adjust
             expandedCrossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -115,7 +113,6 @@ class FaqsScreens extends StatelessWidget {
           ),
           ExpansionTile(
             title: Text("How do I apply for the Kubera Scheme?"),
-            childrenPadding: EdgeInsets.all(20),
             expandedAlignment: Alignment.topLeft, //left and right adjust
             expandedCrossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -129,7 +126,6 @@ class FaqsScreens extends StatelessWidget {
           ),
           ExpansionTile(
             title: Text("What documents are needed to join the Kubera Scheme?"),
-            childrenPadding: EdgeInsets.all(20),
             expandedAlignment: Alignment.topLeft, //left and right adjust
             expandedCrossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -143,7 +139,6 @@ class FaqsScreens extends StatelessWidget {
           ),
           ExpansionTile(
             title: Text("What type of gold is used for the payout?"),
-            childrenPadding: EdgeInsets.all(20),
             expandedAlignment: Alignment.topLeft, //left and right adjust
             expandedCrossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -157,7 +152,6 @@ class FaqsScreens extends StatelessWidget {
           ),
           ExpansionTile(
             title: Text("Can I refer others to the Kubera Scheme?"),
-            childrenPadding: EdgeInsets.all(20),
             expandedAlignment: Alignment.topLeft, //left and right adjust
             expandedCrossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -172,7 +166,6 @@ class FaqsScreens extends StatelessWidget {
           ExpansionTile(
             title: Text(
                 "What is the customer service contact for the Kubera Scheme?"),
-            childrenPadding: EdgeInsets.all(20),
             expandedAlignment: Alignment.topLeft, //left and right adjust
             expandedCrossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -186,7 +179,6 @@ class FaqsScreens extends StatelessWidget {
           ),
           ExpansionTile(
             title: Text("Is there a maximum limit to how much I can invest?"),
-            childrenPadding: EdgeInsets.all(20),
             expandedAlignment: Alignment.topLeft, //left and right adjust
             expandedCrossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -200,7 +192,6 @@ class FaqsScreens extends StatelessWidget {
           ),
           ExpansionTile(
             title: Text("Are there any taxes on the gold payout?"),
-            childrenPadding: EdgeInsets.all(20),
             expandedAlignment: Alignment.topLeft, //left and right adjust
             expandedCrossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -214,7 +205,6 @@ class FaqsScreens extends StatelessWidget {
           ),
           ExpansionTile(
             title: Text("How is the gold delivered to investors?"),
-            childrenPadding: EdgeInsets.all(20),
             expandedAlignment: Alignment.topLeft, //left and right adjust
             expandedCrossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -228,7 +218,6 @@ class FaqsScreens extends StatelessWidget {
           ),
           ExpansionTile(
             title: Text("Can I visit Vindhya Bullion's refinery?"),
-            childrenPadding: EdgeInsets.all(20),
             expandedAlignment: Alignment.topLeft, //left and right adjust
             expandedCrossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -242,7 +231,6 @@ class FaqsScreens extends StatelessWidget {
           ),
           ExpansionTile(
             title: Text("How long does the Kubera Scheme last?"),
-            childrenPadding: EdgeInsets.all(20),
             expandedAlignment: Alignment.topLeft, //left and right adjust
             expandedCrossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -256,7 +244,6 @@ class FaqsScreens extends StatelessWidget {
           ),
           ExpansionTile(
             title: Text("What makes Vindhya Bullion a trusted partner?"),
-            childrenPadding: EdgeInsets.all(20),
             expandedAlignment: Alignment.topLeft, //left and right adjust
             expandedCrossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -270,7 +257,6 @@ class FaqsScreens extends StatelessWidget {
           ),
           ExpansionTile(
             title: Text("Is there an option to receive cash instead of gold?"),
-            childrenPadding: EdgeInsets.all(20),
             expandedAlignment: Alignment.topLeft, //left and right adjust
             expandedCrossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -284,7 +270,6 @@ class FaqsScreens extends StatelessWidget {
           ),
           ExpansionTile(
             title: Text("What happens if the gold market fluctuates?"),
-            childrenPadding: EdgeInsets.all(20),
             expandedAlignment: Alignment.topLeft, //left and right adjust
             expandedCrossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -298,7 +283,6 @@ class FaqsScreens extends StatelessWidget {
           ),
           ExpansionTile(
             title: Text("Can companies invest in the Kubera Scheme?"),
-            childrenPadding: EdgeInsets.all(20),
             expandedAlignment: Alignment.topLeft, //left and right adjust
             expandedCrossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -312,7 +296,6 @@ class FaqsScreens extends StatelessWidget {
           ),
           ExpansionTile(
             title: Text("What if the customer dies during the scheme?"),
-            childrenPadding: EdgeInsets.all(20),
             expandedAlignment: Alignment.topLeft, //left and right adjust
             expandedCrossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -327,7 +310,6 @@ class FaqsScreens extends StatelessWidget {
           ExpansionTile(
             title: Text(
                 "Where can I find more information about Vindhya Bullion's schemes?"),
-            childrenPadding: EdgeInsets.all(20),
             expandedAlignment: Alignment.topLeft, //left and right adjust
             expandedCrossAxisAlignment: CrossAxisAlignment.center,
             children: [

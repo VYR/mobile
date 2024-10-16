@@ -44,7 +44,6 @@ class AboutKubera extends StatelessWidget {
                 ),
                 const SizedBox(height: 20,),
                 RichText(
-                  textAlign: TextAlign.justify,
                   text: const TextSpan(
                     style: TextStyle(fontSize: 22, color: Color.fromRGBO(62, 0, 107, 1), height: 1.5),
                     children: [
@@ -54,7 +53,7 @@ class AboutKubera extends StatelessWidget {
                       TextSpan(
                         text: '  KUBERA SCHEME?',
                         style: TextStyle(
-                            fontWeight: FontWeight.w900),
+                            fontWeight: FontWeight.w800),
                       ),
                     ]
                   )

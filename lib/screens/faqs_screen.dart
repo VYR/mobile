@@ -1,3 +1,5 @@
+// not using it. Instead we are using kubera_scheme_faqs.
+
 import 'package:flutter/material.dart';
 
 class FaqsScreen extends StatelessWidget {

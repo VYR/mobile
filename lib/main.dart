@@ -17,8 +17,7 @@ import 'package:kubera_scheme/screens/investment_screen.dart';
 import 'package:kubera_scheme/screens/key_invest_highlights.dart';
 import 'package:kubera_scheme/screens/key_matrices_screen.dart';
 import 'package:kubera_scheme/screens/kubera_balance.dart';
-import 'package:kubera_scheme/screens/faqs_screens.dart';
-//import 'package:kubera_scheme/screens/faqs_screens.dart';
+import 'package:kubera_scheme/screens/knowledge_center_faqs.dart';
 import 'package:kubera_scheme/screens/kubera_scheme_faqs.dart';
 import 'package:kubera_scheme/screens/login_screen.dart';
 import 'package:kubera_scheme/screens/my_schemes.dart';
@@ -26,7 +25,6 @@ import 'package:kubera_scheme/screens/nominee_screen.dart';
 import 'package:kubera_scheme/screens/personal_details.dart';
 import 'package:kubera_scheme/screens/profile_screens.dart';
 import 'package:kubera_scheme/screens/kubera_scheme_screen.dart';
-import 'package:kubera_scheme/screens/refer_earn_screen.dart';
 import 'package:kubera_scheme/screens/referral_screen.dart';
 import 'package:kubera_scheme/screens/refer_earn_faqs_screen.dart';
 import 'package:kubera_scheme/screens/schemes_screens.dart';
@@ -36,6 +34,7 @@ import 'package:kubera_scheme/screens/snapshot_screen.dart';
 import 'package:kubera_scheme/screens/splash_screen.dart';
 import 'package:kubera_scheme/screens/user_menu_screen.dart';
 import 'package:kubera_scheme/screens/faqs_screen.dart';
+import 'package:kubera_scheme/screens/webinars_screen.dart';
 import 'package:kubera_scheme/screens/webview_screens/webview_profile_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -98,12 +97,12 @@ class MyApp extends StatelessWidget {
       GoRoute(
         name: 'personal',
         path: '/personal',
-        builder: (context, state) => PersonalDetailsForm(),
+        builder: (context, state) => const PersonalDetailsForm(),
       ),
       GoRoute(
         name: 'address',
         path: '/address',
-        builder: (context, state) => AddressScreen(),
+        builder: (context, state) => const AddressScreen(),
       ),
       GoRoute(
         name: 'bank-account',
@@ -121,9 +120,9 @@ class MyApp extends StatelessWidget {
         builder: (context, state) => const NomineeScreen(),
       ),
       GoRoute(
-        name: 'faqs',
-        path: '/faqs',
-        builder: (context, state) => const FaqsScreens(),
+        name: 'faqs1',
+        path: '/faqs1',
+        builder: (context, state) => const KnowledgeFaqScreens(),
       ),
       GoRoute(
         name: 'user-menu',
@@ -228,12 +227,17 @@ class MyApp extends StatelessWidget {
       GoRoute(
         name: 'refer-earn-faqs',
         path: '/refer-earn-faqs',
-        builder: (context, state) => const ReferEarnFaqsScreen(),
+        builder: (context, state) => const ReferEarnScreen(),
       ),
       GoRoute(
         name: 'kubera-faqs',
         path: '/kubera-faqs',
         builder: (context, state) => const KuberaSchemeFaqs(),
+      ),
+      GoRoute(
+        name: 'webinars',
+        path: '/webinars',
+        builder: (context, state) => const WebinarsScreen(),
       ),
     ],
   );

@@ -3,6 +3,8 @@ import 'package:kubera_scheme/screens/documents.dart';
 import 'package:kubera_scheme/screens/faqs_screen.dart';
 import 'package:kubera_scheme/screens/key_invest_highlights.dart';
 import 'package:kubera_scheme/screens/key_matrices_screen.dart';
+import 'package:kubera_scheme/screens/kubera_scheme_faqs.dart';
+import 'package:kubera_scheme/screens/refer_earn_faqs_screen.dart';
 import 'package:kubera_scheme/screens/snapshot_screen.dart';
 
 class KuberaSchemeScreen extends StatelessWidget {
@@ -402,7 +404,7 @@ class KuberaSchemeScreen extends StatelessWidget {
                                   SnapShotScreen(),
                                   KeyInvestHighlightsScreen(),
                                   KeyMetricesScreen(),
-                                  FaqsScreen(),
+                                  KuberaSchemeFaqs(),
                                   DocumentsScreen()
                                 ],
                               ),

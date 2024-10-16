@@ -5,11 +5,11 @@ class NomineeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Nominee Details'),
-        ),
-        body: SafeArea(
-            child: SingleChildScrollView(
+      appBar: AppBar(
+        title: const Text('Nominee Details'),
+      ),
+      body: SafeArea(
+        child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(20),
             child: Column(
@@ -55,7 +55,7 @@ class NomineeScreen extends StatelessWidget {
                 //   child: const Text("Get Support"),
                 // )
               ],
-            ), //Container
+            ), 
           ),
         )
       )

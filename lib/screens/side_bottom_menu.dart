@@ -4,9 +4,11 @@ import 'package:kubera_scheme/screens/about_kubera.dart';
 import 'package:kubera_scheme/screens/about_us_screen.dart';
 import 'package:kubera_scheme/screens/contact_screen.dart';
 import 'package:kubera_scheme/screens/dashboard_screen.dart';
+import 'package:kubera_scheme/screens/knowledge_center_faqs.dart';
 import 'package:kubera_scheme/screens/investment_screen.dart';
-import 'package:kubera_scheme/screens/refer_earn_screen.dart';
+import 'package:kubera_scheme/screens/refer_earn_faqs_screen.dart';
 import 'package:kubera_scheme/screens/schemes_screens.dart';
+import 'package:kubera_scheme/screens/webinars_screen.dart';
 
 class SideBottomMenu extends StatefulWidget {
   const SideBottomMenu({super.key});
@@ -113,14 +115,14 @@ class _SideBottomMenuState extends State<SideBottomMenu> {
                       title: const Text('   Webinars'),
                       onTap: () {
                         Navigator.pop(context);
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => const AboutKubera()),);
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const WebinarsScreen()),);
                       },
                     ),
                     ListTile(
                       title: const Text('   FAQs'),
                       onTap: () {
                         Navigator.pop(context);
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => const AboutKubera()),);
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const KnowledgeFaqScreens()),);
                       },
                     ),
                   ],
