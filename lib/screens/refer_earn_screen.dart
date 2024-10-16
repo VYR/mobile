@@ -5,6 +5,9 @@ class ReferEarnScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Refer and Earn'),
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(

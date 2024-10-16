@@ -16,74 +16,148 @@ class KeyInvestHighlightsScreen extends StatelessWidget {
                   'Key Investment Highlights',
                   textAlign: TextAlign.start,
                   style: TextStyle(
-                    color: Color.fromRGBO(38, 36, 123, 1),
-                    fontWeight: FontWeight.w700,fontSize: 16
+                    fontWeight: FontWeight.w700,fontSize: 18
                   ),
                 ),
                 SizedBox(height: 20),
                 Text(
-                  'Strong Security Structure',
+                  'High Yield Fixed Income',
                   textAlign: TextAlign.start,
                   style: TextStyle(
-                    color: Color.fromRGBO(38, 36, 123, 1),
-                    fontWeight: FontWeight.w700,fontSize: 14
+                    fontWeight: FontWeight.w700,fontSize: 16
                   ),
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: 7),
                 Text(
-                  '• Secured Structure with Bank Guarantee covering 100% of the Investment and Interest amount.',
-                ),
-                Text(
-                  '• kubera scheme controls escrow where repayments are received from the Buyer.',
+                  'The scheme offers a high yield, with the potential to double your investment in 40 months.',
                 ),
                 SizedBox(height: 10),
                 Text(
-                  'About Bank Guarantee',
+                  'Returns in Gold',
                   textAlign: TextAlign.start,
                   style: TextStyle(
-                    color: Color.fromRGBO(38, 36, 123, 1),
-                    fontWeight: FontWeight.w700,fontSize: 14
+                    fontWeight: FontWeight.w700,fontSize: 16
                   ),
+                ),
+                SizedBox(height: 8),
+                Text(
+                  'Monthly returns are paid in 24-karat 999 gold, unaffected by market fluctuations​.',
                 ),
                 SizedBox(height: 10),
                 Text(
-                  '•A bank guarantee is an enforceable commitment by a bank to ensure payment to a beneficiary. The issued BG can be invoked by beneficiary in certain conditions such as failure of payment.'
-                ),
-                SizedBox(height: 6),
-                Text(
-                  "• Bank guarantee is issued on the Bank's assessment of buyer's credit worthiness.",
-                ),
-                SizedBox(height: 6),
-                Text(
-                  "• In this case, the seller of goods/services gets a bank guarantee from the buyer's Bank which can be invoked if the buyer fails to make the payment on time.",
-                ),
-                SizedBox(height: 16),
-                Text(
-                  'How it works?',
+                  'Investment Range',
                   textAlign: TextAlign.start,
                   style: TextStyle(
-                    color: Color.fromRGBO(38, 36, 123, 1),
-                    fontWeight: FontWeight.w700,fontSize: 14
+                    fontWeight: FontWeight.w700,fontSize: 16
                   ),
+                ),
+                SizedBox(height: 8),
+                Text(
+                  'Investments start from ₹10 lakhs and can go up to ₹5 crores.',
                 ),
                 SizedBox(height: 10),
                 Text(
-                  '• Seller delivers the goods/services to buyer on credit and raises the invoice (receivables)',
+                  'Secure Structure',
+                  textAlign: TextAlign.start,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w700,fontSize: 16
+                  ),
                 ),
+                SizedBox(height: 8),
                 Text(
-                  "• Buyer's bank issues an unconditional and irrevocable bank guarantee to the seller (up to the sanctioned limit)",
+                  'The scheme is backed by a bank guarantee, protecting 100% of both investment and interest amounts.',
                 ),
+                SizedBox(height: 10),
                 Text(
-                  '• Seller assigns the Bank guarantee to kubera scheme',
+                  'Referral Benefits',
+                  textAlign: TextAlign.start,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w700,fontSize: 16
+                  ),
                 ),
+                SizedBox(height: 8),
                 Text(
-                  '• Investor(s) subscribe to discounted invoices on kubera scheme platform',
+                  'Participants can earn benefits by referring others to the scheme.',
                 ),
+                SizedBox(height: 10),
                 Text(
-                  '• kubera scheme takes the control on escrow account (designated a/c for all buyer repayments) to safeguard Investors.',
+                  'Long-Term Commitment',
+                  textAlign: TextAlign.start,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w700,fontSize: 16
+                  ),
                 ),
+                SizedBox(height: 8),
                 Text(
-                  '• When the buyer makes payment, it flows directly into the escrow account controlled by kubera scheme. In worst case scenario of default, kubera scheme invokes the BG with bank to recover the amount.',
+                  'The scheme lasts for 40 months, and early withdrawal is not permitted.',
+                ),
+                SizedBox(height: 10),
+                Text(
+                  'Eligibility',
+                  textAlign: TextAlign.start,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w700,fontSize: 16
+                  ),
+                ),
+                SizedBox(height: 8),
+                Text(
+                  'Both individuals and companies can invest, with simple KYC requirements.',
+                ),
+                SizedBox(height: 20),
+                Text(
+                  'How the Kubera Scheme Works',
+                  textAlign: TextAlign.start,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w700,fontSize: 18
+                  ),
+                ),
+                SizedBox(height: 20),
+                Text(
+                  'Investment',
+                  textAlign: TextAlign.start,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w700,fontSize: 16
+                  ),
+                ),
+                SizedBox(height: 7),
+                Text(
+                  'Investors deposit a minimum of ₹10 Lakhs, up to ₹5 Crores or more, into the Kubera Scheme. The deposit remains fixed for the entire 40-month period.',
+                ),
+                SizedBox(height: 10),
+                Text(
+                  'Gold-Based Returns',
+                  textAlign: TextAlign.start,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w700,fontSize: 16
+                  ),
+                ),
+                SizedBox(height: 8),
+                Text(
+                  'Investors receive monthly returns in the form of 24-karat, 999 purity gold. The amount is calculated as 1/40th of the total investment each month, ensuring the investor receives double the initial investment by the end of 40 months.',
+                ),
+                SizedBox(height: 10),
+                Text(
+                  'Bank Guarantee',
+                  textAlign: TextAlign.start,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w700,fontSize: 16
+                  ),
+                ),
+                SizedBox(height: 8),
+                Text(
+                  "The scheme is secured by a Bank Guarantee from the buyer's bank, which covers 100% of the investment and interest. This guarantee is invoked if the buyer defaults on payments, ensuring that investors are protected.",
+                ),
+                SizedBox(height: 10),
+                Text(
+                  'No Early Withdrawals',
+                  textAlign: TextAlign.start,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w700,fontSize: 16
+                  ),
+                ),
+                SizedBox(height: 8),
+                Text(
+                  'The scheme does not allow early withdrawals. Investors are locked into the 40-month period, and returns are exclusively in gold.',
                 ),
               ]
             )
@@ -93,4 +167,5 @@ class KeyInvestHighlightsScreen extends StatelessWidget {
     );
   }
 }
+
 

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kubera_scheme/screens/about_kubera.dart';
+import 'package:kubera_scheme/screens/about_us_screen.dart';
+import 'package:kubera_scheme/screens/contact_screen.dart';
 import 'package:kubera_scheme/screens/dashboard_screen.dart';
 import 'package:kubera_scheme/screens/investment_screen.dart';
 import 'package:kubera_scheme/screens/refer_earn_screen.dart';
@@ -97,25 +99,51 @@ class _SideBottomMenuState extends State<SideBottomMenu> {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => const AboutKubera()),);
                   },
                 ),
-                ListTile(
+                ExpansionTile(
                   title: const Text('Knowledge Center'),
-                  onTap: () {
-                    Navigator.pop(context);
-                    // Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()),);
-                  },
+                  children: [
+                    ListTile(
+                      title: const Text('   Blogs'),
+                      onTap: () {
+                        Navigator.pop(context);
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const AboutKubera()),);
+                      },
+                    ),
+                    ListTile(
+                      title: const Text('   Webinars'),
+                      onTap: () {
+                        Navigator.pop(context);
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const AboutKubera()),);
+                      },
+                    ),
+                    ListTile(
+                      title: const Text('   FAQs'),
+                      onTap: () {
+                        Navigator.pop(context);
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const AboutKubera()),);
+                      },
+                    ),
+                  ],
                 ),
+                // ListTile(
+                //   title: const Text('Knowledge Center'),
+                //   onTap: () {
+                //     Navigator.pop(context);
+                //     // Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()),);
+                //   },
+                // ),
                 ListTile(
                   title: const Text('About Us'),
                   onTap: () {
                     Navigator.pop(context);
-                    // Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()),);
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const AboutUsScreen()),);
                   },
                 ),
                 ListTile(
                   title: const Text('Contact Us'),
                   onTap: () {
                     Navigator.pop(context);
-                    // Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()),);
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => ContactScreen()),);
                   },
                 ),
                 ListTile(

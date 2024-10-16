@@ -4,69 +4,113 @@ class KeyMetricesScreen extends StatelessWidget {
   const KeyMetricesScreen({super.key});
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text(
-                  'Key Performance Metrics',
+                const Text(
+                  'Key Performance Metrices',
                   textAlign: TextAlign.start,
                   style: TextStyle(
-                    color: Color.fromRGBO(38, 36, 123, 1),
+                    fontWeight: FontWeight.w700,fontSize: 18
+                  ),
+                ),
+                const SizedBox(height: 20),
+                const Text(
+                  'Investment Tenure',
+                  textAlign: TextAlign.start,
+                  style: TextStyle(
                     fontWeight: FontWeight.w700,fontSize: 16
                   ),
                 ),
-                SizedBox(height: 20),
-                Text(
-                  'About Buyer',
+                const SizedBox(height: 7),
+                const Text(
+                  '40 months. The scheme runs for a fixed period of 40 months, during which investors receive monthly returns.',
+                ),
+                const SizedBox(height: 10),
+                const Text(
+                  'Monthly Returns',
                   textAlign: TextAlign.start,
                   style: TextStyle(
-                    color: Color.fromRGBO(38, 36, 123, 1),
-                    fontWeight: FontWeight.w700,fontSize: 14
+                    fontWeight: FontWeight.w700,fontSize: 16
                   ),
                 ),
-                SizedBox(height: 10),
-                Text(
-                  '• Please refer Product Note',
-                ),
-                SizedBox(height: 10),
-                Text(
-                  'About Seller',
+                _buildBulletPoint('Investors receive 1/40th of their initial investment in 24-karat 999 gold each month.'),
+                _buildBulletPoint('Example: An investment of ₹20 lakhs would yield ₹1 lakh worth of gold per month.'),
+                const SizedBox(height: 10),
+                const Text(
+                  'Total Returns',
                   textAlign: TextAlign.start,
                   style: TextStyle(
-                    color: Color.fromRGBO(38, 36, 123, 1),
-                    fontWeight: FontWeight.w700,fontSize: 14
+                    fontWeight: FontWeight.w700,fontSize: 16
                   ),
                 ),
-                SizedBox(height: 10),
-                Text(
-                  '• Power2SME provides B2B services through its digital ecosystem which delivers raw material procurement at competitive prices, MRO procurement, and access to finance to smaller SMEs with an objective to provided them with higher efficiencies and profitability.'
-                ),
-                SizedBox(height: 6),
-                Text(
-                  '• Started in 2012 has raise INR 400 Cr+ from marquee investors including Accel Partners, Inventus, IFC, Kalaari Capital, Nandan Nilekani.',
-                ),
-                SizedBox(height: 6),
-                Text(
-                  '• The Business is promoted by Mr. R.Narayan who has a strong corporate background with 26 years+ of experience',
-                ),
-                SizedBox(height: 16),
-                Text(
-                  'About Bank',
+                _buildBulletPoint('100% return on the investment over 40 months.'),
+                _buildBulletPoint('Example: An initial investment of ₹10 lakhs would return ₹20 lakhs in gold by the end of the scheme.'),
+                const SizedBox(height: 10),
+                const Text(
+                  'Minimum Investment',
                   textAlign: TextAlign.start,
                   style: TextStyle(
-                    color: Color.fromRGBO(38, 36, 123, 1),
-                    fontWeight: FontWeight.w700,fontSize: 14
+                    fontWeight: FontWeight.w700,fontSize: 16
                   ),
                 ),
-                SizedBox(height: 10),
-                Text(
-                  '• Please refer Product Note',
+                const SizedBox(height: 8),
+                const Text(
+                  'The minimum investment required to join the scheme is ₹10 lakhs',
                 ),
+                const SizedBox(height: 10),
+                const Text(
+                  'Maximum Investment',
+                  textAlign: TextAlign.start,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w700,fontSize: 16
+                  ),
+                ),
+                const SizedBox(height: 8),
+                const Text(
+                  'Investors can invest up to ₹5 crores or more, providing flexibility for larger-scale investments',
+                ),
+                const SizedBox(height: 10),
+                const Text(
+                  'Security via Bank Guarantee',
+                  textAlign: TextAlign.start,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w700,fontSize: 16
+                  ),
+                ),
+                const SizedBox(height: 8),
+                const Text(
+                  'The entire investment, including the interest amount, is covered by a 100% Bank Guarantee, ensuring safety against defaults.',
+                ),
+                const SizedBox(height: 10),
+                const Text(
+                  'Guaranteed Gold Payout',
+                  textAlign: TextAlign.start,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w700,fontSize: 16
+                  ),
+                ),
+                const SizedBox(height: 8),
+                const Text(
+                  'Payouts are made in certified 24-karat 999 gold, ensuring high-value returns regardless of market fluctuations​.',
+                ),
+                const SizedBox(height: 10),
+                const Text(
+                  'Referral Benefits',
+                  textAlign: TextAlign.start,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w700,fontSize: 16
+                  ),
+                ),
+                const SizedBox(height: 8),
+                const Text(
+                  'Investors can also earn additional returns by referring others to the Kubera Scheme.',
+                ),               
               ]
             )
           )
@@ -74,5 +118,19 @@ class KeyMetricesScreen extends StatelessWidget {
       )
     );
   }
+
+  Widget _buildBulletPoint(String text) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 4.0),
+      child: Row(
+        children: [
+          const Icon(Icons.circle, size: 8,),
+          const SizedBox(width: 8),
+          Expanded(child: Text(text, textAlign: TextAlign.left,),),
+        ],
+      ),
+    );
+  }
+
 }
 

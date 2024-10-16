@@ -112,25 +112,27 @@ class KuberaSchemeScreen extends StatelessWidget {
                                           ],
                                         ),
                                         const SizedBox(width: 10,),
-                                        const Column(
-                                          mainAxisAlignment: MainAxisAlignment.start,
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          children: <Widget>[
-                                            Text(
-                                              'Vi Bullion',
-                                              textAlign: TextAlign.left,
-                                              style: TextStyle(
-                                                color: Color.fromRGBO(42, 38, 38, 1),
-                                                fontWeight: FontWeight.w700
+                                        const Expanded(
+                                          child: Column(
+                                            mainAxisAlignment: MainAxisAlignment.start,
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: <Widget>[
+                                              Text(
+                                                'Vi Bullion',
+                                                textAlign: TextAlign.left,
+                                                style: TextStyle(
+                                                  color: Color.fromRGBO(42, 38, 38, 1),
+                                                  fontWeight: FontWeight.w700
+                                                ),
                                               ),
-                                            ),
-                                            SizedBox(height: 10),
-                                            Text(
-                                              'Vi Bullion is a Gold Refinery and Trading Company',
-                                              textAlign: TextAlign.left,
-                                              ),
-                                          ]
-                                        )
+                                              SizedBox(height: 10),
+                                              Text(
+                                                'Vi Bullion is a Gold Refinery and Trading Company',
+                                                textAlign: TextAlign.left,
+                                                ),
+                                            ]
+                                          )
+                                        ),
                                       ]
                                     ),
                                     const SizedBox(height: 10),
