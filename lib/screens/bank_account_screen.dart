@@ -112,7 +112,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class BankAccountScreen extends StatefulWidget {
-  BankAccountScreen({super.key});
+  const BankAccountScreen({super.key});
 
   @override
   _BankAccountScreenState createState() => _BankAccountScreenState();

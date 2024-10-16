@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class WebinarsScreen extends StatelessWidget {
-  const WebinarsScreen({Key? key}) : super(key: key);
+  const WebinarsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

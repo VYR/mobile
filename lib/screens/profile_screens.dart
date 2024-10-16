@@ -55,7 +55,7 @@ class ProfileScreens extends StatelessWidget {
                       height: 80,
                       child: InkWell(
                         onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => PersonalDetailsForm()),);
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => const PersonalDetailsForm()),);
                         },
                         child: const Card(
                           child: Column(
@@ -82,7 +82,7 @@ class ProfileScreens extends StatelessWidget {
                       height: 80,
                       child: InkWell(
                         onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => AddressScreen()),);
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => const AddressScreen()),);
                         },
                         child: const Card(
                           child: Column(
@@ -109,7 +109,7 @@ class ProfileScreens extends StatelessWidget {
                       height: 80,
                       child: InkWell(
                         onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => BankAccountScreen()),);
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => const BankAccountScreen()),);
                         },
                         child: const Card(
                           child: Column(

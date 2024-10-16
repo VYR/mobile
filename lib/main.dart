@@ -107,7 +107,7 @@ class MyApp extends StatelessWidget {
       GoRoute(
         name: 'bank-account',
         path: '/bank-account',
-        builder: (context, state) => BankAccountScreen(),
+        builder: (context, state) => const BankAccountScreen(),
       ),
       GoRoute(
         name: 'demat-account',
