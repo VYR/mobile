@@ -6,11 +6,15 @@ import 'package:kubera_scheme/screens/bottom_navigation_part.dart';
 import 'package:kubera_scheme/screens/dashboard_screen.dart';
 import 'package:kubera_scheme/screens/demart_account_screen.dart';
 import 'package:kubera_scheme/screens/enter_otp_screen.dart';
+import 'package:kubera_scheme/screens/faqs_screens.dart';
+//import 'package:kubera_scheme/screens/faqs_screens.dart';
 import 'package:kubera_scheme/screens/investment_screen.dart';
+import 'package:kubera_scheme/screens/kubera_scheme_faqs.dart';
 import 'package:kubera_scheme/screens/login_screen.dart';
 import 'package:kubera_scheme/screens/nominee_screen.dart';
 import 'package:kubera_scheme/screens/personal_details.dart';
 import 'package:kubera_scheme/screens/profile_screens.dart';
+import 'package:kubera_scheme/screens/refer_earn_faqs_screen.dart';
 import 'package:kubera_scheme/screens/schemes_screens.dart';
 import 'package:kubera_scheme/screens/set_pin_screen.dart';
 import 'package:kubera_scheme/screens/side_bottom_menu.dart';
@@ -102,6 +106,11 @@ class MyApp extends StatelessWidget {
         builder: (context, state) => const NomineeScreen(),
       ),
       GoRoute(
+        name: 'faqs',
+        path: '/faqs',
+        builder: (context, state) => const FaqsScreens(),
+      ),
+      GoRoute(
         name: 'user-menu',
         path: '/user-menu',
         builder: (context, state) => const UserMenuScreen(),
@@ -115,6 +124,16 @@ class MyApp extends StatelessWidget {
         name: 'main-page',
         path: '/main-page',
         builder: (context, state) => const SideBottomMenu(),
+      ),
+      GoRoute(
+        name: 'refer-earn-faqs',
+        path: '/refer-earn-faqs',
+        builder: (context, state) => const ReferEarnFaqsScreen(),
+      ),
+      GoRoute(
+        name: 'kubera-faqs',
+        path: '/kubera-faqs',
+        builder: (context, state) => const KuberaSchemeFaqs(),
       ),
     ],
   );
