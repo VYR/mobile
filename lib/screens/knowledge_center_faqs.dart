@@ -28,20 +28,26 @@ class KnowledgeFaqScreens extends StatelessWidget {
             height: 20,
           ),
           ExpansionTile(
-            title: Text("What is the goal of the Kubera Scheme?"),
+            title: Text("What is the goal of the Kubera Scheme?",
+            style: TextStyle(
+                fontSize: 16, color: Colors.black, fontWeight: FontWeight.w500
+              ),),
             expandedAlignment: Alignment.topLeft,
             expandedCrossAxisAlignment: CrossAxisAlignment.center,
             // collapsedBackgroundColor: Colors.blue,
             // trailing: Icon(Icons.check), // icons symbol change
             // controlAffinity: ListTileControlAffinity.leading, //Down Arrow left side changing
             children: [
-              // Padding(padding: EdgeInsets.only(bottom: 20)),
-              Text(
+              Padding(
+                padding: EdgeInsets.only(bottom: 10),
+                child: Text(
                 "The scheme is designed to encourage savings and provide a high-yield, alternative fixed income.",
                 style: TextStyle(
                   fontSize: 16,
                 ),
               ),
+                ),
+              
               // Text("Don't Forget like and subscribe")
             ],
             // tilePadding: EdgeInsets.all(0),
@@ -59,266 +65,407 @@ class KnowledgeFaqScreens extends StatelessWidget {
           //   height: 5,
           // ),
           ExpansionTile(
-            title: Text("How long does the Kubera Scheme last?"),
+            title: Text("How long does the Kubera Scheme last?",
+            style: TextStyle(
+                fontSize: 16, color: Colors.black, fontWeight: FontWeight.w500
+              ),),
             expandedAlignment: Alignment.topLeft, //left and right adjust
             expandedCrossAxisAlignment: CrossAxisAlignment.center,
             // collapsedBackgroundColor: Colors.blue,
             children: [
+              Padding(
+                padding: EdgeInsets.only(bottom: 10),
+                child: 
               Text(
                 "The scheme runs for 40 months.",
                 style: TextStyle(
                   fontSize: 16,
                 ),
               ),
+              )
             ],
           ),
           ExpansionTile(
-            title: Text("How often are the returns paid?"),
+            title: Text("How often are the returns paid?",
+            style: TextStyle(
+                fontSize: 16, color: Colors.black, fontWeight: FontWeight.w500
+              ),),
             expandedAlignment: Alignment.topLeft, //left and right adjust
             expandedCrossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Padding(
+                padding: EdgeInsets.only(bottom: 10),
+                child: 
               Text(
                 "Returns are paid monthly in 24 karat 999 gold.",
                 style: TextStyle(
                   fontSize: 16,
                 ),
               ),
+              )
             ],
           ),
           ExpansionTile(
-            title: Text("What happens if I miss to receive my return?"),
-            expandedAlignment: Alignment.topLeft, //left and right adjust
+            title: Text("What happens if I miss to receive my return?",
+            style: TextStyle(
+                fontSize: 16, color: Colors.black, fontWeight: FontWeight.w500
+              ),),
+            expandedAlignment: Alignment.topLeft, 
             expandedCrossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text(
-                "Please contact our support team for guidance if you miss an instalment.",
-                style: TextStyle(
-                  fontSize: 16,
+              Padding(
+                padding: EdgeInsets.only(bottom: 10),
+                child: 
+                Text(
+                  "Please contact our support team for guidance if you miss an instalment.",
+                  style: TextStyle(
+                    fontSize: 16,
+                  ),
                 ),
-              ),
+              )
             ],
           ),
           ExpansionTile(
-            title: Text("Can I increase my investment during the scheme?"),
+            title: Text("Can I increase my investment during the scheme?",
+            style: TextStyle(
+                fontSize: 16, color: Colors.black, fontWeight: FontWeight.w500
+              ),),
             expandedAlignment: Alignment.topLeft, //left and right adjust
             expandedCrossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Padding(
+                padding: EdgeInsets.only(bottom: 10),
+                child: 
               Text(
                 "No, the initial deposit remains fixed for the 40-month period.",
                 style: TextStyle(
                   fontSize: 16,
                 ),
               ),
+              )
             ],
           ),
           ExpansionTile(
-            title: Text("How do I apply for the Kubera Scheme?"),
+            title: Text("How do I apply for the Kubera Scheme?",
+            style: TextStyle(
+                fontSize: 16, color: Colors.black, fontWeight: FontWeight.w500
+              ),),
             expandedAlignment: Alignment.topLeft, //left and right adjust
             expandedCrossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Padding(
+                padding: EdgeInsets.only(bottom: 10),
+                child: 
               Text(
                 "You can apply through our website or app, or contact us directly via email at kuberainvestor@gmail.com. Alternatively, you can visit our office for assistance.",
                 style: TextStyle(
                   fontSize: 16,
                 ),
               ),
+              )
             ],
           ),
           ExpansionTile(
-            title: Text("What documents are needed to join the Kubera Scheme?"),
+            title: Text("What documents are needed to join the Kubera Scheme?",
+            style: TextStyle(
+                fontSize: 16, color: Colors.black, fontWeight: FontWeight.w500
+              ),),
             expandedAlignment: Alignment.topLeft, //left and right adjust
             expandedCrossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Padding(
+                padding: EdgeInsets.only(bottom: 10),
+                child: 
               Text(
                 "Basic identification documents, proof of address, and bank details are required. KYC will be completed through Digi Locker.",
                 style: TextStyle(
                   fontSize: 16,
                 ),
               ),
+              )
             ],
           ),
           ExpansionTile(
-            title: Text("What type of gold is used for the payout?"),
+            title: Text("What type of gold is used for the payout?",
+            style: TextStyle(
+                fontSize: 16, color: Colors.black, fontWeight: FontWeight.w500
+              ),),
             expandedAlignment: Alignment.topLeft, //left and right adjust
             expandedCrossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Padding(
+                padding: EdgeInsets.only(bottom: 10),
+                child: 
               Text(
                 "Gold of certified purity (24 karat 999) is used for payouts.",
                 style: TextStyle(
                   fontSize: 16,
                 ),
               ),
+              )
             ],
           ),
           ExpansionTile(
-            title: Text("Can I refer others to the Kubera Scheme?"),
+            title: Text("Can I refer others to the Kubera Scheme?",
+            style: TextStyle(
+                fontSize: 16, color: Colors.black, fontWeight: FontWeight.w500
+              ),),
             expandedAlignment: Alignment.topLeft, //left and right adjust
             expandedCrossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Padding(
+                padding: EdgeInsets.only(bottom: 10),
+                child: 
               Text(
                 "Yes, we encourage referrals. Please contact us for details on referral benefits.",
                 style: TextStyle(
                   fontSize: 16,
                 ),
               ),
+              )
             ],
           ),
           ExpansionTile(
             title: Text(
-                "What is the customer service contact for the Kubera Scheme?"),
+                "What is the customer service contact for the Kubera Scheme?",
+                style: TextStyle(
+                fontSize: 16, color: Colors.black, fontWeight: FontWeight.w500
+              ),),
             expandedAlignment: Alignment.topLeft, //left and right adjust
             expandedCrossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Padding(
+                padding: EdgeInsets.only(bottom: 10),
+                child: 
               Text(
                 "You can reach us at kuberainvestor@gmail.com for any assistance.",
                 style: TextStyle(
                   fontSize: 16,
                 ),
               ),
+              )
             ],
           ),
           ExpansionTile(
-            title: Text("Is there a maximum limit to how much I can invest?"),
+            title: Text("Is there a maximum limit to how much I can invest?",
+            style: TextStyle(
+                fontSize: 16, color: Colors.black, fontWeight: FontWeight.w500
+              ),),
             expandedAlignment: Alignment.topLeft, //left and right adjust
             expandedCrossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Padding(
+                padding: EdgeInsets.only(bottom: 10),
+                child: 
               Text(
                 "Investments start from ₹ 10 lakhs and can go up to ₹ 5 crores or more.",
                 style: TextStyle(
                   fontSize: 16,
                 ),
               ),
+              )
             ],
           ),
           ExpansionTile(
-            title: Text("Are there any taxes on the gold payout?"),
+            title: Text("Are there any taxes on the gold payout?",
+            style: TextStyle(
+                fontSize: 16, color: Colors.black, fontWeight: FontWeight.w500
+              ),),
             expandedAlignment: Alignment.topLeft, //left and right adjust
             expandedCrossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Padding(
+                padding: EdgeInsets.only(bottom: 10),
+                child: 
               Text(
                 "Taxes will apply as per government regulations.",
                 style: TextStyle(
                   fontSize: 16,
                 ),
               ),
+              )
             ],
           ),
           ExpansionTile(
-            title: Text("How is the gold delivered to investors?"),
+            title: Text("How is the gold delivered to investors?",
+            style: TextStyle(
+                fontSize: 16, color: Colors.black, fontWeight: FontWeight.w500
+              ),),
             expandedAlignment: Alignment.topLeft, //left and right adjust
             expandedCrossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Padding(
+                padding: EdgeInsets.only(bottom: 10),
+                child: 
               Text(
                 "Gold is delivered securely through our trusted partners.",
                 style: TextStyle(
                   fontSize: 16,
                 ),
               ),
+              )
             ],
           ),
           ExpansionTile(
-            title: Text("Can I visit Vindhya Bullion's refinery?"),
+            title: Text("Can I visit Vindhya Bullion's refinery?",
+            style: TextStyle(
+                fontSize: 16, color: Colors.black, fontWeight: FontWeight.w500
+              ),),
             expandedAlignment: Alignment.topLeft, //left and right adjust
             expandedCrossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Padding(
+                padding: EdgeInsets.only(bottom: 10),
+                child: 
               Text(
                 "Yes, we welcome visits. Please schedule an appointment in advance.",
                 style: TextStyle(
                   fontSize: 16,
                 ),
               ),
+              )
             ],
           ),
           ExpansionTile(
-            title: Text("How long does the Kubera Scheme last?"),
+            title: Text("How long does the Kubera Scheme last?",
+            style: TextStyle(
+                fontSize: 16, color: Colors.black, fontWeight: FontWeight.w500
+              ),),
             expandedAlignment: Alignment.topLeft, //left and right adjust
             expandedCrossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Padding(
+                padding: EdgeInsets.only(bottom: 10),
+                child: 
               Text(
                 "The scheme runs for 40 months.",
                 style: TextStyle(
                   fontSize: 16,
                 ),
               ),
+              )
             ],
           ),
           ExpansionTile(
-            title: Text("What makes Vindhya Bullion a trusted partner?"),
+            title: Text("What makes Vindhya Bullion a trusted partner?",
+            style: TextStyle(
+                fontSize: 16, color: Colors.black, fontWeight: FontWeight.w500
+              ),),
             expandedAlignment: Alignment.topLeft, //left and right adjust
             expandedCrossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Padding(
+                padding: EdgeInsets.only(bottom: 10),
+                child: 
               Text(
                 "We are RBI-regulated, NABL-certified, and uphold transparency, trust, and ethical values in all our operation",
                 style: TextStyle(
                   fontSize: 16,
                 ),
               ),
+              )
             ],
           ),
           ExpansionTile(
-            title: Text("Is there an option to receive cash instead of gold?"),
+            title: Text("Is there an option to receive cash instead of gold?",
+            style: TextStyle(
+                fontSize: 16, color: Colors.black, fontWeight: FontWeight.w500
+              ),),
             expandedAlignment: Alignment.topLeft, //left and right adjust
             expandedCrossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Padding(
+                padding: EdgeInsets.only(bottom: 10),
+                child: 
               Text(
                 "No, the returns are paid exclusively in gold.",
                 style: TextStyle(
                   fontSize: 16,
                 ),
               ),
+              )
             ],
           ),
           ExpansionTile(
-            title: Text("What happens if the gold market fluctuates?"),
+            title: Text("What happens if the gold market fluctuates?",
+            style: TextStyle(
+                fontSize: 16, color: Colors.black, fontWeight: FontWeight.w500
+              ),),
             expandedAlignment: Alignment.topLeft, //left and right adjust
             expandedCrossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Padding(
+                padding: EdgeInsets.only(bottom: 10),
+                child: 
               Text(
                 "The payout value in gold remains unaffected by market fluctuations.",
                 style: TextStyle(
                   fontSize: 16,
                 ),
               ),
+              )
             ],
           ),
           ExpansionTile(
-            title: Text("Can companies invest in the Kubera Scheme?"),
+            title: Text("Can companies invest in the Kubera Scheme?",
+            style: TextStyle(
+                fontSize: 16, color: Colors.black, fontWeight: FontWeight.w500
+              ),),
             expandedAlignment: Alignment.topLeft, //left and right adjust
             expandedCrossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Padding(
+                padding: EdgeInsets.only(bottom: 10),
+                child: 
               Text(
                 "Yes, both individuals and companies can invest.",
                 style: TextStyle(
                   fontSize: 16,
                 ),
               ),
+              )
             ],
           ),
           ExpansionTile(
-            title: Text("What if the customer dies during the scheme?"),
+            title: Text("What if the customer dies during the scheme?",
+            style: TextStyle(
+                fontSize: 16, color: Colors.black, fontWeight: FontWeight.w500
+              ),),
             expandedAlignment: Alignment.topLeft, //left and right adjust
             expandedCrossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Padding(
+                padding: EdgeInsets.only(bottom: 10),
+                child: 
               Text(
                 "If the customer passes away, the nominee designated at the time of application will be eligible to receive the gold returns.",
                 style: TextStyle(
                   fontSize: 16,
                 ),
               ),
+              )
             ],
           ),
           ExpansionTile(
             title: Text(
-                "Where can I find more information about Vindhya Bullion's schemes?"),
-            expandedAlignment: Alignment.topLeft, //left and right adjust
+              "Where can I find more information about Vindhya Bullion's schemes?",
+              style: TextStyle(
+                fontSize: 16, color: Colors.black, fontWeight: FontWeight.w500
+              ),
+            ),
+            expandedAlignment: Alignment.topLeft, 
             expandedCrossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Padding(
+                padding: EdgeInsets.only(bottom: 10),
+                child: 
               Text(
                 "For more information, visit our website or contact us directly.",
                 style: TextStyle(
                   fontSize: 16,
                 ),
               ),
+              )
             ],
           ),
         ],

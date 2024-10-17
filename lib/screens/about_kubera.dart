@@ -444,7 +444,7 @@ class AboutKubera extends StatelessWidget {
                 RichText(
                   textAlign: TextAlign.justify,
                   text: const TextSpan(
-                    style: TextStyle(fontSize: 16, height: 1.3),
+                    style: TextStyle(fontSize: 16, height: 1.3, color: Colors.black),
                     children: [
                       TextSpan(
                         text: 'All investment opportunities on our platform carry risk and investors should carefully evaluate whether the opportunity is suitable for them before making the investments. Please read the detailed risk factors available at ',

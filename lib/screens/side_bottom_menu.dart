@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kubera_scheme/screens/about_kubera.dart';
 import 'package:kubera_scheme/screens/about_us_screen.dart';
+import 'package:kubera_scheme/screens/blogs_screen.dart';
 import 'package:kubera_scheme/screens/contact_screen.dart';
 import 'package:kubera_scheme/screens/dashboard_screen.dart';
 import 'package:kubera_scheme/screens/knowledge_center_faqs.dart';
@@ -74,7 +75,7 @@ class _SideBottomMenuState extends State<SideBottomMenu> {
                     children: [
                       CircleAvatar(
                         radius: 52,
-                        backgroundImage: NetworkImage('/assets/icon/icon.png'),
+                        backgroundImage: AssetImage('assets/icon/icon.png')
                       ),
                       SizedBox(
                         height: 12,
@@ -108,7 +109,7 @@ class _SideBottomMenuState extends State<SideBottomMenu> {
                       title: const Text('   Blogs'),
                       onTap: () {
                         Navigator.pop(context);
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => const AboutKubera()),);
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => BlogsScreen()),);
                       },
                     ),
                     ListTile(

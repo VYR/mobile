@@ -4,6 +4,7 @@ import 'package:kubera_scheme/screens/about_kubera.dart';
 import 'package:kubera_scheme/screens/about_us_screen.dart';
 import 'package:kubera_scheme/screens/address_screen.dart';
 import 'package:kubera_scheme/screens/bank_account_screen.dart';
+import 'package:kubera_scheme/screens/blogs_screen.dart';
 import 'package:kubera_scheme/screens/bottom_navigation_part.dart';
 import 'package:kubera_scheme/screens/contact_screen.dart';
 import 'package:kubera_scheme/screens/dashboard_screen.dart';
@@ -238,6 +239,11 @@ class MyApp extends StatelessWidget {
         name: 'webinars',
         path: '/webinars',
         builder: (context, state) => const WebinarsScreen(),
+      ),
+      GoRoute(
+        name: 'blogs',
+        path: '/blogs',
+        builder: (context, state) => BlogsScreen(),
       ),
     ],
   );

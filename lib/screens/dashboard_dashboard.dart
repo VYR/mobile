@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:kubera_scheme/screens/schemes_screens.dart';
 
 class DashboardOneScreen extends StatelessWidget {
   const DashboardOneScreen({super.key});
@@ -53,7 +53,12 @@ class DashboardOneScreen extends StatelessWidget {
                   minWidth: 300.0,
                   color: const Color.fromRGBO(0, 92, 187, 1),
                   textColor: Colors.white,
-                  onPressed: () => {GoRouter.of(context).go('/main-page')},
+                  onPressed: () => {
+                            Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const SchemesScreens()),
+                )
+                          },
                   child: const Text("Explore Schemes"),
                 )
               ],

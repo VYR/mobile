@@ -85,125 +85,189 @@ class ReferEarnScreen extends StatelessWidget {
               ),
               const ExpansionTile(
                 title: Text(
-                    "What is the Refer and Earn program in the Kubera Scheme?"),
+                  "What is the Refer and Earn program in the Kubera Scheme?",
+                  style: TextStyle(
+                    fontSize: 16, color: Colors.black, fontWeight: FontWeight.w500
+                  ),
+                ),
                 expandedAlignment: Alignment.topLeft, //left and right adjust
                 expandedCrossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  Padding(
+                padding: EdgeInsets.only(bottom: 10),
+                child:
                   Text(
                     "The Refer and Earn program allows you to refer friends, family, or businesses to invest in the Kubera Scheme and earn rewards for successful referrals.",
                     style: TextStyle(
                       fontSize: 16,
                     ),
                   ),
+              )
                 ],
               ),
               const ExpansionTile(
-                title: Text("How do I refer someone to the Kubera Scheme?"),
+                title: Text("How do I refer someone to the Kubera Scheme?",
+                style: TextStyle(
+                fontSize: 16, color: Colors.black, fontWeight: FontWeight.w500
+              ),),
                 expandedAlignment: Alignment.topLeft, //left and right adjust
                 expandedCrossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  Padding(
+                padding: EdgeInsets.only(bottom: 10),
+                child:
                   Text(
                     "You can refer others by sharing your unique referral code or by having them mention your name during the application process. You can also email us their details for assistance.",
                     style: TextStyle(
                       fontSize: 16,
                     ),
                   ),
+                  )
                 ],
               ),
               const ExpansionTile(
-                title: Text("What rewards can I earn through referrals?"),
+                title: Text("What rewards can I earn through referrals?",
+                style: TextStyle(
+                fontSize: 16, color: Colors.black, fontWeight: FontWeight.w500
+              ),),
                 expandedAlignment: Alignment.topLeft, //left and right adjust
                 expandedCrossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  Padding(
+                padding: EdgeInsets.only(bottom: 10),
+                child:
                   Text(
                     "The rewards vary based on the investment amount of the referred person. These rewards can include incentives in gold, exclusive offers, or other perks.",
                     style: TextStyle(
                       fontSize: 16,
                     ),
                   ),
+                  )
                 ],
               ),
               const ExpansionTile(
                 title:
-                    Text("Is there a limit to how many people I can refer?"),
+                  Text("Is there a limit to how many people I can refer?",
+                  style: TextStyle(
+                    fontSize: 16, color: Colors.black, fontWeight: FontWeight.w500
+                  ),),
                 expandedAlignment: Alignment.topLeft, //left and right adjust
                 expandedCrossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  Padding(
+                padding: EdgeInsets.only(bottom: 10),
+                child:
                   Text(
                     "No, there is no limit to how many people you can refer to the Kubera Scheme. The more successful referrals you make, the more rewards you can earn.",
                     style: TextStyle(
                       fontSize: 16,
                     ),
                   ),
+                  )
                 ],
               ),
               const ExpansionTile(
                 title: Text(
-                    "When do I receive the rewards after a successful referral?"),
+                  "When do I receive the rewards after a successful referral?",
+                  style: TextStyle(
+                    fontSize: 16, color: Colors.black, fontWeight: FontWeight.w500
+                  ),),
                 expandedAlignment: Alignment.topLeft, //left and right adjust
                 expandedCrossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  Padding(
+                padding: EdgeInsets.only(bottom: 10),
+                child:
                   Text(
                     "Rewards are processed once the referred person successfully completes their investment in the Kubera Scheme. The time frame for receiving rewards will be shared with you after confirmation.",
                     style: TextStyle(
                       fontSize: 16,
                     ),
                   ),
+                  )
                 ],
               ),
               const ExpansionTile(
-                title: Text("Can I track the status of my referrals?"),
+                title: Text("Can I track the status of my referrals?",
+                style: TextStyle(
+                  fontSize: 16, color: Colors.black, fontWeight: FontWeight.w500
+                ),),
                 expandedAlignment: Alignment.topLeft, //left and right adjust
                 expandedCrossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  Padding(
+                padding: EdgeInsets.only(bottom: 10),
+                child:
                   Text(
                     "Yes, you will receive updates via email or through our app regarding the status of your referrals and any rewards due.",
                     style: TextStyle(
                       fontSize: 16,
                     ),
                   ),
+                  )
                 ],
               ),
               const ExpansionTile(
                 title: Text(
-                    "What information do I need to provide to refer someone?"),
+                    "What information do I need to provide to refer someone?",
+                    style: TextStyle(
+                      fontSize: 16, color: Colors.black, fontWeight: FontWeight.w500
+                    ),),
                 expandedAlignment: Alignment.topLeft, //left and right adjust
                 expandedCrossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  Padding(
+                padding: EdgeInsets.only(bottom: 10),
+                child:
                   Text(
                     "You simply need to share your referral code or provide the name and contact information of the person you are referring. We will assist them with the rest.",
                     style: TextStyle(
                       fontSize: 16,
                     ),
                   ),
+                  )
                 ],
               ),
               const ExpansionTile(
                 title: Text(
-                    "Can I refer people who are already in the Kubera Scheme?"),
+                  "Can I refer people who are already in the Kubera Scheme?",
+                  style: TextStyle(
+                    fontSize: 16, color: Colors.black, fontWeight: FontWeight.w500
+                  ),),
                 expandedAlignment: Alignment.topLeft, //left and right adjust
                 expandedCrossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  Padding(
+                padding: EdgeInsets.only(bottom: 10),
+                child:
                   Text(
                     "No, only new investors who are not already part of the Kubera Scheme can be referred.",
                     style: TextStyle(
                       fontSize: 16,
                     ),
                   ),
+                  )
                 ],
               ),
               const ExpansionTile(
                 title: Text(
-                    "Do I need to be an existing investor to refer someone?"),
+                    "Do I need to be an existing investor to refer someone?",
+                    style: TextStyle(
+                      fontSize: 16, color: Colors.black, fontWeight: FontWeight.w500
+                    ),),
                 expandedAlignment: Alignment.topLeft, //left and right adjust
                 expandedCrossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  Padding(
+                padding: EdgeInsets.only(bottom: 10),
+                child:
                   Text(
                     "Yes, you must be an investor in the Kubera Scheme to refer others.",
                     style: TextStyle(
                       fontSize: 16,
                     ),
                   ),
+                  )
                 ],
               ),
             ]

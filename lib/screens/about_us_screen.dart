@@ -6,7 +6,7 @@ class AboutUsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('About Kubera'),
+        title: const Text('About Us'),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
