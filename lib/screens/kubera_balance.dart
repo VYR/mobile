@@ -4,7 +4,7 @@ class KuberaBalanceScreen extends StatefulWidget {
   const KuberaBalanceScreen({super.key});
 
   @override
-  _KuberaBalanceScreenState createState() => _KuberaBalanceScreenState();
+  State<KuberaBalanceScreen> createState() => _KuberaBalanceScreenState();
 }
 
 class _KuberaBalanceScreenState extends State<KuberaBalanceScreen> {

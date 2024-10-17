@@ -6,7 +6,7 @@ import 'package:kubera_scheme/screens/refer_earn_faqs_screen.dart';
 class ReferralScreen extends StatefulWidget {
   const ReferralScreen({super.key});
   @override
-  _ReferralScreenState createState() => _ReferralScreenState();
+  State<ReferralScreen> createState() => _ReferralScreenState();
 }
 
 class _ReferralScreenState extends State<ReferralScreen> with SingleTickerProviderStateMixin {

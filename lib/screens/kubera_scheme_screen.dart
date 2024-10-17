@@ -9,7 +9,7 @@ import 'package:kubera_scheme/screens/snapshot_screen.dart';
 class KuberaSchemeScreen extends StatefulWidget {
   const KuberaSchemeScreen({super.key});
   @override
-  _KuberaSchemeScreenState createState() => _KuberaSchemeScreenState();
+  State<KuberaSchemeScreen> createState() => _KuberaSchemeScreenState();
 }
 
 class _KuberaSchemeScreenState extends State<KuberaSchemeScreen> with SingleTickerProviderStateMixin {

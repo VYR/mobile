@@ -9,7 +9,7 @@ import 'package:kubera_scheme/screens/snapshot_screen.dart';
 class DigitalGoldSchemeScreen extends StatefulWidget {
   const DigitalGoldSchemeScreen({super.key});
   @override
-  _DigitalGoldSchemeScreenState createState() => _DigitalGoldSchemeScreenState();
+  State<DigitalGoldSchemeScreen> createState() => _DigitalGoldSchemeScreenState();
 }
 
 class _DigitalGoldSchemeScreenState extends State<DigitalGoldSchemeScreen> with SingleTickerProviderStateMixin {

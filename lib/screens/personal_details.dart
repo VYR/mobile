@@ -5,7 +5,7 @@ class PersonalDetailsForm extends StatefulWidget {
   const PersonalDetailsForm({super.key});
 
   @override
-  _PersonalDetailsFormState createState() => _PersonalDetailsFormState();
+  State<PersonalDetailsForm> createState() => _PersonalDetailsFormState();
 }
 
 class _PersonalDetailsFormState extends State<PersonalDetailsForm> {
